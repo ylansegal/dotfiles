@@ -1,0 +1,24 @@
+[user]
+	name = Ylan Segal
+	email = ylan@alxglobal.com
+[core]
+	excludesfile = /Users/ylansegal/.gitignore
+	editor = mate -w
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+[alias]
+  co = checkout
+  ci = commit
+  st = status
+  br = branch
+  histdate = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	hist = log --pretty=oneline --abbrev-commit --graph --decorate 
+  type = cat-file -t
+  dump = cat-file -p
+  web = instaweb --httpd webrick
+  merg = merge --no-ff
+[push]
+# Push current branch even if you've never pushed it before
+default = current
