@@ -1,0 +1,4 @@
+#!/bin/bash
+COMMAND="heroku $* --app laptopbatterydepot-staging"
+echo $COMMAND
+$COMMAND
