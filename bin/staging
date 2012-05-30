@@ -1,4 +1,3 @@
 #!/bin/bash
 COMMAND="heroku $* --app locum-staging"
-echo $COMMAND
 $COMMAND
