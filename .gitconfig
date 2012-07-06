@@ -3,7 +3,7 @@
 	email = ylan@alxglobal.com
 [core]
 	excludesfile = /Users/ylansegal/.gitignore
-	editor = mate -w
+	editor = subl -w
 [color]
 	diff = auto
 	status = auto
