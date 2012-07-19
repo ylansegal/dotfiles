@@ -10,7 +10,6 @@ ZSH_THEME="robbyrussell"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias fbe="foreman run bundle exec"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
