@@ -19,6 +19,8 @@
   dump = cat-file -p
   web = instaweb --httpd webrick
   merg = merge --no-ff
+  dc = diff --cached
+  ai = add -p
 [push]
 # Push current branch even if you've never pushed it before
 default = current
