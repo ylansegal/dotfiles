@@ -5,8 +5,6 @@ set nocompatible                  " Must come first because it changes other opt
 
 syntax enable                     " Turn on syntax highlighting.
 filetype plugin indent on         " Turn on file type detection.
-set background=light               " From solarized instructions
-colorscheme solarized             " From solarized instructions
 
 "runtime macros/matchit.vim        " Load the matchit plugin.
 
