@@ -35,3 +35,8 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 . ~/.profile
+
+if [ -f ~/.dev.profile ]
+then
+    . ~/.dev.profile
+fi
