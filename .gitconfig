@@ -1,6 +1,6 @@
 [user]
 	name = Ylan Segal
-	email = ylan@alxglobal.com
+	email = ylan.segal@mellmo.com
 [core]
 	excludesfile = /Users/ylansegal/.gitignore
 	editor = subl -w
@@ -30,3 +30,5 @@ default = current
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+[http]
+	sslVerify = false
