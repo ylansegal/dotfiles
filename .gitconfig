@@ -14,7 +14,7 @@
   st = status
   br = branch
   histdate = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-  hist = log --graph --pretty=format:'%Cred%h%Creset %an -%C(yellow)%d%Creset %s %Cgreen(%cd)%Creset' --date=short --abbrev-commit -20 
+  hist = log --graph --pretty=format:'%Cred%h%Creset %an -%C(yellow)%d%Creset %s %Cgreen(%cd)%Creset' --date=short --abbrev-commit -50
   type = cat-file -t
   dump = cat-file -p
   web = instaweb --httpd webrick
