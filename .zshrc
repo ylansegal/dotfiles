@@ -10,6 +10,7 @@ ZSH_THEME="robbyrussell"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias rpry="rails-console-pry -r pry-doc -r awesome_print"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
