@@ -59,13 +59,3 @@ end
 
 # Show results of all extension-loading
 puts "#{ANSI[:GRAY]}~> Console extensions:#{ANSI[:RESET]} #{$console_extensions.join(' ')}#{ANSI[:RESET]}"
-
-# Using pry
-
-begin
-  require "pry"
-  Pry.start
-  exit
-rescue LoadError => e
-  warn "=> Unable to load pry"
-end
