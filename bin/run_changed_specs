@@ -2,4 +2,4 @@
 
 set -e
 
-(git diff --name-only develop..HEAD; git ls-files --other --exclude-standard) | grep 'spec.rb' | xargs smart_rspec
+(git diff --name-only develop..HEAD; git ls-files -m --other --exclude-standard) | grep 'spec.rb' | xargs smart_rspec
