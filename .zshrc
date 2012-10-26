@@ -53,5 +53,10 @@ function cd {
     done
   fi
 }
+
+# Setting up JAVA_HOME
+JAVA_HOME=$(/usr/libexec/java_home -v 1.6)
+export JAVA_HOME
+
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
