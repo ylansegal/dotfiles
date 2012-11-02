@@ -32,3 +32,5 @@ default = current
 	trustExitCode = true
 [http]
 	sslVerify = false
+[branch]
+	autosetuprebase = always
