@@ -42,12 +42,21 @@ then
     . ~/.dev.profile
 fi
 
+# Overriding cd function. Looking for .env and sourcing it if found
+function cd {
+    builtin cd "$@"
+  if [[ -f .env ]]; then
+    echo "### Setting up environment variables from .env"
+    cat .env | grep -v '#' | grep -v '^$' | while read line; do
+      echo $line
+      export $line
+    done
+  fi
+}
+
 # Setting up JAVA_HOME
 JAVA_HOME=$(/usr/libexec/java_home -v 1.6)
 export JAVA_HOME
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
-
-# Using Autoenv
-source /usr/local/Cellar/autoenv/0.1.0/activate.sh
