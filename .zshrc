@@ -12,6 +12,9 @@ ZSH_THEME="robbyrussell"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias rpry="rails-console-pry -r pry-doc -r awesome_print"
 
+# Setting up environement
+export EDITOR=subl
+
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
