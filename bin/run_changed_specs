@@ -2,7 +2,7 @@
 
 set -e
 
-(git diff --name-only develop..HEAD; git ls-files -m --other --exclude-standard) | \
+(git diff --name-only origin/develop..HEAD; git ls-files -m --other --exclude-standard) | \
 grep 'spec.rb' | \
 	while read f; do \
 		[ -f "$f" ] && echo "$f"; \
