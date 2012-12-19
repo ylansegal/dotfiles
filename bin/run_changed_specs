@@ -7,4 +7,4 @@ grep 'spec.rb' | \
 	while read f; do \
 		[ -f "$f" ] && echo "$f"; \
 	done | \
-xargs smart_rspec
+xargs smart_rspec $@
