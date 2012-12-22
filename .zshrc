@@ -61,5 +61,8 @@ function cd {
 JAVA_HOME=$(/usr/libexec/java_home -v 1.6)
 export JAVA_HOME
 
+# Report if commands take longer than x seconds:
+REPORTTIME=5
+
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
