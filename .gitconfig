@@ -1,6 +1,6 @@
 [user]
 	name = Ylan Segal
-	email = ylan.segal@mellmo.com
+	email = ylan@segal-family.com
 [core]
 	excludesfile = /Users/ylansegal/.gitignore
 	editor = subl -w
