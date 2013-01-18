@@ -18,6 +18,8 @@
   web = instaweb --httpd webrick
   merg = merge --no-ff
   dc = diff --cached
+  dw = diff --word-diff
+  dcw = diff --cached --word-diff
   ai = add -p
   unstage = reset HEAD
   ll = log --pretty=format:"%C(red)%h%Creset%C(yellow)%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
