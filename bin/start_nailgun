@@ -1,0 +1,7 @@
+#! /bin/bash
+
+# Kill existing nailgun instance
+lsof -t -i :2113 | sort | uniq | xargs kill -9
+
+# Start a new nailgun instance in the background
+(unset JRUBY_OPTS; rvm jruby-1.6.8@yeti do jruby --ng-server ) &
