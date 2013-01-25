@@ -70,3 +70,6 @@ HEROKU_PATH="/usr/local/heroku/bin"
 PYTHON_SHARE_PATH="/usr/local/share/python"
 
 export PATH="$PATH:$HEROKU_PATH:$PYTHON_SHARE_PATH"
+
+## CUSTOM PROMPT
+PS1="$PS1 %(?..[FAIL] )"
