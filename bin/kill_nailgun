@@ -1,0 +1,4 @@
+#! /bin/bash
+
+# Kill existing nailgun instance
+lsof -t -i :2113 | sort | uniq | xargs kill -9
