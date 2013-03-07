@@ -1,7 +1,0 @@
-#! /bin/bash
-
-# Kill existing nailgun instance
-kill_nailgun
-
-# Start a new nailgun instance in the background
-(unset JRUBY_OPTS; rvm $(rvm current) do jruby --ng-server ) &
