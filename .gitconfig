@@ -21,6 +21,7 @@
   dc = diff --cached
   dw = diff --word-diff
   dcw = diff --cached --word-diff
+  ds = git stash show -p
   ai = add -p
   unstage = reset HEAD
   ll = log --pretty=format:"%C(red)%h%Creset%C(yellow)%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
