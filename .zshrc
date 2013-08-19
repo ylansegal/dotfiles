@@ -73,3 +73,7 @@ export PATH="$PATH:$HEROKU_PATH:$PYTHON_SHARE_PATH:$NPM_PATH"
 
 ## Add empty line before command
 PS1=$'\n'"$PS1"
+
+# Syntax Highlighting
+# Installed with: brew install zsh-syntax-highlighting
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
