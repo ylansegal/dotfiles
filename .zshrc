@@ -11,6 +11,7 @@ ZSH_THEME="robbyrussell"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias rpry="rails-console-pry -r pry-doc -r awesome_print"
+alias h\?="history | grep"
 
 # Setting up environement
 export EDITOR=subl
