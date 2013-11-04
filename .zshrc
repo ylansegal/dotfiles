@@ -12,6 +12,7 @@ ZSH_THEME="robbyrussell"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias rpry="rails-console-pry -r pry-doc -r awesome_print"
 alias h\?="history | grep"
+alias git='nocorrect git'
 
 # Setting up environement
 export EDITOR=subl
@@ -67,10 +68,10 @@ REPORTTIME=5
 
 ## PATH ADDITIONS
 HEROKU_PATH="/usr/local/heroku/bin"
-PYTHON_SHARE_PATH="/usr/local/share/python"
 NPM_PATH="/usr/local/share/npm/bin"
+BREW_SBIN_PATH="/usr/local/sbin"
 
-export PATH="$PATH:$HEROKU_PATH:$PYTHON_SHARE_PATH:$NPM_PATH"
+export PATH="$PATH:$BREW_SBIN_PATH:$HEROKU_PATH:$NPM_PATH"
 
 ## Add empty line before command
 PS1=$'\n'"$PS1"
