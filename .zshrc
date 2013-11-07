@@ -59,10 +59,6 @@ function cd {
   fi
 }
 
-# Setting up JAVA_HOME
-JAVA_HOME=$(/usr/libexec/java_home -v 1.6)
-export JAVA_HOME
-
 # Report if commands take longer than x seconds:
 REPORTTIME=5
 
