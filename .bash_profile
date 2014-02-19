@@ -2,7 +2,6 @@
 
 #Ylan's Profile
 PATH=/usr/local/bin:$PATH:~/bin
-export EDITOR=nano
 
 #COLORS!
 #ls colors
@@ -21,10 +20,6 @@ export HISTSIZE=10000
 # Don't put duplicate lines in the history
 export HISTCONTROL=ignoredups
 # Appending bash history
-shopt -s histappend 
+shopt -s histappend
 #S Sacing history after each command
-PROMPT_COMMAND='history -a' 
-
-#RVM
-export CC=gcc-4.2
-  [[ -s "/Users/ylansegal/.rvm/scripts/rvm" ]] && source "/Users/ylansegal/.rvm/scripts/rvm"  # This loads RVM into a shell session.
+PROMPT_COMMAND='history -a'
