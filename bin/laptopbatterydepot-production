@@ -1,3 +1,0 @@
-#!/bin/bash
-COMMAND="heroku $* --app laptopbatterydepot-production"
-$COMMAND
