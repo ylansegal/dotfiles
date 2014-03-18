@@ -1,18 +1,11 @@
 #. "$HOME/.bashrc"
 
-#Ylan's Profile
-PATH=/usr/local/bin:$PATH:~/bin
-
 #COLORS!
 #ls colors
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 #prompt colors
 export PS1='\[\e[1;32m\]\u@\h \W\$\[\e[0m\] '
-
-#Aliases
-#alias brake="bundle exec rake"
-alias flush_dns_cache="dscacheutil -flushcache"
 
 # Store 10000 commands in bash history
 export HISTFILESIZE=10000

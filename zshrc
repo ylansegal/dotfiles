@@ -62,13 +62,6 @@ function cd {
 # Report if commands take longer than x seconds:
 REPORTTIME=5
 
-## PATH ADDITIONS
-HEROKU_PATH="/usr/local/heroku/bin"
-NPM_PATH="/usr/local/share/npm/bin"
-BREW_SBIN_PATH="/usr/local/sbin"
-
-export PATH="$PATH:$BREW_SBIN_PATH:$HEROKU_PATH:$NPM_PATH"
-
 ## Add empty line before command
 PS1=$'\n'"$PS1"
 
