@@ -1,5 +1,3 @@
-. $HOME/.bashrc.load
-
 # Customization that is used by all shells (bash, zsh, etc)
 
 PATH=/usr/local/bin:$PATH:~/bin
