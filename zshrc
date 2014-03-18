@@ -76,5 +76,3 @@ PS1=$'\n'"$PS1"
 # Installed with: brew install zsh-syntax-highlighting
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
