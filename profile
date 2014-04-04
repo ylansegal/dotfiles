@@ -21,6 +21,7 @@ export PATH
 alias wsd="cd ~/mellmo-git/web-server"
 alias rdd="cd ~/mellmo-git/ruby-gems/roambi/roambi-data/"
 alias rid="cd ~/mellmo-git/ruby-gems/roambi/roambi-i18n/"
+alias pandora="pianobar"
 
 # Functions
 
