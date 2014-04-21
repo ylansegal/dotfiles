@@ -27,8 +27,8 @@ alias pandora="pianobar"
 
 function mercy_kill() {
   pid=$1
-  for signal in 15 2 1 9; do
-    cmd="kill -${signal} $pid"
+  for signal in TERM INT HUP KILL; do
+    cmd="kill -s ${signal} $pid"
     echo $cmd
     eval $cmd
     for i in {0..19}; do
