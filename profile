@@ -40,3 +40,7 @@ function mercy_kill() {
     done
   done
 }
+
+proj() {
+    cd $(find ~/mellmo-git ~/Development ~/Personal -maxdepth 1 -type d | selecta)
+}
