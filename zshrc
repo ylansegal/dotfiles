@@ -62,9 +62,6 @@ function cd {
 # Report if commands take longer than x seconds:
 REPORTTIME=5
 
-## Add empty line before and after command
-PS1=$'\n'"$PS1"$'\n'"$ "
-
 # Syntax Highlighting
 # Installed with: brew install zsh-syntax-highlighting
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
