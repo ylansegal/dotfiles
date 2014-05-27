@@ -22,9 +22,6 @@ ATOM_REPOS_HOME=~/Development
 export ATOM_REPOS_HOME
 
 #Aliases
-alias wsd="cd ~/mellmo-git/web-server"
-alias rdd="cd ~/mellmo-git/ruby-gems/roambi/roambi-data/"
-alias rid="cd ~/mellmo-git/ruby-gems/roambi/roambi-i18n/"
 alias pandora="pianobar"
 alias subl="atom"
 
