@@ -44,5 +44,5 @@ function mercy_kill() {
 }
 
 cdp() {
-    cd $(find ~/mellmo-git ~/mellmo-git/ruby-gems/roambi ~/Development ~/Personal -maxdepth 1 -type d | selecta)
+    cd $(find ~/mellmo-git ~/mellmo-git/ruby-gems/roambi ~/Development ~/Personal -maxdepth 1 -type d | percol)
 }
