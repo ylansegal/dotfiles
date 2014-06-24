@@ -43,6 +43,11 @@ function mercy_kill() {
   done
 }
 
+# Stolen from http://www.smallmeans.com/notes/shell-history/
+function histogram() {
+  sort|uniq -c|sort -rn|head -20|awk '!max{max=$1;}{r="";i=s=60*$1/max;while(i-->0)r=r"#";printf "%15s %5d %s %s",$2,$1,r,"\n";}'
+}
+
 cdp() {
     cd $(find ~/mellmo-git ~/mellmo-git/ruby-gems/roambi ~/Development ~/Personal -maxdepth 1 -type d | percol)
 }
