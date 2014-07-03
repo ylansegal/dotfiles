@@ -1,8 +1,9 @@
-.env
-.DS_Store
-.tags*
-.gemtags
-to_do
 *.sublime-project
 *.sublime-workspace
+.DS_Store
+.env
+.gemtags
+.starscope.db
+.tags*
 TODO.md
+to_do
