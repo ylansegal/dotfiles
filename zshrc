@@ -15,7 +15,7 @@ alias h\?="history | grep"
 alias git='nocorrect git'
 
 # Setting up environement
-export EDITOR=subl
+export EDITOR=atom
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
