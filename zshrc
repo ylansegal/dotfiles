@@ -52,7 +52,7 @@ function cd {
     builtin cd "$@"
   if [[ -f .env ]]; then
     echo "### Setting up environment variables from .env"
-    cat .env | grep -v '#' | grep -v '^$' | while read line; do
+    cat .env | grep -v '#' | grep -v '^$' | grep -v 'PATH'| while read line; do
       echo $line
       export $line
     done
