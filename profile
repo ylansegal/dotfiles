@@ -17,7 +17,7 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 export PATH
 
-# Other environment variableval
+# Other environment variables
 ATOM_REPOS_HOME=~/Development
 export ATOM_REPOS_HOME
 
