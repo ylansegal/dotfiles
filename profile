@@ -4,8 +4,8 @@
 
 PATH=/usr/local/bin:$PATH:~/bin
 
-if [ -d ~/ruby-dev-scripts ]; then
-    PATH=$PATH:~/ruby-dev-scripts
+if [ -d ~/mellmo-git/ruby-dev-scripts ]; then
+    PATH=$PATH:~/mellmo-git/ruby-dev-scripts
 fi
 HEROKU_PATH="/usr/local/heroku/bin"
 NPM_PATH="/usr/local/share/npm/bin"
