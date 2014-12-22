@@ -37,3 +37,8 @@ default = current
 	autosetuprebase = always
 [hub]
 	host = github.mellmo.lan
+[merge]
+	tool = p4merge
+[mergetool]
+	prompt = false
+	keepBackup = false
