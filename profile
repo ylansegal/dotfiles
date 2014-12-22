@@ -11,11 +11,9 @@ fi
 if [ -d ~/Personal/dev-scripts ]; then
     PATH=$PATH:~/Personal/dev-scripts
 fi
-HEROKU_PATH="/usr/local/heroku/bin"
-NPM_PATH="/usr/local/share/npm/bin"
 BREW_SBIN_PATH="/usr/local/sbin"
 
-PATH="$PATH:$BREW_SBIN_PATH:$HEROKU_PATH:$NPM_PATH"
+PATH="$PATH:$BREW_SBIN_PATH"
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
