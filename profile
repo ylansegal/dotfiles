@@ -7,6 +7,10 @@ PATH=/usr/local/bin:$PATH:~/bin
 if [ -d ~/mellmo-git/ruby-dev-scripts ]; then
     PATH=$PATH:~/mellmo-git/ruby-dev-scripts
 fi
+
+if [ -d ~/Personal/dev-scripts ]; then
+    PATH=$PATH:~/Personal/dev-scripts
+fi
 HEROKU_PATH="/usr/local/heroku/bin"
 NPM_PATH="/usr/local/share/npm/bin"
 BREW_SBIN_PATH="/usr/local/sbin"
