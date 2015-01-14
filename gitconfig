@@ -27,7 +27,7 @@
   file-log = log -u
   list-aliases = "!git config -l | grep alias | cut -c 7-"
   last-commit-hash = rev-parse HEAD
-  undo=reset --soft 'HEAD^'
+  uncommit=reset --soft 'HEAD^'
 [push]
 # Push current branch even if you've never pushed it before
 default = current
