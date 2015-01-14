@@ -54,3 +54,12 @@ function histogram() {
 cdp() {
     cd $(find ~/mellmo-git ~/mellmo-git/ruby-gems/roambi ~/Development ~/Personal -maxdepth 1 -type d | percol)
 }
+
+fuzz() {
+  search_term=$1
+  find . -wholename \*$search_term\* -not -path './.git/*' | percol
+}
+
+fuzzedit()  {
+  $EDITOR $(fuzz $1)
+}
