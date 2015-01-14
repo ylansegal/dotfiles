@@ -38,6 +38,7 @@ default = current
 [hub]
 	host = github.mellmo.lan
 [merge]
+	summary = true
 	tool = p4merge
 [mergetool]
 	prompt = false
