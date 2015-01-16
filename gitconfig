@@ -43,3 +43,5 @@ default = current
 [mergetool]
 	prompt = false
 	keepBackup = false
+[rerere]
+	enabled = true
