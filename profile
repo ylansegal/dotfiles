@@ -26,7 +26,7 @@ export ATOM_REPOS_HOME
 #Aliases
 alias pandora="pianobar"
 alias subl="atom"
-alias minecraft="java -Xmx128m -jar /Applications/Minecraft.app/Contents/Resources/Java/Bootstrap.jar"
+alias ios_simulator="/Applications/Xcode.app/Contents/Applications/iOS Simulator.app"
 
 # Functions
 
