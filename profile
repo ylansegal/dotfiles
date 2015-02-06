@@ -26,7 +26,7 @@ export ATOM_REPOS_HOME
 #Aliases
 alias pandora="pianobar"
 alias subl="atom"
-alias ios_simulator="/Applications/Xcode.app/Contents/Applications/iOS Simulator.app"
+alias ios_simulator="open /Applications/Xcode.app/Contents/Applications/iOS\ Simulator.app"
 
 # Functions
 
