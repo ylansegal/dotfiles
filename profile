@@ -2,8 +2,6 @@
 
 # PATH CUSTOMIZATION AND ADDITIONS
 
-PATH=/usr/local/bin:$PATH:~/bin
-
 if [ -d ~/mellmo-git/ruby-dev-scripts ]; then
     PATH=$PATH:~/mellmo-git/ruby-dev-scripts
 fi
@@ -11,9 +9,6 @@ fi
 if [ -d ~/Personal/dev-scripts ]; then
     PATH=$PATH:~/Personal/dev-scripts
 fi
-BREW_SBIN_PATH="/usr/local/sbin"
-
-PATH="$PATH:$BREW_SBIN_PATH"
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
