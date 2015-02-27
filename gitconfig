@@ -2,7 +2,7 @@
 	name = Ylan Segal
 [core]
 	excludesfile = /Users/ylansegal/.gitignore
-	editor = pico
+	editor = nano
 [color]
 	diff = auto
 	status = auto
