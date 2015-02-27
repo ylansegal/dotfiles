@@ -1,2 +1,4 @@
 set tabsize 2
 set tabstospaces
+
+include "~/.nano/nanorc/git.nanorc"
