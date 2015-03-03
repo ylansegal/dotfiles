@@ -52,7 +52,7 @@ cdp() {
 
 fuzz() {
   search_term=$1
-  find . -wholename \*$search_term\* -not -path './.git/*' | percol
+  find . -wholename \*$search_term\* -not -path './.git/*' | percol | tee >(xargs echo -n | pbcopy)  
 }
 
 fuzzedit()  {
