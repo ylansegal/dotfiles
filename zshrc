@@ -91,5 +91,11 @@ zle -N insert-fuzzy-path-in-command-line
 bindkey "^S" "insert-fuzzy-path-in-command-line"
 # ----------------------
 
+# Tig autocompletion
+if [ -f /usr/local/etc/bash_completion.d/tig-completion.bash ]; then
+  source /usr/local/etc/bash_completion.d/tig-completion.bash
+fi
+
+
 # RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
