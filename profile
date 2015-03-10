@@ -25,8 +25,13 @@ alias ios_simulator="open /Applications/Xcode.app/Contents/Applications/iOS\ Sim
 
 # Functions
 
+# Fuzzyness
+FUZZ_MATCHER=percol
+export FUZZ_MATCHER
+
+# Fuzzy find of processes and then kill
 function mercy_kill() {
-  pid=$1
+  pid=$(ps | grep -v $FUZZ_MATCHER | $FUZZ_MATCHER | cut -f 1 -d ' ')
   for signal in TERM INT HUP KILL; do
     cmd="kill -s ${signal} $pid"
     echo $cmd
@@ -46,15 +51,18 @@ function histogram() {
   sort | uniq -c| sort -rn | awk '!max{max=$1;}{r="";i=s=60*$1/max;while(i-->0)r=r"#";printf "%15s %5d %s %s",$2,$1,r,"\n";}'
 }
 
+# Changes to a project directory, found fuzzily
 cdp() {
-    cd $(find ~/mellmo-git ~/mellmo-git/ruby-gems/roambi ~/Development ~/Personal -maxdepth 1 -type d | percol)
+    cd $(find ~/mellmo-git ~/mellmo-git/ruby-gems/roambi ~/Development ~/Personal -maxdepth 1 -type d | $FUZZ_MATCHER)
 }
 
+# Searches for files under the current directory
 fuzz() {
   search_term=$1
-  find . -wholename \*$search_term\* -not -path './.*/*' | percol  
+  find . -wholename \*$search_term\* -not -path './.*/*' | $FUZZ_MATCHER
 }
 
-fuzzedit()  {
-  $EDITOR $(fuzz $1)
+# Fuzzy find in history, does not execute
+h() {
+  history | cut -c8- | sort -u | $FUZZ_MATCHER
 }
