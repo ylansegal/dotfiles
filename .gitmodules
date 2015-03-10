@@ -1,3 +1,0 @@
-[submodule "nano/nanorc"]
-	path = nano/nanorc
-	url = git@github.com:ylansegal/nanorc.git
