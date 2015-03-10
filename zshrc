@@ -11,7 +11,6 @@ ZSH_THEME="ylansegal"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias rpry="rails-console-pry -r pry-doc -r awesome_print"
-alias h\?="history | grep"
 alias git='nocorrect git'
 
 # Setting up environement
