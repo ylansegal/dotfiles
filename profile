@@ -11,7 +11,7 @@ if [ -d ~/Personal/dev-scripts ]; then
 fi
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
+PATH="/usr/local/sbin:$PATH" # Add sbin, some stuff is installed there by homebrew
 export PATH
 
 # Other environment variables
