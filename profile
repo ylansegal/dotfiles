@@ -26,7 +26,12 @@ alias ios_simulator="open /Applications/Xcode.app/Contents/Applications/iOS\ Sim
 # Functions
 
 # Fuzzyness
-FUZZ_MATCHER=percol
+
+function better_fzf() {
+  fzf --extended-exact --reverse
+}
+
+FUZZ_MATCHER=better_fzf
 export FUZZ_MATCHER
 
 # Fuzzy find of processes and then kill
