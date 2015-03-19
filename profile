@@ -28,7 +28,7 @@ alias ios_simulator="open /Applications/Xcode.app/Contents/Applications/iOS\ Sim
 # Fuzzyness
 
 function better_fzf() {
-  fzf --extended-exact --reverse
+  fzf --reverse
 }
 
 FUZZ_MATCHER=better_fzf
@@ -36,7 +36,7 @@ export FUZZ_MATCHER
 
 # Fuzzy find of processes and then kill
 function mercy_kill() {
-  pid=$(ps | grep -v $FUZZ_MATCHER | $FUZZ_MATCHER | cut -f 1 -d ' ')
+  pid=$(ps | grep -v $FUZZ_MATCHER | $FUZZ_MATCHER | sed "s/^[ \t]*//" |cut -f 1 -d ' ')
   for signal in TERM INT HUP KILL; do
     cmd="kill -s ${signal} $pid"
     echo $cmd
