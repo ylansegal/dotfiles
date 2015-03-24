@@ -69,5 +69,5 @@ fuzz() {
 
 # Fuzzy find in history, does not execute
 h() {
-  fc -e - $(history | $FUZZ_MATCHER | sed 's/^[ \t]*//' | cut -f1 -d ' ')
+  fc -e - $(history | gtac | $FUZZ_MATCHER | sed 's/^[ \t]*//' | cut -f1 -d ' ')
 }
