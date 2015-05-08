@@ -17,4 +17,3 @@ shopt -s histappend
 #S Sacing history after each command
 PROMPT_COMMAND='history -a'
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

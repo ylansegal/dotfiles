@@ -10,7 +10,6 @@ if [ -d ~/Personal/dev-scripts ]; then
     PATH=$PATH:~/Personal/dev-scripts
 fi
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 PATH="/usr/local/sbin:$PATH" # Add sbin, some stuff is installed there by homebrew
 export PATH
 
@@ -22,6 +21,10 @@ export ATOM_REPOS_HOME
 alias pandora="pianobar"
 alias subl="atom"
 alias ios_simulator="open /Applications/Xcode.app/Contents/Applications/iOS\ Simulator.app"
+
+# rbenv
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+PATH=~/.rbenv/shims:$PATH
 
 # Functions
 
@@ -70,4 +73,16 @@ fuzz() {
 # Fuzzy find in history, does not execute
 h() {
   fc -e - $(history | gtac | $FUZZ_MATCHER | sed 's/^[ \t]*//' | cut -f1 -d ' ')
+}
+
+# Determines current ruby, for prompt
+ruby_version()
+{
+  if which rbenv &> /dev/null; then
+    rbenv version | cut -f1 -d ' '
+  else 
+    if which rvm-prompt &> /dev/null; then
+     rvm-prompt i v g
+    fi
+  fi
 }
