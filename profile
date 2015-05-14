@@ -24,7 +24,6 @@ alias ios_simulator="open /Applications/Xcode.app/Contents/Applications/iOS\ Sim
 
 # rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-PATH=~/.rbenv/shims:$PATH
 
 # Functions
 
