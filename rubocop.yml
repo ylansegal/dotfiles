@@ -1,5 +1,8 @@
 Documentation:
   Enabled: false
 
-LineLength:
+Metrics/LineLength:
   Max: 120
+
+Style/BlockDelimiters:
+  EnforcedStyle: semantic
