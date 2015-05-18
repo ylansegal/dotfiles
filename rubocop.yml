@@ -6,3 +6,6 @@ Metrics/LineLength:
 
 Style/BlockDelimiters:
   EnforcedStyle: semantic
+
+Style/SingleLineBlockParams:
+  Enabled: false
