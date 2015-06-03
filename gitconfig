@@ -45,3 +45,5 @@ default = current
 	keepBackup = false
 [rerere]
 	enabled = true
+[init]
+	templatedir = /Users/ylansegal/.git_template
