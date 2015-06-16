@@ -49,3 +49,5 @@ default = current
 	templatedir = /Users/ylansegal/.git_template
 [diff]
 	noprefix = true
+[rebase]
+	autosquash = true
