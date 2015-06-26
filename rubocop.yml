@@ -6,6 +6,21 @@ Metrics/LineLength:
 
 Style/BlockDelimiters:
   EnforcedStyle: semantic
+  FunctionalMethods:
+     - before
+     - after
+     - subject
+     - subject!
+     - let
+     - let!
+
+  AutoCorrect: false
 
 Style/SingleLineBlockParams:
   Enabled: false
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+Style/AndOr:
+  AutoCorrect: false
