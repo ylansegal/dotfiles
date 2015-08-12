@@ -22,6 +22,7 @@ export SSL_CERT_FILE=~/.cert.pem
 alias pandora="pianobar"
 alias subl="atom"
 alias ios_simulator="open /Applications/Xcode.app/Contents/Applications/iOS\ Simulator.app"
+alias cat="ccat"
 
 # rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
