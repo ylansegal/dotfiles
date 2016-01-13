@@ -46,18 +46,6 @@ then
     . ~/.dev.profile
 fi
 
-# Overriding cd function. Looking for .env and sourcing it if found
-function cd {
-    builtin cd "$@"
-  if [[ -f .env ]]; then
-    echo "### Setting up environment variables from .env"
-    cat .env | grep -v '#' | grep -v '^$' | grep -v 'PATH'| while read line; do
-      echo $line
-      export $line
-    done
-  fi
-}
-
 # Report if commands take longer than x seconds:
 REPORTTIME=5
 
