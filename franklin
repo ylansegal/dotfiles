@@ -1,0 +1,10 @@
+---
+:libraries:
+  - :name: San Francisco Public Library
+    :url: http://sfpl.lib.overdrive.com
+  - :name: San Diego Public Library
+    :url: http://sdpl.lib.overdrive.com
+  - :name: San Diego County Library
+    :url: http://sdcl.lib.overdrive.com/
+  - :name: Los Angeles County Library
+    :url: http://overdrive.colapublib.org/
