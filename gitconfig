@@ -1,7 +1,7 @@
 [user]
 	name = Ylan Segal
 [core]
-	excludesfile = /Users/ylansegal/.gitignore
+	excludesfile = ~/.gitignore
 	editor = nano
 [color]
 	diff = auto
@@ -46,7 +46,7 @@ default = current
 [rerere]
 	enabled = true
 [init]
-	templatedir = /Users/ylansegal/.git_template
+	templatedir = ~/.git_template
 [diff]
 	noprefix = true
 [rebase]
