@@ -72,7 +72,7 @@ function source_env() {
 
 # Changes to a project directory, found fuzzily
 cdp() {
-    cd $(find ~/mellmo-git ~/mellmo-git/ruby-gems/roambi ~/Development ~/Personal -maxdepth 1 -type d | $FUZZ_MATCHER)
+    cd $(find ~/mellmo-git ~/Development ~/Personal -maxdepth 1 -type d | $FUZZ_MATCHER)
     source_env
 }
 
