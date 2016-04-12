@@ -24,3 +24,6 @@ Style/StringLiterals:
 
 Style/AndOr:
   AutoCorrect: false
+
+Style/SignalException:
+  EnforcedStyle: semantic
