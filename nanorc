@@ -1,4 +1,5 @@
 set tabsize 2
 set tabstospaces
+set speller "aspell -x -c"
 
 include "~/.nano/nanorc/git.nanorc"
