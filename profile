@@ -84,7 +84,7 @@ fuzz() {
 
 # Fuzzy find in history, does not execute
 h() {
-  fc -e - $(history | uniq_history |  gtac | $FUZZ_MATCHER | sed 's/^[ \t]*//' | cut -f1 -d ' ')
+  fc -e - $(history | gtac | $FUZZ_MATCHER | sed 's/^[ \t]*//' | cut -f1 -d ' ')
 }
 
 # Determines current ruby, for prompt
