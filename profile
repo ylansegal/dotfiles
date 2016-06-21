@@ -60,7 +60,7 @@ function histogram() {
   sort | uniq -c | sort -rn | awk '!max{max=$1;}{r="";i=s=60*$1/max;while(i-->0)r=r"#";printf "%15s %5d %s %s",$2,$1,r,"\n";}'
 }
 
-function source_env() {
+function habitat() {
   if [[ -f .env ]]; then
     echo "### Setting up environment variables from .env"
     cat .env | grep -v '#' | grep -v '^$' | grep -v 'PATH'| while read line; do
@@ -73,7 +73,7 @@ function source_env() {
 # Changes to a project directory, found fuzzily
 cdp() {
     cd $(find ~/mellmo-git ~/Development ~/Personal -maxdepth 1 -type d | $FUZZ_MATCHER)
-    source_env
+    habitat
 }
 
 # Searches for files under the current directory
