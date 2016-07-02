@@ -14,7 +14,7 @@ alias rpry="rails-console-pry -r pry-doc -r awesome_print"
 alias git='nocorrect git'
 
 # Setting up environement
-export EDITOR=atom
+export EDITOR=nano
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
