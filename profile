@@ -25,7 +25,17 @@ alias ios_simulator="open /Applications/Xcode.app/Contents/Applications/iOS\ Sim
 alias cat="ccat"
 
 # rbenv
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+# if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+# chruby
+alias ruby-install="\ruby-install --rubies-dir ~/.rubies"
+source /usr/local/share/chruby/chruby.sh
+source /usr/local/share/chruby/auto.sh
+
+if [[ $PS1 ]]; then
+  precmd_functions+=("chruby_auto")
+  preexec_functions=${preexec_functions:#"chruby_auto"}
+fi
 
 # Functions
 
