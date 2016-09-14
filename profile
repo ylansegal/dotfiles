@@ -114,8 +114,6 @@ man() {
 }
 
 # Source .env when logging in
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-
 if [ -f ~/.env ]; then
   habitat
 fi
