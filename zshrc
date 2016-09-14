@@ -84,8 +84,5 @@ if [ -f /usr/local/etc/bash_completion.d/tig-completion.bash ]; then
 fi
 
 
-# RVM
-#[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
 # Enable zmv
 autoload -U zmv
