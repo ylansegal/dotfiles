@@ -100,12 +100,12 @@ h() {
 # Determines current ruby, for prompt
 ruby_version()
 {
-  if which rbenv &> /dev/null; then
+  if which chruby &> /dev/null; then
+    echo ${RUBY_ROOT##*/}
+  elif which rbenv &> /dev/null; then
     rbenv version | cut -f1 -d ' '
-  else
-    if which rvm-prompt &> /dev/null; then
-     rvm-prompt i v g
-    fi
+  elif which rvm-prompt &> /dev/null; then
+    rvm-prompt i v g
   fi
 }
 
