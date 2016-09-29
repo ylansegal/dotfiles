@@ -27,6 +27,9 @@ alias cat="ccat"
 # rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
+# Apple XCode tools support
+export DEVELOPER_DIR="/Applications/Xcode.app/Contents/Developer/"
+
 # Functions
 
 # Fuzzyness
