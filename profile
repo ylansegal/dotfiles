@@ -6,8 +6,8 @@ if [ -d ~/mellmo-git/ruby-dev-scripts ]; then
     PATH=$PATH:~/mellmo-git/ruby-dev-scripts
 fi
 
-if [ -d ~/Personal/dev-scripts ]; then
-    PATH=$PATH:~/Personal/dev-scripts
+if [ -d ~/.bin ]; then
+    PATH=$PATH:~/.bin
 fi
 
 PATH="/usr/local/sbin:$PATH" # Add sbin, some stuff is installed there by homebrew
