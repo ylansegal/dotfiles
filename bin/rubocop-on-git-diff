@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+# "main" git branch is first one listed by "git branch"
+
+# If we are on "main" branch, the * will be th first listed and exit status will be 0
+# If we are not on the main branch, the first branch won't be listed
+git branch | head -1 | grep '*' > /dev/null
+if [ $? != 0 ]; then
+  # On different branch
+  # Determine default branch
+  main_branch=$(comm -23 <(git branch) <(git branch --contains HEAD) | head -1)
+  # run rubocop
+  git d --name-only $main_branch..HEAD | grep '\.rb$' | xargs rubocop
+fi
