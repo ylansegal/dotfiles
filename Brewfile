@@ -1,3 +1,4 @@
+brew "aspell"
 brew "ccat"
 brew "coreutils"
 brew "ctags"
