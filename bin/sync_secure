@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+source_path=/Users/ylansegal/Personal
+sparse_bundle=Secure.sparsebundle
+
+if [ -d /Volumes/Secure ] ; then
+  >&2 echo "/Volume/Secure is mounted. Exiting..."
+  exit 1
+fi
+
+rclone_cmd="rclone sync $source_path/$sparse_bundle drive:/$sparse_bundle/"
+echo $rclone_cmd
+$rclone_cmd

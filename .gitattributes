@@ -1,3 +1,4 @@
 netrc filter=git-crypt diff=git-crypt
 ssh/* filter=git-crypt diff=git-crypt
 env filter=git-crypt diff=git-crypt
+rclone.conf filter=git-crypt diff=git-crypt
