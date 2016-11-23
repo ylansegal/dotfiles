@@ -4,7 +4,7 @@ bundle show rubocop > /dev/null
 if [ $? == 0 ]; then
   RUBOCOP="bundle exec rubocop"
 else
-  RUBOCOP=~/.rbenv/versions/2.3.1/bin/rubocop
+  RUBOCOP=~/.rbenv/versions/2.3.3/bin/rubocop
 fi
 
 set -x
