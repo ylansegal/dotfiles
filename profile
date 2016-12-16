@@ -21,6 +21,7 @@ export ATOM_REPOS_HOME
 #Aliases
 alias ios_simulator="open /Applications/Xcode.app/Contents/Applications/iOS\ Simulator.app"
 alias cat="ccat"
+alias notes="atom ~/Personal/Notes"
 
 # rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
