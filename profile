@@ -19,8 +19,6 @@ export ATOM_REPOS_HOME
 #export SSL_CERT_FILE=~/.cert.pem
 
 #Aliases
-alias pandora="pianobar"
-alias subl="atom"
 alias ios_simulator="open /Applications/Xcode.app/Contents/Applications/iOS\ Simulator.app"
 alias cat="ccat"
 
