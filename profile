@@ -16,7 +16,6 @@ export PATH
 # Other environment variables
 ATOM_REPOS_HOME=~/Development
 export ATOM_REPOS_HOME
-#export SSL_CERT_FILE=~/.cert.pem
 
 #Aliases
 alias ios_simulator="open /Applications/Xcode.app/Contents/Applications/iOS\ Simulator.app"
