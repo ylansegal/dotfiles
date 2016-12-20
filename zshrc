@@ -41,11 +41,6 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 . ~/.profile
 
-if [ -f ~/.dev.profile ]
-then
-    . ~/.dev.profile
-fi
-
 # Report if commands take longer than x seconds:
 REPORTTIME=5
 
