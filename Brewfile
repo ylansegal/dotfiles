@@ -12,6 +12,7 @@ brew "ripgrep"
 brew "the_silver_searcher"
 brew "tig"
 brew "wget"
+brew "zsh"
 brew "zsh-syntax-highlighting"
 
 tap "caskroom/cask"
