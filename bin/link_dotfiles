@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+# Link missing dotfiles so they are picked up form ~/.*
+
+# Link dotfiles
+ls ~/.dotfiles | \
+  grep -v Brewfile | \
+  grep -v LICENSE.txt | \
+  grep -v README.md | \
+  grep -v ylansegal.zsh-theme | \
+  {
+    while read rc_file; do
+      if [ -e ~/.$rc_file ]; then
+        echo "Skipping ~/.$rc_file, it already exists"
+      else
+        ln -s $HOME/.dotfiles/$rc_file $HOME/.$rc_file && echo "Linked ~/.$rc_file"
+      fi
+    done
+  }
+
+# Link oh-my-zsh theme
+if [ -e $HOME/.oh-my-zsh/custom/themes/ylansegal.zsh-theme ]; then
+  echo "Skipping ylansegal.zsh-theme, it already exists"
+else
+  ln -s $HOME/.dotfiles/ylansegal.zsh-theme $HOME/.oh-my-zsh/custom/themes/ylansegal.zsh-theme && \
+    echo "Linked ylansegal.zsh-theme"
+fi
