@@ -10,23 +10,14 @@
 	branch = auto
 [alias]
   co = checkout
-  ci = commit --verbose
   st = status
   br = branch
-  histdate = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-  hist = log --graph --pretty=format:'%Cred%h%Creset %Cblue%an%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd)%Creset' --date=short --abbrev-commit -50
-  web = instaweb --httpd webrick
-  merg = merge --no-ff
   d = diff
   dc = diff --cached
   dw = diff --word-diff
   dcw = diff --cached --word-diff
   ds = stash show -p
   ai = add -p
-  unstage = reset HEAD
-  ll = log --pretty=format:"%C(red)%h%Creset%C(yellow)%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
-  file-log = log -u
-  list-aliases = "!git config -l | grep alias | cut -c 7-"
   last-commit-hash = rev-parse HEAD
   uncommit=reset --soft 'HEAD^'
 [push]
