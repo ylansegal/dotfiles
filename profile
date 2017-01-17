@@ -63,9 +63,10 @@ function histogram() {
 }
 
 function habitat() {
-  if [[ -f .env ]]; then
-    echo "### Setting up environment variables from .env"
-    cat .env | grep -v '#' | grep -v '^$' | grep -v 'PATH'| while read line; do
+  envfile="${1:-.env}"
+  if [[ -f $envfile ]]; then
+    echo "### Setting up environment variables from $envfile"
+    cat $envfile | grep -v '#' | grep -v '^$' | grep -v 'PATH'| while read line; do
       echo $line
       export $line
     done
