@@ -1,13 +1,13 @@
 [user]
-	name = Ylan Segal
-	useConfigOnly = true
+  name = Ylan Segal
+  useConfigOnly = true
 [core]
-	excludesfile = ~/.gitignore
-	editor = nano
+  excludesfile = ~/.gitignore
+  editor = nano
 [color]
-	diff = auto
-	status = auto
-	branch = auto
+  diff = auto
+  status = auto
+  branch = auto
 [alias]
   co = checkout
   st = status
@@ -24,25 +24,25 @@
 # Push current branch even if you've never pushed it before
 default = current
 [http]
-	sslVerify = false
+  sslVerify = false
 [branch]
-	autosetuprebase = always
+  autosetuprebase = always
 [hub]
-	host = github.mellmo.lan
+  host = github.mellmo.lan
 [merge]
-	summary = true
-	tool = p4merge
+  summary = true
+  tool = p4merge
 [mergetool]
-	prompt = false
-	keepBackup = false
+  prompt = false
+  keepBackup = false
 [rerere]
-	enabled = true
+  enabled = true
 [init]
-	templatedir = ~/.git_template
+  templatedir = ~/.git_template
 [diff]
-	noprefix = true
+  noprefix = true
 [rebase]
-	autosquash = true
+  autosquash = true
 [commit]
   gpgsign = true
 [log]
