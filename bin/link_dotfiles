@@ -22,6 +22,7 @@ ls ~/.dotfiles | \
 if [ -e $HOME/.oh-my-zsh/custom/themes/ylansegal.zsh-theme ]; then
   echo "Skipping ylansegal.zsh-theme, it already exists"
 else
+  mkdir -p $HOME/.oh-my-zsh/custom/themes
   ln -s $HOME/.dotfiles/ylansegal.zsh-theme $HOME/.oh-my-zsh/custom/themes/ylansegal.zsh-theme && \
     echo "Linked ylansegal.zsh-theme"
 fi
