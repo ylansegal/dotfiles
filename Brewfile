@@ -17,7 +17,6 @@ brew "zsh-syntax-highlighting"
 
 tap "caskroom/cask"
 cask "1Password"
-cask "alfred"
 cask "atom"
 cask "dash"
 cask "font-hack"
