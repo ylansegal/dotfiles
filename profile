@@ -120,7 +120,3 @@ man() {
 if [ -f ~/.env ]; then
   habitat
 fi
-
-# Use ssh passwords from keychain
-# https://github.com/lionheart/openradar-mirror/issues/15361
-{ eval `ssh-agent`; ssh-add -A; } &>/dev/null
