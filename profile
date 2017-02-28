@@ -20,7 +20,7 @@ export ATOM_REPOS_HOME
 #Aliases
 alias ios_simulator="open /Applications/Xcode.app/Contents/Applications/iOS\ Simulator.app"
 alias cat="ccat"
-alias notes="atom ~/Personal/Notes"
+alias notes="cd ~/Personal/Notes && atom ."
 alias tig="tig --show-signature"
 
 # rbenv
