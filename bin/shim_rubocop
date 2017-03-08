@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-set -euo pipefail
 
 bundle show rubocop > /dev/null
 if [ $? == 0 ]; then
@@ -8,5 +7,4 @@ else
   RUBOCOP=~/.rbenv/versions/2.4.0/bin/rubocop
 fi
 
-set -x
 $RUBOCOP $@
