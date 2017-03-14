@@ -5,7 +5,7 @@ libraries:
   - name: San Diego Public Library
     url: https://sdpl.overdrive.com
   - name: San Diego County Library
-    url: https://sdcl.overdrive.com/
+    url: https://sdcl.overdrive.com
   - name: Los Angeles County Library
-    url: https://colapublib.overdrive.com/
+    url: https://colapublib.overdrive.com
 default_type: eBook
