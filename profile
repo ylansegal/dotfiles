@@ -85,9 +85,12 @@ fuzz() {
   find . -wholename \*$search_term\* -not -path './.*/*' | $FUZZ_MATCHER
 }
 
-# Fuzzy find in history, does not execute
+# Fuzzy find in history and executes
 h() {
-  fc -e - $(history | uniq_history 2>&1 | gtac | $FUZZ_MATCHER | sed 's/^[ \t]*//' | cut -f1 -d ' ')
+  pid=$(history | uniq_history 2>&1 | gtac | $FUZZ_MATCHER | sed 's/^[ \t]*//' | cut -f1 -d ' ')
+  if [ ! -z "$pid" ]; then
+    fc -e - $pid
+  fi
 }
 
 # Determines current ruby, for prompt
