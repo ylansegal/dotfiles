@@ -75,7 +75,10 @@ function habitat() {
 
 # Changes to a project directory, found fuzzily
 cdp() {
-    cd $(find -H ~/mellmo-git ~/Development ~/Personal -maxdepth 1 -type d | $FUZZ_MATCHER)
+    dir=$(find -H ~/mellmo-git ~/Development ~/Personal -maxdepth 1 -type d | $FUZZ_MATCHER)
+    if [ ! -z "$dir" ]; then
+      cd $dir
+    fi
     habitat
 }
 
