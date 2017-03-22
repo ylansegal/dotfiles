@@ -4,7 +4,8 @@ bundle show rubocop > /dev/null
 if [ $? == 0 ]; then
   RUBOCOP="bundle exec rubocop"
 else
-  RUBOCOP=~/.rbenv/versions/2.4.0/bin/rubocop
+  RB_VERSION=$(cat ~/.ruby-version)
+  RUBOCOP=~/.rbenv/versions/$RB_VERSION/bin/rubocop
 fi
 
 $RUBOCOP $@
