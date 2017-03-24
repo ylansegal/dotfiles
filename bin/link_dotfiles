@@ -9,6 +9,7 @@ ls ~/.dotfiles | \
   grep -v LICENSE.txt | \
   grep -v README.md | \
   grep -v ylansegal.zsh-theme | \
+  grep -v default-gems | \
   {
     while read rc_file; do
       if [ -e ~/.$rc_file ]; then
@@ -26,4 +27,12 @@ else
   mkdir -p $HOME/.oh-my-zsh/custom/themes
   ln -s $HOME/.dotfiles/ylansegal.zsh-theme $HOME/.oh-my-zsh/custom/themes/ylansegal.zsh-theme && \
     echo "Linked ylansegal.zsh-theme"
+fi
+
+# Link default-gems
+if [ -e $(rbenv root)/default-gems ]; then
+  echo "Skipping default-gems, it already exists"
+else
+  ln -s $HOME/.dotfiles/default-gems "$(rbenv root)/default-gems" && \
+    echo "Linked default-gems"
 fi
