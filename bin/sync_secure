@@ -9,6 +9,6 @@ if [ -d /Volumes/Secure ] ; then
   exit 1
 fi
 
-rclone_cmd="rclone sync $source_path/$sparse_bundle drive:/$sparse_bundle/"
+rclone_cmd="rclone --verbose sync $source_path/$sparse_bundle drive:/$sparse_bundle/"
 set -x
 $rclone_cmd
