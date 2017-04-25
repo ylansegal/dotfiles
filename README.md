@@ -39,7 +39,13 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 ### Link dotfiles from home
 
 ```
-bin/link_dotfiles
+$ bin/link_dotfiles
 ```
 
 This will link all dotfiles and the custom oh-my-zsh theme
+
+### Install atom packages
+
+```
+$ apm install --packages-file ./atom/packages-list.txt
+```

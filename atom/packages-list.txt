@@ -1,4 +1,3 @@
-README.md
 advanced-open-file
 atom-beautify
 base16-ocean-dark-syntax-theme
