@@ -3,3 +3,4 @@ ssh/* filter=git-crypt diff=git-crypt
 env filter=git-crypt diff=git-crypt
 rclone.conf filter=git-crypt diff=git-crypt
 bin/roambi_env filter=git-crypt diff=git-crypt
+sqlcli filter=git-crypt diff=git-crypt
