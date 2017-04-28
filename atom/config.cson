@@ -87,14 +87,6 @@
     viewedVersion: "0.95.0"
   rspec:
     command: "smart_rspec"
-  "rspec-tree-runner":
-    rspecPathCommand: "zeus rspec"
-    showRSpecWarningMessages: false
-  "ruby-test":
-    rspecAllCommand: "zeus rspec spec"
-    rspecFileCommand: "zeus rspec --tty {relative_path}"
-    rspecSingleCommand: "zeus rspec  --tty {relative_path}:{line_number}"
-    shell: "zsh"
   "spell-check":
     locales: [
       "en-US"
