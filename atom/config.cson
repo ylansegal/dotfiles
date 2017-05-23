@@ -36,7 +36,6 @@
       ".zeus.sock"
     ]
     projectHome: "/Users/ylansegal/mellmo-git"
-    restorePreviousWindowsOnStart: false
     telemetryConsent: "limited"
     themes: [
       "unity-ui"
