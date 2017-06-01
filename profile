@@ -122,12 +122,6 @@ man() {
 			man "$@"
 }
 
-# Quick and dirty web-server
-function serve {
-  port="${1:-3000}"
-  ruby -run -e httpd . -p $port
-}
-
 # Source .env when logging in
 if [ -f ~/.env ]; then
   habitat
