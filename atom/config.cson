@@ -72,7 +72,8 @@
     elixircExecutablePath: "/usr/local/bin/elixirc"
   "linter-rubocop":
     command: "shim_rubocop -R"
-  "linter-ui-default": {}
+  "linter-ui-default":
+    panelHeight: 75
   "markdown-preview": {}
   metrics:
     userId: "fb069a61625718a624211f08b631024e164870ca"
@@ -102,8 +103,7 @@
   tabs:
     addNewTabsAtEnd: true
   "terminal-panel": {}
-  "tree-view":
-    hideVcsIgnoredFiles: true
+  "tree-view": {}
   "unity-ui":
     colorStatusIndicatorsInTreeView: true
     showIcons: true
