@@ -103,7 +103,8 @@
   tabs:
     addNewTabsAtEnd: true
   "terminal-panel": {}
-  "tree-view": {}
+  "tree-view":
+    alwaysOpenExisting: true
   "unity-ui":
     colorStatusIndicatorsInTreeView: true
     showIcons: true
