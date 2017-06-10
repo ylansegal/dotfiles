@@ -3,13 +3,16 @@ Ylan's dotfiles.
 
 To setup your Mac the way Ylan likes it:
 
+*Note*: There are some circular dependecies here when setting up a new computer around when the ssh keys are
+available to clone repos. They are managed by this repo, but are needed to clone. I still need to figure that out
+
 ### Clone dotfiles
 
 ```
 $ git clone git@github.com:ylansegal/dotfiles.git
 $ ln -s dotfiles ~/.dotfiles
 $ cd dotfiles
-$ git submudle init && git submodule update
+$ git submodule init && git submodule update
 ```
 
 ### Install Brew
