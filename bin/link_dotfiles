@@ -12,9 +12,12 @@ ls ~/.dotfiles | \
   grep -v default-gems | \
   {
     while read rc_file; do
-      if [ -e ~/.$rc_file ]; then
-        echo "Skipping ~/.$rc_file, it already exists"
+      if [ "$(readlink ~/.$rc_file)" -ef "$HOME/.dotfiles/$rc_file" ]; then
+        echo "Skipping ~/.$rc_file, it's already linked"
       else
+        if [ -e ~/.$rc_file ]; then
+          mv ~/.$rc_file ~/.$rc_file.backup && echo "Moved ~/.$rc_file to ~/.$rc_file.backup"
+        fi
         ln -s $HOME/.dotfiles/$rc_file $HOME/.$rc_file && echo "Linked ~/.$rc_file"
       fi
     done
