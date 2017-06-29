@@ -8,3 +8,4 @@ atom/.npm
 atom/.apm
 atom/packages/
 atom/atom-shell/
+atom/recovery/
