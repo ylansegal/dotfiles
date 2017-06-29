@@ -135,4 +135,5 @@ notes() {
 today() {
   cd ~/Personal/Notes
   atom DailyLog/`date "+%Y-%m-%d"`.md
+  cd -
 }
