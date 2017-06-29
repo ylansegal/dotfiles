@@ -20,7 +20,6 @@ export ATOM_REPOS_HOME
 #Aliases
 alias ios_simulator="open /Applications/Xcode.app/Contents/Applications/iOS\ Simulator.app"
 alias cat="ccat"
-alias notes="cd ~/Personal/Notes && atom ."
 alias tig="tig --show-signature"
 
 # rbenv
@@ -126,3 +125,14 @@ man() {
 if [ -f ~/.env ]; then
   habitat
 fi
+
+# Note-taking shortcuts
+notes() {
+  cd ~/Personal/Notes
+  atom .
+}
+
+today() {
+  cd ~/Personal/Notes
+  atom DailyLog/`date "+%Y-%m-%d"`.md
+}
