@@ -105,6 +105,7 @@
   "terminal-panel": {}
   "tree-view":
     alwaysOpenExisting: true
+    hideVcsIgnoredFiles: true
   "unity-ui":
     colorStatusIndicatorsInTreeView: true
     showIcons: true
