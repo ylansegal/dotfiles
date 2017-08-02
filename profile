@@ -137,3 +137,8 @@ today() {
   atom DailyLog/`date "+%Y-%m-%d"`.md
   cd -
 }
+
+# Source sap-profile
+if [ -f ~/.sap-profile ]; then
+  source ~/.sap-profile
+fi
