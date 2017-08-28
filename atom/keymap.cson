@@ -22,3 +22,5 @@
   "enter": "autocomplete-plus:confir"
 ".platform-darwin atom-workspace":
   "alt-cmd-n": "advanced-open-file:toggle"
+"atom-workspace atom-text-editor:not(.mini)":
+  "ctrl-shift-t": "toggle-markdown-task:toggle"
