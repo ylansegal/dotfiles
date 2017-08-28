@@ -28,12 +28,16 @@
       "fancy-new-file"
       "atom-lint"
       "pretty-json"
+      "linter-crystal"
     ]
     ignoredNames: [
       ".git"
       ".DS_Store"
       "Thumbs.db"
       ".zeus.sock"
+    ]
+    packagesWithKeymapsDisabled: [
+      "zentabs"
     ]
     projectHome: "/Users/ylansegal/mellmo-git"
     telemetryConsent: "limited"
