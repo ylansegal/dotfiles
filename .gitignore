@@ -9,3 +9,5 @@ atom/.apm
 atom/packages/
 atom/atom-shell/
 atom/recovery/
+bin/cranklin
+bin/sqlcli
