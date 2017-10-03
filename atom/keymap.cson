@@ -18,6 +18,8 @@
 #
 'atom-text-editor':
   'cmd-.': 'ruby-test-switcher:switch-without-split'
+'atom-text-editor[data-grammar="source elixir"]':
+  "cmd-.": "elixir-jump-around:toggle-test-file"
 ".autocomplete-plus input.hidden-input":
   "enter": "autocomplete-plus:confir"
 ".platform-darwin atom-workspace":

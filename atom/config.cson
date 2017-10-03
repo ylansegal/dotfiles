@@ -5,6 +5,7 @@
   "atom-beautify":
     general:
       _analyticsUserId: "2042c787-a923-474d-ac97-45db44046617"
+  "atom-codesearch": {}
   "atom-fuzzy-grep":
     detectGitProjectAndUseGitGrep: false
   "atom-lint": {}
@@ -45,7 +46,6 @@
       "unity-ui"
       "base16-ocean-dark-syntax-theme"
     ]
-    titleBar: "custom"
   editor:
     confirmCheckoutHeadRevision: false
     fontFamily: "Hack"
@@ -76,9 +76,9 @@
     elixircExecutablePath: "/usr/local/bin/elixirc"
   "linter-rubocop":
     command: "shim_rubocop -R"
-  "linter-ui-default":
-    panelHeight: 75
-  "markdown-preview": {}
+  "linter-ui-default": {}
+  "markdown-preview":
+    openPreviewInSplitPane: false
   metrics:
     userId: "fb069a61625718a624211f08b631024e164870ca"
   minimap:
