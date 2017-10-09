@@ -21,6 +21,7 @@ export ATOM_REPOS_HOME
 alias ios_simulator="open /Applications/Xcode.app/Contents/Applications/iOS\ Simulator.app"
 alias cat="ccat"
 alias tig="tig --show-signature"
+alias iex="iex --erl '-kernel shell_history enabled'"
 
 # rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
@@ -83,8 +84,7 @@ cdp() {
 
 # Searches for files under the current directory
 fuzz() {
-  search_term=$1
-  find . -wholename \*$search_term\* -not -path './.*/*' | $FUZZ_MATCHER
+  fd $1 | $FUZZ_MATCHER
 }
 
 # Fuzzy find in history and executes
