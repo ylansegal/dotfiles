@@ -72,11 +72,14 @@
     lintOnEditorFocus: false
   "linter-crystal":
     command: "compile"
+  "linter-elixir-credo":
+    flags: "--strict"
   "linter-elixirc":
     elixircExecutablePath: "/usr/local/bin/elixirc"
   "linter-rubocop":
     command: "shim_rubocop -R"
-  "linter-ui-default": {}
+  "linter-ui-default":
+    panelHeight: 75
   "markdown-preview":
     openPreviewInSplitPane: false
   metrics:
