@@ -20,10 +20,10 @@ linter-elixir-credo@1.1.0
 linter-rubocop@2.2.0
 linter-ui-default@1.6.10
 markdown-table-formatter@2.9.0
+pipe@0.4.0
 rspec@0.4.0
 ruby-syntax-replacer@0.5.1
 ruby-test-switcher@1.2.3
-shell-it@0.2.1
 toggle-markdown-task@0.6.0
 toggle-quotes@1.0.1
 unity-ui@2.1.11
