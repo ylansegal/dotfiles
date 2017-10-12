@@ -38,9 +38,6 @@ plugins=(bundler)
 
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
-. ~/.profile
-
 # Report if commands take longer than x seconds:
 REPORTTIME=5
 
@@ -77,7 +74,6 @@ bindkey "^S" "insert-fuzzy-path-in-command-line"
 if [ -f /usr/local/etc/bash_completion.d/tig-completion.bash ]; then
   source /usr/local/etc/bash_completion.d/tig-completion.bash
 fi
-
 
 # Enable zmv
 autoload -U zmv

@@ -23,9 +23,6 @@ alias cat="ccat"
 alias tig="tig --show-signature"
 alias iex="iex --erl '-kernel shell_history enabled'"
 
-# rbenv
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-
 # Apple XCode tools support
 export DEVELOPER_DIR="/Applications/Xcode.app/Contents/Developer/"
 
@@ -66,7 +63,7 @@ function habitat() {
   envfile="${1:-.env}"
   if [[ -f $envfile ]]; then
     echo "### Setting up environment variables from $envfile"
-    cat $envfile | grep -v '#' | grep -v '^$' | grep -v 'PATH'| while read line; do
+    \cat $envfile | grep -v '#' | grep -v '^$' | grep -v 'PATH'| while read line; do
       echo $line
       export $line
     done
@@ -142,3 +139,6 @@ today() {
 if [ -f ~/.sap-profile ]; then
   source ~/.sap-profile
 fi
+
+# rbenv
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi

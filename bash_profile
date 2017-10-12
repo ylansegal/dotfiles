@@ -17,3 +17,4 @@ shopt -s histappend
 #S Sacing history after each command
 PROMPT_COMMAND='history -a'
 
+source ~/.profile
