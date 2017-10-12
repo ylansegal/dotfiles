@@ -79,3 +79,5 @@ $ git submodule init && git submodule update
 ```
 $ apm install --packages-file ./atom/packages-list.txt
 ```
+
+Packaes previously generated with `apm list --installed --bare > atom/packages-list.txt`
