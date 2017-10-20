@@ -78,8 +78,7 @@
     elixircExecutablePath: "/usr/local/bin/elixirc"
   "linter-rubocop":
     command: "shim_rubocop -R"
-  "linter-ui-default":
-    panelHeight: 75
+  "linter-ui-default": {}
   "markdown-preview":
     openPreviewInSplitPane: false
   metrics:
@@ -94,6 +93,7 @@
     viewedVersion: "0.95.0"
   rspec:
     command: "smart_rspec"
+    force_colored_results: false
   "spell-check":
     locales: [
       "en-US"
