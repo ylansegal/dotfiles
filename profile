@@ -29,32 +29,6 @@ export DEVELOPER_DIR="/Applications/Xcode.app/Contents/Developer/"
 
 # Functions
 
-# Fuzzyness
-
-function better_fzf() {
-  fzf --reverse
-}
-
-FUZZ_MATCHER=better_fzf
-export FUZZ_MATCHER
-
-# Fuzzy find of processes and then kill
-function mercy_kill() {
-  pid=$(ps | grep -v $FUZZ_MATCHER | $FUZZ_MATCHER | sed "s/^[ \t]*//" |cut -f 1 -d ' ')
-  for signal in TERM INT HUP KILL; do
-    cmd="kill -s ${signal} $pid"
-    echo $cmd
-    eval $cmd
-    for i in {0..19}; do
-      if [ $(ps -p $pid|wc -l) -lt 2 ]; then
-        echo "pid $pid no longer exists"
-        return 0
-      fi
-      sleep 0.1
-    done
-  done
-}
-
 # Stolen from http://www.smallmeans.com/notes/shell-history/
 function histogram() {
   sort | uniq -c | sort -rn | awk '!max{max=$1;}{r="";i=s=60*$1/max;while(i-->0)r=r"#";printf "%15s %5d %s %s",$2,$1,r,"\n";}'
@@ -71,9 +45,33 @@ function habitat() {
   fi
 }
 
+# Fuzzyness
+# ---------
+
+# fzf options
+export FZF_DEFAULT_OPTS="--reverse"
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,node_modules}/*" 2> /dev/null'
+
+# Fuzzy find of processes and then kill
+function mercy_kill() {
+  pid=$(ps | grep -v fzf | fzf | sed "s/^[ \t]*//" |cut -f 1 -d ' ')
+  for signal in TERM INT HUP KILL; do
+    cmd="kill -s ${signal} $pid"
+    echo $cmd
+    eval $cmd
+    for i in {0..19}; do
+      if [ $(ps -p $pid|wc -l) -lt 2 ]; then
+        echo "pid $pid no longer exists"
+        return 0
+      fi
+      sleep 0.1
+    done
+  done
+}
+
 # Changes to a project directory, found fuzzily
 cdp() {
-    dir=$(find -H ~/mellmo-git ~/Development ~/Personal -maxdepth 1 -type d | $FUZZ_MATCHER)
+    dir=$(find -H ~/mellmo-git ~/Development ~/Personal -maxdepth 1 -type d | fzf)
     if [ ! -z "$dir" ]; then
       cd $dir
     fi
@@ -82,16 +80,18 @@ cdp() {
 
 # Searches for files under the current directory
 fuzz() {
-  fd $1 | $FUZZ_MATCHER
+  fd $1 | fzf
 }
 
 # Fuzzy find in history and executes
 h() {
-  pid=$(history | uniq_history 2>&1 | gtac | $FUZZ_MATCHER | sed 's/^[ \t]*//' | cut -f1 -d ' ')
+  pid=$(history | uniq_history 2>&1 | gtac | fzf | sed 's/^[ \t]*//' | cut -f1 -d ' ')
   if [ ! -z "$pid" ]; then
     fc -e - $pid
   fi
 }
+
+# ---------
 
 # Determines current ruby, for prompt
 ruby_version()
