@@ -22,6 +22,7 @@ alias ios_simulator="open /Applications/Xcode.app/Contents/Applications/iOS\ Sim
 alias cat="ccat"
 alias tig="tig --show-signature"
 alias iex="iex --erl '-kernel shell_history enabled'"
+alias iso_date="date "+%Y-%m-%d""
 
 # Apple XCode tools support
 export DEVELOPER_DIR="/Applications/Xcode.app/Contents/Developer/"
