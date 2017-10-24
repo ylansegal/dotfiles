@@ -51,7 +51,7 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # By default, ^S freezes terminal output and ^Q resumes it. Disable that so
 # that those keys can be used for other things.
 unsetopt flowcontrol
-# Run Selecta in the current working directory, appending the selected path, if
+# Run fuzz in the current working directory, appending the selected path, if
 # any, to the current command.
 function insert-fuzzy-path-in-command-line() {
     local selected_path
@@ -68,6 +68,23 @@ function insert-fuzzy-path-in-command-line() {
 zle -N insert-fuzzy-path-in-command-line
 # Bind the key to the newly created widget
 bindkey "^S" "insert-fuzzy-path-in-command-line"
+# ----------------------
+
+# ----------------------
+# ^b for fuzzy matching git branches
+# Run fuzz in the current working directory, appending the selected path, if
+# any, to the current command.
+function insert-fuzzy-git-branch-in-command-line() {
+    local selected_path
+    echo
+    selected_path=$(git for-each-ref refs/heads | cut -d/ -f3- | fzf) || return
+    eval 'LBUFFER="$LBUFFER$selected_path"'
+    zle reset-prompt
+}
+# Create the zle widget
+zle -N insert-fuzzy-git-branch-in-command-line
+# Bind the key to the newly created widget
+bindkey "^b" "insert-fuzzy-git-branch-in-command-line"
 # ----------------------
 
 # Tig autocompletion
