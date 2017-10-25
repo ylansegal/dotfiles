@@ -87,6 +87,21 @@ zle -N insert-fuzzy-git-branch-in-command-line
 bindkey "^b" "insert-fuzzy-git-branch-in-command-line"
 # ----------------------
 
+# ----------------------
+# ^g for fuzzy matching git files
+function insert-fuzzy-git-files-in-command-line() {
+    local selected_path
+    echo
+    selected_path=$(git status --porcelain | fzf | cut -d ' ' -f3) || return
+    eval 'LBUFFER="$LBUFFER$selected_path"'
+    zle reset-prompt
+}
+# Create the zle widget
+zle -N insert-fuzzy-git-files-in-command-line
+# Bind the key to the newly created widget
+bindkey "^g" "insert-fuzzy-git-files-in-command-line"
+# ----------------------
+
 # Tig autocompletion
 if [ -f /usr/local/etc/bash_completion.d/tig-completion.bash ]; then
   source /usr/local/etc/bash_completion.d/tig-completion.bash
