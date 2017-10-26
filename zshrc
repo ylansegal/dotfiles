@@ -92,7 +92,7 @@ bindkey "^b" "insert-fuzzy-git-branch-in-command-line"
 function insert-fuzzy-git-files-in-command-line() {
     local selected_path
     echo
-    selected_path=$(git status --porcelain | fzf | cut -d ' ' -f3) || return
+    selected_path=$(git status --porcelain | fzf | sed s/^...//) || return
     eval 'LBUFFER="$LBUFFER$selected_path"'
     zle reset-prompt
 }
