@@ -58,7 +58,7 @@ function insert-fuzzy-path-in-command-line() {
     # Print a newline or we'll clobber the old prompt.
     echo
     # Find the path; abort if the user doesn't select anything.
-    selected_path=$(fuzz) || return
+    selected_path=$(fuzz --multi | xargs echo) || return
     # Append the selection to the current command buffer.
     eval 'LBUFFER="$LBUFFER$selected_path"'
     # Redraw the prompt since Selecta has drawn several new lines of text.
@@ -92,7 +92,7 @@ bindkey "^b" "insert-fuzzy-git-branch-in-command-line"
 function insert-fuzzy-git-files-in-command-line() {
     local selected_path
     echo
-    selected_path=$(git status --porcelain | fzf | sed s/^...//) || return
+    selected_path=$(git status --porcelain | fzf --multi | sed s/^...// | xargs echo) || return
     eval 'LBUFFER="$LBUFFER$selected_path"'
     zle reset-prompt
 }
