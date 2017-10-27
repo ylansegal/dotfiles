@@ -10,6 +10,7 @@ ls ~/.dotfiles | \
   grep -v README.md | \
   grep -v ylansegal.zsh-theme | \
   grep -v default-gems | \
+  grep -v spectacle_shortcuts.json | \
   {
     while read rc_file; do
       if [ "$(readlink ~/.$rc_file)" -ef "$HOME/.dotfiles/$rc_file" ]; then
@@ -38,4 +39,16 @@ if [ -e $(rbenv root)/default-gems ]; then
 else
   ln -s $HOME/.dotfiles/default-gems "$(rbenv root)/default-gems" && \
     echo "Linked default-gems"
+fi
+
+# Link Spectacle shortcuts file
+SPECTACLES_DIR="$HOME/Library/Application Support/Spectacle"
+if [ "$(readlink $SPECTACLES_DIR/Shortcuts.json)" -ef "$HOME/.dotfiles/spectacle_shortcuts.json" ]; then
+  echo "Skipping $SPECTACLES_DIR/Shortcuts.json, it's already linked"
+else
+  if [ -e "$SPECTACLES_DIR/Shortcuts.json" ]; then
+    mv "$SPECTACLES_DIR/Shortcuts.json" "$SPECTACLES_DIR/Shortcuts.json.backup"
+    echo "Moved $SPECTACLES_DIR/Shortcuts.json to $SPECTACLES_DIR/Shortcuts.json.backup"
+  fi
+  ln -s $HOME/.dotfiles/spectacle_shortcuts.json "$SPECTACLES_DIR/Shortcuts.json" && echo "$SPECTACLES_DIR/Shortcuts.json"
 fi
