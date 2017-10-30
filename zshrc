@@ -58,7 +58,7 @@ function insert-fuzzy-path-in-command-line() {
     # Print a newline or we'll clobber the old prompt.
     echo
     # Find the path; abort if the user doesn't select anything.
-    selected_path=$(fuzz --multi | xargs echo) || return
+    selected_path=$(fzf --multi | xargs echo) || return
     # Append the selection to the current command buffer.
     eval 'LBUFFER="$LBUFFER$selected_path"'
     # Redraw the prompt since Selecta has drawn several new lines of text.
@@ -67,7 +67,7 @@ function insert-fuzzy-path-in-command-line() {
 # Create the zle widget
 zle -N insert-fuzzy-path-in-command-line
 # Bind the key to the newly created widget
-bindkey "^S" "insert-fuzzy-path-in-command-line"
+bindkey "^s" "insert-fuzzy-path-in-command-line"
 # ----------------------
 
 # ----------------------
