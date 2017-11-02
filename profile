@@ -10,12 +10,13 @@ if [ -d ~/.bin ]; then
     PATH=~/.bin:$PATH
 fi
 
-PATH="/usr/local/sbin:$PATH" # Add sbin, some stuff is installed there by homebrew
-export PATH
+export PATH="/usr/local/sbin:$PATH" # Add sbin, some stuff is installed there by homebrew
 
 # Other environment variables
-ATOM_REPOS_HOME=~/Development
-export ATOM_REPOS_HOME
+export ATOM_REPOS_HOME=~/Development
+# Apple XCode tools support
+export DEVELOPER_DIR="/Applications/Xcode.app/Contents/Developer/"
+export EDITOR=nano
 
 #Aliases
 alias ios_simulator="open /Applications/Xcode.app/Contents/Applications/iOS\ Simulator.app"
@@ -23,9 +24,6 @@ alias cat="ccat"
 alias tig="tig --show-signature"
 alias iex="iex --erl '-kernel shell_history enabled'"
 alias iso_date="date "+%Y-%m-%d""
-
-# Apple XCode tools support
-export DEVELOPER_DIR="/Applications/Xcode.app/Contents/Developer/"
 
 # Functions
 
