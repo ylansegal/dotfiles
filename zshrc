@@ -55,9 +55,7 @@ function insert-fuzzy-path-in-command-line() {
     # Print a newline or we'll clobber the old prompt.
     echo
     # Find the path; abort if the user doesn't select anything.
-    selected_path=$(rg --files --no-ignore --hidden --follow -g "!{.git,node_modules}/*" 2> /dev/null |\
-                    fzf |\
-                    xargs echo) || return
+    selected_path=$(fd | fzf | xargs echo) || return
     # Append the selection to the current command buffer.
     eval 'LBUFFER="$LBUFFER$selected_path"'
     # Redraw the prompt since Selecta has drawn several new lines of text.
