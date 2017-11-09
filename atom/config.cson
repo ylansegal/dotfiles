@@ -21,6 +21,8 @@
   "autocomplete-ruby": {}
   awiki:
     wikiLocation: "/Users/ylansegal/iCloud/Wiki/"
+  "bracket-matcher":
+    highlightMatchingLineNumber: true
   core:
     closeDeletedFileTabs: true
     disabledPackages: [
@@ -57,6 +59,7 @@
     invisibles: {}
     lineHeight: 1.25
     preferredLineLength: 120
+    scrollPastEnd: true
     showIndentGuide: true
   "exception-reporting":
     userId: "af6fb80d-448d-6726-ae3a-044bfd6711ee"
