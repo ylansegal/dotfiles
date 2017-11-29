@@ -131,6 +131,7 @@
   zentabs:
     maximumOpenedTabs: 8
     neverCloseDirty: true
+    neverCloseNew: true
     neverCloseUnsaved: true
 ".basic.html.text":
   editor:
