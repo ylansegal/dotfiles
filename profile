@@ -17,6 +17,8 @@ export ATOM_REPOS_HOME=~/Development
 # Apple XCode tools support
 export DEVELOPER_DIR="/Applications/Xcode.app/Contents/Developer/"
 export EDITOR=nano
+# Needed by crystal in macOS High Sierra.
+export PKG_CONFIG_PATH=/usr/local/opt/openssl/lib/pkgconfig
 
 #Aliases
 alias ios_simulator="open /Applications/Xcode.app/Contents/Applications/iOS\ Simulator.app"
