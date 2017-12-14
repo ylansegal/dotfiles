@@ -48,6 +48,7 @@
       "atom-elixir-formatter"
     ]
     projectHome: "/Users/ylansegal/mellmo-git"
+    restorePreviousWindowsOnStart: "no"
     telemetryConsent: "limited"
     themes: [
       "unity-ui"
