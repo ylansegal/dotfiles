@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source_path=/Users/ylansegal/Personal
+sparse_bundle=Secure.sparsebundle
+mounted=/Volumes/Secure
+
+# Mount secure
+echo "Mounting $sparse_bundle"
+hdiutil attach $source_path/$sparse_bundle
+
+# Loop until it's unmounted
+
+echo ""
+echo "Waiting until volume is unmounted..."
+until [ ! -d $mounted ] ; do
+  sleep 1
+done
+
+echo "Backing up..."
+rclone --verbose sync $source_path/$sparse_bundle drive:/$sparse_bundle/
+
+echo "Done"
