@@ -85,7 +85,7 @@ fuzz() {
 
 # Fuzzy find in history and executes
 h() {
-  pid=$(history | uniq_history 2>&1 | gtac | fzf | sed 's/^[ \t]*//' | cut -f1 -d ' ')
+  pid=$(history | uniq_history | gtac | fzf | sed 's/^[ \t]*//' | cut -f1 -d ' ')
   if [ ! -z "$pid" ]; then
     fc -e - $pid
   fi
