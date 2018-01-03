@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
 echo "Creating ctags..."
-ctags -R
+ctags -R --exclude='*.js'
