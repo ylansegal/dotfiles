@@ -27,3 +27,6 @@ Style/AndOr:
 
 Style/SignalException:
   EnforcedStyle: semantic
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
