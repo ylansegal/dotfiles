@@ -136,6 +136,12 @@ today() {
   cd -
 }
 
+tomorrow() {
+  cd ~/Personal/Notes
+  atom DailyLog/`date -v+1d "+%Y-%m-%d"`.md
+  cd -
+}
+
 # Source sap-profile
 if [ -f ~/.sap-profile ]; then
   source ~/.sap-profile
