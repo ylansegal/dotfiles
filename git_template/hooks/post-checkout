@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
 
-echo "Creating ctags..."
-ctags -R --exclude='*.js'
+which ctags | grep "/usr/local/" > /dev/null
+if [ $? == 0 ]; then
+  echo "Creating ctags..."
+  ctags -R --exclude='*.js'
+fi
