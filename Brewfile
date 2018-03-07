@@ -26,7 +26,6 @@ cask "atom"
 cask "google-chrome"
 cask "gpgtools"
 cask "iterm2"
-cask "java"
 cask "spectacle"
 
 tap "caskroom/fonts"
