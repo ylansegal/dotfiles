@@ -2,10 +2,12 @@
 libraries:
   - name: San Francisco Public Library
     url: https://sfpl.overdrive.com
-#  - name: San Diego Public Library
-#    url: https://sdpl.overdrive.com
   - name: San Diego County Library
     url: https://sdcl.overdrive.com
   - name: Los Angeles County Library
     url: https://colapublib.overdrive.com
+  # - name: Orange County Public Library
+  #   url: https://ocpl.overdrive.com/
+  - name: Santa Barbara Library
+    url: https://blackgold.overdrive.com
 default_type: eBook
