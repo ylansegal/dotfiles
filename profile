@@ -142,10 +142,5 @@ tomorrow() {
   cd -
 }
 
-# Source sap-profile
-if [ -f ~/.sap-profile ]; then
-  source ~/.sap-profile
-fi
-
 # rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
