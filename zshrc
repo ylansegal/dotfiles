@@ -8,9 +8,6 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="ylansegal"
 
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-alias rpry="rails-console-pry -r pry-doc -r awesome_print"
 alias git='nocorrect git'
 
 # Set to this to use case-sensitive completion

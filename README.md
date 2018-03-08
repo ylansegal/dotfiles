@@ -88,4 +88,4 @@ Download and install Alfred 2. Point settings to iCloud.
 
 ### Iterm 2
 
-Point iTerm 2 to use settings in iCloud
+Point iTerm 2 to use settings in iCloud.
