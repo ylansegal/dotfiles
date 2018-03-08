@@ -19,7 +19,6 @@ brew "wget"
 brew "zsh"
 brew "zsh-syntax-highlighting"
 
-
 tap "caskroom/cask"
 cask "1Password"
 cask "atom"
