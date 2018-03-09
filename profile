@@ -1,11 +1,6 @@
 # Customization that is used by all shells (bash, zsh, etc)
 
 # PATH CUSTOMIZATION AND ADDITIONS
-
-if [ -d ~/mellmo-git/ruby-dev-scripts ]; then
-    PATH=$PATH:~/mellmo-git/ruby-dev-scripts
-fi
-
 if [ -d ~/.bin ]; then
     PATH=~/.bin:$PATH
 fi
@@ -21,7 +16,6 @@ export EDITOR=nano
 export PKG_CONFIG_PATH=/usr/local/opt/openssl/lib/pkgconfig
 
 #Aliases
-alias ios_simulator="open /Applications/Xcode.app/Contents/Applications/iOS\ Simulator.app"
 alias cat="ccat"
 alias tig="tig --show-signature"
 alias iex="iex --erl '-kernel shell_history enabled'"
@@ -71,7 +65,7 @@ function mercy_kill() {
 
 # Changes to a project directory, found fuzzily
 cdp() {
-    dir=$(find -H ~/mellmo-git ~/Development ~/Personal -maxdepth 1 -type d | fzf)
+    dir=$(find -H ~/Development ~/Personal -maxdepth 1 -type d | fzf)
     if [ ! -z "$dir" ]; then
       cd $dir
     fi
