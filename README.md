@@ -52,6 +52,13 @@ $ cd dotfiles
 $ git-crypt unlock
 ```
 
+### Change Permissions on ssh keys
+
+```
+$ cd dotfiles
+$ chmod 400 ssh/id_*
+```
+
 ### Install Oh-My-Zsh
 
 ```
