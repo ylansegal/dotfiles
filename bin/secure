@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-source_path=/Users/ylansegal/Personal
+source_path=~/Personal
 sparse_bundle=Secure.sparsebundle
 mounted=/Volumes/Secure
 
