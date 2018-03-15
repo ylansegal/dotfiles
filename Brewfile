@@ -23,7 +23,7 @@ tap "caskroom/cask"
 cask "1Password"
 cask "atom"
 cask "google-chrome"
-cask "gpgtools"
+cask "gpg-suite"
 cask "iterm2"
 cask "spectacle"
 
