@@ -11,6 +11,8 @@
   "atom-fuzzy-grep":
     detectGitProjectAndUseGitGrep: false
   "atom-lint": {}
+  "atom-package-deps":
+    ignored: []
   "atom-terminal-panel": {}
   autocomplete:
     includeCompletionsFromAllBuffers: true
