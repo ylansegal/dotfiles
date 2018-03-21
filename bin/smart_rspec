@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+NAILGUN_PORT=2113
+SPORK_PORT=8989
+
+# Looking for zeus socket
+if [ -S ./.zeus.sock ]; then
+  RSPEC="zeus rspec"
+else
+  # Looking for binstubs
+  if [ -f ./bin/rspec ]; then
+    RSPEC="bin/rspec"
+  else
+    RSPEC="bundle exec rspec"
+  fi
+
+  # Looking for nailgun
+  lsof -i :$NAILGUN_PORT > /dev/null
+  if [ $? == 0 ]; then
+    RSPEC="jruby --ng --dev -S $RSPEC"
+  fi
+
+  # Looking for spork
+  lsof -i :$SPORK_PORT > /dev/null
+  if [ $? == 0 ]; then
+    RSPEC="$RSPEC --drb"
+  fi
+fi
+
+CMD="$RSPEC $@"
+echo $CMD
+$CMD
