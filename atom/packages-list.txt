@@ -16,8 +16,12 @@ language-rspec@0.7.0
 language-slim@1.0.0
 language-typescript-grammars-only@1.6.0
 linter@2.2.0
+linter-rubocop@2.2.3
 linter-ui-default@1.7.1
 pipe@0.4.0
+ruby-syntax-replacer@0.5.1
+ruby-test-switcher@1.2.3
 toggle-markdown-task@0.6.0
+toggle-quotes@1.1.0
 unity-ui@2.1.11
 
