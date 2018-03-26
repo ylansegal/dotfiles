@@ -3,7 +3,7 @@
   useConfigOnly = true
 [core]
   excludesfile = ~/.gitignore
-  editor = nano
+  editor = atom --wait
 [color]
   diff = auto
   status = auto
