@@ -5,6 +5,10 @@ if [ -d ~/.bin ]; then
     PATH=~/.bin:$PATH
 fi
 
+if [ -d ~/Personal/ruby-dev-scripts ]; then
+  PATH=~/Personal/ruby-dev-scripts:$PATH
+fi
+
 export PATH="/usr/local/sbin:$PATH" # Add sbin, some stuff is installed there by homebrew
 
 # Other environment variables
