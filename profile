@@ -113,11 +113,6 @@ man() {
 			man "$@"
 }
 
-# Source .env when logging in
-if [ -f ~/.env ]; then
-  habitat
-fi
-
 # Note-taking shortcuts
 notes() {
   cd ~/Personal/Notes
@@ -135,6 +130,11 @@ tomorrow() {
   atom DailyLog/`date -v+1d "+%Y-%m-%d"`.md
   cd -
 }
+
+# Source .env when logging in
+if [ -f ~/.env ]; then
+  habitat
+fi
 
 # rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
