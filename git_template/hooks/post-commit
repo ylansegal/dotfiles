@@ -2,6 +2,9 @@
 
 which ctags | grep "/usr/local/" > /dev/null
 if [ $? == 0 ]; then
-  echo "Creating ctags..."
-  ctags -R --exclude='*.js'
+  pgrep ctags > /dev/null
+  if [ $? != 0 ]; then
+    echo "Creating ctags..."
+    ctags -R --exclude='*.js' > /dev/null 2>&1 &
+  fi
 fi
