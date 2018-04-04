@@ -1,2 +1,7 @@
 set vertical-split = no
 bind main ! !git revert %(commit)
+
+# Large repo speed improvements:
+# https://github.com/jonas/tig/blob/master/contrib/large-repo.tigrc
+set commit-order = defaultt c
+set main-options = -n 1000
