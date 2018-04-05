@@ -41,7 +41,7 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # ----------------------
-# ^S for fuzzy matching
+# ^S for fuzzy matching files under current directory
 # By default, ^S freezes terminal output and ^Q resumes it. Disable that so
 # that those keys can be used for other things.
 unsetopt flowcontrol
@@ -94,6 +94,21 @@ function insert-fuzzy-git-files-in-command-line() {
 zle -N insert-fuzzy-git-files-in-command-line
 # Bind the key to the newly created widget
 bindkey "^g" "insert-fuzzy-git-files-in-command-line"
+# ----------------------
+
+# ----------------------
+# ^k for fuzzy matching git commits
+function insert-fuzzy-git-commits-in-command-line() {
+    local selected_path
+    echo
+    selected_path=$(git log --oneline --max-count=1000 | fzf | cut -d ' ' -f1) || return
+    eval 'LBUFFER="$LBUFFER$selected_path"'
+    zle reset-prompt
+}
+# Create the zle widget
+zle -N insert-fuzzy-git-commits-in-command-line
+# Bind the key to the newly created widget
+bindkey "^k" "insert-fuzzy-git-commits-in-command-line"
 # ----------------------
 
 # Tig autocompletion
