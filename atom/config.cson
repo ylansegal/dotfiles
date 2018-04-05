@@ -64,6 +64,7 @@
     preferredLineLength: 120
     scrollPastEnd: true
     showIndentGuide: true
+    showInvisibles: true
   "exception-reporting":
     userId: "af6fb80d-448d-6726-ae3a-044bfd6711ee"
   "fancy-new-file": {}
