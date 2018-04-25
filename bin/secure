@@ -12,10 +12,17 @@ hdiutil attach $source_path/$sparse_bundle
 
 # Loop until it's unmounted
 
-echo ""
-echo "Waiting until volume is unmounted..."
+echo "-------"
+
+
 until [ ! -d $mounted ] ; do
-  sleep 1
+  echo ""
+  read -p "Press enter when ready to unmount $mounted..." yn
+  # Don't error if we can't unmount
+  set +eu
+  hdiutil detach $mounted
+  # Continue exiting on futher errors
+  set -eu
 done
 
 echo "Backing up..."
