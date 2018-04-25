@@ -58,13 +58,14 @@
   editor:
     confirmCheckoutHeadRevision: false
     fontFamily: "Hack"
-    fontSize: 15
+    fontSize: 16
     invisibles: {}
     lineHeight: 1.25
     preferredLineLength: 120
     scrollPastEnd: true
     showIndentGuide: true
     showInvisibles: true
+    softWrapAtPreferredLineLength: true
   "exception-reporting":
     userId: "af6fb80d-448d-6726-ae3a-044bfd6711ee"
   "fancy-new-file": {}
@@ -108,6 +109,10 @@
     command: "smart_rspec"
     force_colored_results: false
   "spell-check":
+    addKnownWords: true
+    knownWords: [
+      "Procore"
+    ]
     locales: [
       "en-US"
       "sp-MX"
@@ -125,12 +130,12 @@
   "terminal-panel": {}
   "tree-view":
     alwaysOpenExisting: true
-    hideVcsIgnoredFiles: true
   "unity-ui":
     colorStatusIndicatorsInTreeView: true
     showIcons: true
   welcome:
     showOnStartup: false
+  "white-cursor": {}
   whitespace:
     ignoreWhitespaceOnCurrentLine: false
   zentabs:
