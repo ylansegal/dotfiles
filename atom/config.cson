@@ -25,6 +25,7 @@
   "bracket-matcher":
     highlightMatchingLineNumber: true
   core:
+    automaticallyUpdate: false
     closeDeletedFileTabs: true
     disabledPackages: [
       "policeman-rubocop"
