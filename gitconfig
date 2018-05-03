@@ -17,7 +17,6 @@
   dw = diff --word-diff
   dcw = diff --cached --word-diff
   ds = stash show -p
-  ai = add -p
   last-commit-hash = rev-parse HEAD
   uncommit=reset --soft 'HEAD^'
 [push]
