@@ -116,7 +116,7 @@
     ]
     locales: [
       "en-US"
-      "sp-MX"
+      "es-419"
     ]
   "split-diff":
     diffWords: true
