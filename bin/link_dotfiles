@@ -4,7 +4,7 @@ set -euo pipefail
 # Link missing dotfiles so they are picked up form ~/.*
 
 # Link dotfiles
-ls ~/.dotfiles | \
+ls "$HOME/.dotfiles" | \
   grep -v Brewfile | \
   grep -v LICENSE.txt | \
   grep -v README.md | \
@@ -12,32 +12,32 @@ ls ~/.dotfiles | \
   grep -v default-gems | \
   grep -v spectacle_shortcuts.json | \
   {
-    while read rc_file; do
-      if [ "$(readlink ~/.$rc_file)" -ef "$HOME/.dotfiles/$rc_file" ]; then
-        echo "Skipping ~/.$rc_file, it's already linked"
+    while read -r rc_file; do
+      if [ "$(readlink $HOME/.$rc_file)" -ef "$HOME/.dotfiles/$rc_file" ]; then
+        echo "Skipping $HOME/.$rc_file, it's already linked"
       else
-        if [ -e ~/.$rc_file ]; then
-          mv ~/.$rc_file ~/.$rc_file.backup && echo "Moved ~/.$rc_file to ~/.$rc_file.backup"
+        if [ -e "$HOME/.$rc_file" ]; then
+          mv "$HOME/.$rc_file" "~$HOME.$rc_file.backup" && echo "Moved $HOME/.$rc_file to $HOME/.$rc_file.backup"
         fi
-        ln -s $HOME/.dotfiles/$rc_file $HOME/.$rc_file && echo "Linked ~/.$rc_file"
+        ln -s "$HOME/.dotfiles/$rc_file $HOME/.$rc_file" && echo "Linked $HOME/.$rc_file"
       fi
     done
   }
 
 # Link oh-my-zsh theme
-if [ -e $HOME/.oh-my-zsh/custom/themes/ylansegal.zsh-theme ]; then
+if [ -e "$HOME/.oh-my-zsh/custom/themes/ylansegal.zsh-theme" ]; then
   echo "Skipping ylansegal.zsh-theme, it already exists"
 else
-  mkdir -p $HOME/.oh-my-zsh/custom/themes
-  ln -s $HOME/.dotfiles/ylansegal.zsh-theme $HOME/.oh-my-zsh/custom/themes/ylansegal.zsh-theme && \
+  mkdir -p "$HOME/.oh-my-zsh/custom/themes"
+  ln -s "$HOME/.dotfiles/ylansegal.zsh-theme" "$HOME/.oh-my-zsh/custom/themes/ylansegal.zsh-theme" && \
     echo "Linked ylansegal.zsh-theme"
 fi
 
 # Link default-gems
-if [ -e $(rbenv root)/default-gems ]; then
+if [ -e "$(rbenv root)/default-gems" ]; then
   echo "Skipping default-gems, it already exists"
 else
-  ln -s $HOME/.dotfiles/default-gems "$(rbenv root)/default-gems" && \
+  ln -s "$HOME/.dotfiles/default-gems" "$(rbenv root)/default-gems" && \
     echo "Linked default-gems"
 fi
 
@@ -50,5 +50,5 @@ else
     mv "$SPECTACLES_DIR/Shortcuts.json" "$SPECTACLES_DIR/Shortcuts.json.backup"
     echo "Moved $SPECTACLES_DIR/Shortcuts.json to $SPECTACLES_DIR/Shortcuts.json.backup"
   fi
-  ln -s $HOME/.dotfiles/spectacle_shortcuts.json "$SPECTACLES_DIR/Shortcuts.json" && echo "$SPECTACLES_DIR/Shortcuts.json"
+  ln -s "$HOME/.dotfiles/spectacle_shortcuts.json" "$SPECTACLES_DIR/Shortcuts.json" && echo "$SPECTACLES_DIR/Shortcuts.json"
 fi
