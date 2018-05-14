@@ -17,7 +17,7 @@ echo "-------"
 
 until [ ! -d $mounted ] ; do
   echo ""
-  read -p "Press enter when ready to unmount $mounted..." yn
+  read -rp "Press enter when ready to unmount $mounted..."
   # Don't error if we can't unmount
   set +eu
   hdiutil detach $mounted
