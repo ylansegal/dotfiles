@@ -1,0 +1,15 @@
+-- Some config ideas from https://www.digitalocean.com/community/tutorials/how-to-customize-the-postgresql-prompt-with-psqlrc-on-ubuntu-14-04
+
+\set QUIET 1
+
+\set PROMPT1 '%n@%M/%/%x %R%# '
+
+\pset null '[null]'
+
+\set COMP_KEYWORD_CASE upper
+
+\timing
+
+\x auto
+
+\set QUIET 0
