@@ -1,11 +1,10 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
+# Sets the directory where my oh-my-zsh customizations go:
+ZSH_CUSTOM="$HOME/.dotfiles/zsh_custom"
 ZSH_THEME="ylansegal"
+export ZSH_CUSTOM ZSH_THEME
 
 # Example aliases
 alias git='nocorrect git'

@@ -24,15 +24,6 @@ ls "$HOME/.dotfiles" | \
     done
   }
 
-# Link oh-my-zsh theme
-if [ -e "$HOME/.oh-my-zsh/custom/themes/ylansegal.zsh-theme" ]; then
-  echo "Skipping ylansegal.zsh-theme, it already exists"
-else
-  mkdir -p "$HOME/.oh-my-zsh/custom/themes"
-  ln -s "$HOME/.dotfiles/ylansegal.zsh-theme" "$HOME/.oh-my-zsh/custom/themes/ylansegal.zsh-theme" && \
-    echo "Linked ylansegal.zsh-theme"
-fi
-
 # Link default-gems
 if [ -e "$(rbenv root)/default-gems" ]; then
   echo "Skipping default-gems, it already exists"
