@@ -8,4 +8,4 @@ else
   RUBOCOP=~/.rbenv/versions/$RB_VERSION/bin/rubocop
 fi
 
-$RUBOCOP $@
+$RUBOCOP "$@"
