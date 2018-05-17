@@ -116,8 +116,8 @@
     ]
     locales: [
       "en-US"
-      "es-419"
     ]
+    useLocales: false
   "split-diff":
     diffWords: true
     ignoreWhitespace: true
@@ -131,6 +131,7 @@
   "terminal-panel": {}
   "tree-view":
     alwaysOpenExisting: true
+    squashDirectoryNames: true
   "unity-ui":
     colorStatusIndicatorsInTreeView: true
     showIcons: true
