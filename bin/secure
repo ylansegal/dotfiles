@@ -14,7 +14,6 @@ hdiutil attach $source_path/$sparse_bundle
 
 echo "-------"
 
-
 until [ ! -d $mounted ] ; do
   echo ""
   read -rp "Press enter when ready to unmount $mounted..."
@@ -25,6 +24,7 @@ until [ ! -d $mounted ] ; do
   set -eu
 done
 
+echo "-------"
 echo "Backing up..."
 rclone --verbose sync $source_path/$sparse_bundle drive:/$sparse_bundle/
 
