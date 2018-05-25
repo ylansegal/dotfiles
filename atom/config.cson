@@ -139,6 +139,7 @@
   "white-cursor": {}
   whitespace:
     ignoreWhitespaceOnCurrentLine: false
+  wikilink: {}
   zentabs:
     maximumOpenedTabs: 8
     neverCloseDirty: true

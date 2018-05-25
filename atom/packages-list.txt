@@ -27,5 +27,6 @@ ruby-test-switcher@1.2.3
 toggle-markdown-task@0.6.0
 toggle-quotes@1.1.0
 unity-ui@2.1.11
+wikilink@0.14.0
 zentabs@0.8.9
 
