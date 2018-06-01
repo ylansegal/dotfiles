@@ -103,6 +103,8 @@
     plugins:
       "git-diff": true
   "one-light-ui": {}
+  "plantuml-viewer":
+    liveUpdate: false
   "rails-rspec": {}
   "release-notes":
     viewedVersion: "0.95.0"
