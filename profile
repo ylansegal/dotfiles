@@ -57,8 +57,8 @@ function mercy_kill() {
     cmd="kill -s ${signal} $pid"
     echo $cmd
     eval $cmd
-    for i in {0..19}; do
-      if [ $(ps -p $pid|wc -l) -lt 2 ]; then
+    for _ in {0..19}; do
+      if [ "$(ps -p $pid | wc -l)" -lt 2 ]; then
         echo "pid $pid no longer exists"
         return 0
       fi
@@ -71,9 +71,9 @@ function mercy_kill() {
 cdp() {
     dir=$(find -H ~/Development ~/Personal -maxdepth 1 -type d | fzf)
     if [ ! -z "$dir" ]; then
-      cd $dir
+      cd $dir || return
+      habitat
     fi
-    habitat
 }
 
 # Searches for files under the current directory
@@ -107,32 +107,32 @@ ruby_version()
 # https://gist.github.com/cocoalabs/2fb7dc2199b0d4bf160364b8e557eb66
 man() {
 	env \
-		LESS_TERMCAP_mb=$(printf "\e[1;31m") \
-		LESS_TERMCAP_md=$(printf "\e[1;31m") \
-		LESS_TERMCAP_me=$(printf "\e[0m") \
-		LESS_TERMCAP_se=$(printf "\e[0m") \
-		LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
-		LESS_TERMCAP_ue=$(printf "\e[0m") \
-		LESS_TERMCAP_us=$(printf "\e[1;32m") \
+		LESS_TERMCAP_mb="$(printf '\e[1;31m')" \
+		LESS_TERMCAP_md="$(printf '\e[1;31m')" \
+		LESS_TERMCAP_me="$(printf '\e[0m')" \
+		LESS_TERMCAP_se="$(printf '\e[0m')" \
+		LESS_TERMCAP_so="$(printf '\e[1;44;33m')" \
+		LESS_TERMCAP_ue="$(printf '\e[0m')" \
+		LESS_TERMCAP_us="$(printf '\e[1;32m')" \
 			man "$@"
 }
 
 # Note-taking shortcuts
 notes() {
-  cd ~/Personal/Notes
+  cd ~/Personal/Notes || return
   atom .
 }
 
 today() {
-  cd ~/Personal/Notes
-  atom . && atom DailyLog/`date "+%Y-%m-%d"`.md
-  cd -
+  cd ~/Personal/Notes || return
+  atom . && atom "DailyLog/$(date '+%Y-%m-%d').md"
+  cd - || return
 }
 
 tomorrow() {
-  cd ~/Personal/Notes
-  atom DailyLog/`date -v+1d "+%Y-%m-%d"`.md
-  cd -
+  cd ~/Personal/Notes || return
+  atom "DailyLog/$(date -v+1d '+%Y-%m-%d').md"
+  cd - || return
 }
 
 # Source .env when logging in
