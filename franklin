@@ -8,6 +8,8 @@ libraries:
     url: https://lacountylibrary.overdrive.com
   - name: Santa Barbara Library
     url: https://blackgold.overdrive.com
+  - name: Chula Vista Library
+    url: https://serra.overdrive.com
   # - name: Orange County Public Library
   #   url: https://ocpl.overdrive.com
 default_type: eBook
