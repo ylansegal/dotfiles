@@ -100,7 +100,7 @@ bindkey "^g" "insert-fuzzy-git-files-in-command-line"
 function insert-fuzzy-git-commits-in-command-line() {
     local selected_path
     echo
-    selected_path=$(git log --oneline --max-count=1000 | fzf | cut -d ' ' -f1) || return
+    selected_path=$(git log --oneline --max-count=1000 --color=always | fzf --ansi | cut -d ' ' -f1) || return
     eval 'LBUFFER="$LBUFFER$selected_path"'
     zle reset-prompt
 }
