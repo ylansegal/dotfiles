@@ -52,7 +52,7 @@ export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,
 
 # Fuzzy find of processes and then kill
 function mercy_kill() {
-  pid=$(ps | grep -v fzf | fzf | sed "s/^[ \t]*//" |cut -f 1 -d ' ')
+  pid=$(ps | grep -v fzf | fzf | sed "s/^[ \t]*//" | awk '{ print $1 }')
   for signal in TERM INT HUP KILL; do
     cmd="kill -s ${signal} $pid"
     echo $cmd
@@ -83,7 +83,7 @@ fuzz() {
 
 # Fuzzy find in history and executes
 h() {
-  pid=$(history | uniq_history | gtac | fzf | sed 's/^[ \t]*//' | cut -f1 -d ' ')
+  pid=$(history | uniq_history | gtac | fzf | sed 's/^[ \t]*//' | awk '{ print $1 }')
   if [ ! -z "$pid" ]; then
     fc -e - $pid
   fi
@@ -95,7 +95,7 @@ h() {
 ruby_version()
 {
   if which rbenv &> /dev/null; then
-    rbenv version | cut -f1 -d ' '
+    rbenv version | awk '{ print $1 }'
   else
     if which rvm-prompt &> /dev/null; then
      rvm-prompt i v g
