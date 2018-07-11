@@ -70,7 +70,7 @@ bindkey "^s" "insert-fuzzy-path-in-command-line"
 function insert-fuzzy-git-branch-in-command-line() {
     local selected_path
     echo
-    selected_path=$(git for-each-ref refs/heads | cut -d/ -f3- | fzf) || return
+    selected_path=$(git for-each-ref refs/heads | awk -F "/" '{ print $3 }' | fzf) || return
     eval 'LBUFFER="$LBUFFER$selected_path"'
     zle reset-prompt
 }
@@ -100,7 +100,7 @@ bindkey "^g" "insert-fuzzy-git-files-in-command-line"
 function insert-fuzzy-git-commits-in-command-line() {
     local selected_path
     echo
-    selected_path=$(git log --oneline --max-count=1000 --color=always | fzf --ansi | cut -d ' ' -f1) || return
+    selected_path=$(git log --oneline --max-count=1000 --color=always | fzf --ansi | awk '{ print $1 }') || return st
     eval 'LBUFFER="$LBUFFER$selected_path"'
     zle reset-prompt
 }
