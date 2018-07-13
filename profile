@@ -125,13 +125,12 @@ notes() {
 
 today() {
   cd ~/Personal/Notes || return
-  atom . && atom "DailyLog/$(date '+%Y-%m-%d').md"
-  cd - || return
-}
-
-tomorrow() {
-  cd ~/Personal/Notes || return
-  atom "DailyLog/$(date -v+1d '+%Y-%m-%d').md"
+  target_note="DailyLog/$(date '+%Y-%m-%d').md"
+  if [ ! -f $target_note ]; then
+    last_note=$(find DailyLog | sort | tail -n 1)
+    grep -v "\- \[[xX]\]" $last_note > $target_note
+  fi
+  atom . && atom $target_note
   cd - || return
 }
 
