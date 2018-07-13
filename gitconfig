@@ -46,5 +46,6 @@ default = current
   autosquash = true
 [commit]
   gpgsign = true
+  verbose = true
 [log]
   follow = true
