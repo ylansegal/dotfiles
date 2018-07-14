@@ -19,7 +19,7 @@ ls "$HOME/.dotfiles" | \
         if [ -e "$HOME/.$rc_file" ]; then
           mv "$HOME/.$rc_file" "$HOME/.$rc_file.backup" && echo "Moved $HOME/.$rc_file to $HOME/.$rc_file.backup"
         fi
-        ln -s "$HOME/.dotfiles/$rc_file $HOME/.$rc_file" && echo "Linked $HOME/.$rc_file"
+        ln -s "$HOME/.dotfiles/$rc_file" "$HOME/.$rc_file" && echo "Linked $HOME/.$rc_file"
       fi
     done
   }
