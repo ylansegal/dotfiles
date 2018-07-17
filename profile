@@ -124,7 +124,7 @@ notes() {
 }
 
 today() {
-  cd ~/Personal/Notes || return
+  cd $HOME/Personal/Notes || return
   target_note="DailyLog/$(date '+%Y-%m-%d').md"
   if [ ! -f $target_note ]; then
     last_note=$(find DailyLog | sort | tail -n 1)
