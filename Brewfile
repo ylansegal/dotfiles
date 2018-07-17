@@ -1,3 +1,4 @@
+brew "asdf"
 brew "aspell"
 brew "ccat"
 brew "coreutils"
