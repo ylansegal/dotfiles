@@ -166,6 +166,9 @@
 ".erb.html.text":
   editor:
     preferredLineLength: 120
+".git-commit.text":
+  editor:
+    preferredLineLength: 72
 ".haml.text":
   editor:
     preferredLineLength: 120
