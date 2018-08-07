@@ -52,7 +52,7 @@ export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,
 
 # Fuzzy find of processes and then kill
 function mercy_kill() {
-  pid=$(ps | grep -v fzf | fzf | sed "s/^[ \t]*//" | awk '{ print $1 }')
+  pid=${1:-"$(ps | grep -v fzf | fzf | sed "s/^[ \t]*//" | awk '{ print $1 }')"}
   for signal in TERM INT HUP KILL; do
     cmd="kill -s ${signal} $pid"
     echo $cmd
