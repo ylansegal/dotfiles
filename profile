@@ -38,7 +38,7 @@ function habitat() {
     echo "### Setting up environment variables from $envfile"
     \cat $envfile | grep -v '#' | grep -v '^$' | grep -v 'PATH'| while read line; do
       echo $line
-      export $line
+      export line
     done
   fi
 }
