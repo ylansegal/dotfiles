@@ -50,23 +50,6 @@ function habitat() {
 export FZF_DEFAULT_OPTS="--reverse"
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,node_modules}/*" 2> /dev/null'
 
-# Fuzzy find of processes and then kill
-function mercy_kill() {
-  pid=${1:-"$(ps | grep -v fzf | fzf | sed "s/^[ \t]*//" | awk '{ print $1 }')"}
-  for signal in TERM INT HUP KILL; do
-    cmd="kill -s ${signal} $pid"
-    echo $cmd
-    eval $cmd
-    for _ in {0..19}; do
-      if [ "$(ps -p $pid | wc -l)" -lt 2 ]; then
-        echo "pid $pid no longer exists"
-        return 0
-      fi
-      sleep 0.1
-    done
-  done
-}
-
 # Changes to a project directory, found fuzzily
 cdp() {
     dir=$(find -H ~/Development ~/Personal -maxdepth 1 -type d | fzf)
