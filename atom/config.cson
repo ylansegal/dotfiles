@@ -132,6 +132,7 @@
   "terminal-panel": {}
   "tree-view":
     alwaysOpenExisting: true
+    hideVcsIgnoredFiles: true
     squashDirectoryNames: true
   "unity-ui":
     colorStatusIndicatorsInTreeView: true
