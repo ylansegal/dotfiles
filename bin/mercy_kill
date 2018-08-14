@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Fuzzy find of processes and then kill them with increasing force
 
-pid=${1:-"$(ps | grep -v fzf | fzf | sed "s/^[ \t]*//" | awk '{ print $1 }')"}
+pid=${1:-$(ps | grep -v fzf | fzf | sed "s/^[ \t]*//" | awk '{ print $1 }')}
 for signal in TERM INT HUP KILL; do
   cmd="kill -s ${signal} $pid"
   echo $cmd
