@@ -1,11 +1,12 @@
+*.env
 *.sublime-project
 *.sublime-workspace
 .DS_Store
-*.env
 .gemtags
+.rspec
 .starscope.db
 .tags*
+.tool-versions
 TODO.md
-to_do
-.rspec
 tags
+to_do
