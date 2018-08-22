@@ -6,8 +6,7 @@
     general:
       _analyticsUserId: "2042c787-a923-474d-ac97-45db44046617"
   "atom-codesearch": {}
-  "atom-elixir-formatter":
-    elixirExecutable: "/usr/local/bin/elixir"
+  "atom-elixir-formatter": {}
   "atom-fuzzy-grep":
     detectGitProjectAndUseGitGrep: false
   "atom-lint": {}
