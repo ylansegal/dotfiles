@@ -1,6 +1,6 @@
 brew "asdf"
 brew "aspell"
-brew "ccat"
+brew "bat"
 brew "coreutils"
 brew "ctags"
 brew "fd"
