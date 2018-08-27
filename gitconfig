@@ -8,6 +8,7 @@
   diff = auto
   status = auto
   branch = auto
+	ui = true
 [alias]
   co = checkout
   st = status
@@ -50,5 +51,17 @@ default = current
 [log]
   follow = true
 [pager]
-       diff = diff-so-fancy | less --tabs=1,5 -RFX
-       show = diff-so-fancy | less --tabs=1,5 -RFX
+  diff = diff-so-fancy | less --tabs=1,5 -RFX
+  show = diff-so-fancy | less --tabs=1,5 -RFX
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[color "diff"]
+	meta = yellow
+	frag = magenta bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
