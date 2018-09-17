@@ -55,6 +55,10 @@
       "unity-ui"
       "base16-ocean-dark-syntax-theme"
     ]
+    customFileTypes:
+      'source.ruby.gemfile': [
+        'Gemfile.shared'
+      ]
   editor:
     confirmCheckoutHeadRevision: false
     fontFamily: "Hack"
@@ -131,7 +135,6 @@
   "terminal-panel": {}
   "tree-view":
     alwaysOpenExisting: true
-    hideVcsIgnoredFiles: true
     squashDirectoryNames: true
   "unity-ui":
     colorStatusIndicatorsInTreeView: true
