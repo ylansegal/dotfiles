@@ -18,11 +18,12 @@ export DEVELOPER_DIR="/Applications/Xcode.app/Contents/Developer/"
 export EDITOR=nano
 # Needed by crystal in macOS High Sierra.
 export PKG_CONFIG_PATH=/usr/local/opt/openssl/lib/pkgconfig
+# Elixir iex history
+export ERL_AFLAGS="-kernel shell_history enabled"
 
-#Aliases
+# Aliases
 alias cat="bat"
 alias tig="tig --show-signature"
-alias iex="iex --erl '-kernel shell_history enabled'"
 alias iso_date="date "+%Y-%m-%d""
 
 # Functions
