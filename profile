@@ -87,6 +87,12 @@ ruby_version()
   fi
 }
 
+# Determines current elixir version, for prompt
+elixir_version()
+{
+  asdf current elixir | awk '{ print $1 }'
+}
+
 # Colorized man pages!
 # https://gist.github.com/cocoalabs/2fb7dc2199b0d4bf160364b8e557eb66
 man() {
