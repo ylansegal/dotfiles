@@ -26,6 +26,10 @@
   core:
     automaticallyUpdate: false
     closeDeletedFileTabs: true
+    customFileTypes:
+      "source.ruby.gemfile": [
+        "Gemfile.shared"
+      ]
     disabledPackages: [
       "policeman-rubocop"
       "autocomplete-paths"
@@ -55,10 +59,6 @@
       "unity-ui"
       "base16-ocean-dark-syntax-theme"
     ]
-    customFileTypes:
-      'source.ruby.gemfile': [
-        'Gemfile.shared'
-      ]
   editor:
     confirmCheckoutHeadRevision: false
     fontFamily: "Hack"
