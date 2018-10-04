@@ -74,25 +74,6 @@ h() {
 }
 
 # ---------
-
-# Determines current ruby, for prompt
-ruby_version()
-{
-  if which rbenv &> /dev/null; then
-    rbenv version | awk '{ print $1 }'
-  else
-    if which rvm-prompt &> /dev/null; then
-     rvm-prompt i v g
-    fi
-  fi
-}
-
-# Determines current elixir version, for prompt
-elixir_version()
-{
-  asdf current elixir | awk '{ print $1 }'
-}
-
 # Colorized man pages!
 # https://gist.github.com/cocoalabs/2fb7dc2199b0d4bf160364b8e557eb66
 man() {
