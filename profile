@@ -49,9 +49,6 @@ if [ -f ~/.env ]; then
   habitat
 fi
 
-# rbenv
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-
 # nvm
 export NVM_DIR="$HOME/.nvm"
 source "$(brew --prefix nvm)/nvm.sh"

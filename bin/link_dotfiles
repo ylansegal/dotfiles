@@ -9,7 +9,6 @@ ls "$HOME/.dotfiles" | \
   grep -v LICENSE.txt | \
   grep -v README.md | \
   grep -v ylansegal.zsh-theme | \
-  grep -v default-gems | \
   grep -v spectacle_shortcuts.json | \
   {
     while read -r rc_file; do
@@ -23,14 +22,6 @@ ls "$HOME/.dotfiles" | \
       fi
     done
   }
-
-# Link default-gems
-if [ -e "$(rbenv root)/default-gems" ]; then
-  echo "Skipping default-gems, it already exists"
-else
-  ln -s "$HOME/.dotfiles/default-gems" "$(rbenv root)/default-gems" && \
-    echo "Linked default-gems"
-fi
 
 # Link Spectacle shortcuts file
 SPECTACLES_DIR="$HOME/Library/Application Support/Spectacle"
