@@ -36,7 +36,7 @@ export ATOM_REPOS_HOME=~/Development
 export DEVELOPER_DIR="/Applications/Xcode.app/Contents/Developer/"
 export EDITOR=nano
 # Needed by crystal in macOS High Sierra.
-export PKG_CONFIG_PATH=/usr/local/opt/openssl/lib/pkgconfig
+export PKG_CONFIG_PATH="$(brew --prefix openssl)/lib/pkgconfig"
 # Elixir iex history
 export ERL_AFLAGS="-kernel shell_history enabled"
 # fzf options
