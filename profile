@@ -1,5 +1,12 @@
 # Customization that is used by all shells (bash, zsh, etc)
 
+# Source all files in profile.d directory
+if [ -d ~/.profile.d ]; then
+  for filename in ~/.profile.d/*.sh; do
+    source $filename
+  done
+fi
+
 # PATH CUSTOMIZATION AND ADDITIONS
 if [ -d ~/.bin ]; then
     PATH=~/.bin:$PATH
@@ -32,120 +39,9 @@ export EDITOR=nano
 export PKG_CONFIG_PATH=/usr/local/opt/openssl/lib/pkgconfig
 # Elixir iex history
 export ERL_AFLAGS="-kernel shell_history enabled"
-
-# Aliases
-alias cat="bat"
-alias tig="tig --show-signature"
-alias iso_date="date "+%Y-%m-%d""
-
-# Functions
-
-# Stolen from http://www.smallmeans.com/notes/shell-history/
-function histogram() {
-  sort | uniq -c | sort -rn | awk '!max{max=$1;}{r="";i=s=60*$1/max;while(i-->0)r=r"#";printf "%15s %5d %s %s",$2,$1,r,"\n";}'
-}
-
-function habitat() {
-  envfile="${1:-.env}"
-  if [[ -f $envfile ]]; then
-    echo "### Setting up environment variables from $envfile"
-    \cat $envfile | \
-      grep -v '^[#$]' | \
-      grep -v 'PATH'| \
-      while read line; do
-        echo $line
-        export ${line?}
-      done
-  fi
-}
-
-# Fuzzyness
-# ---------
-
 # fzf options
 export FZF_DEFAULT_OPTS="--reverse"
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,node_modules}/*" 2> /dev/null'
-
-# Changes to a project directory, found fuzzily
-cdp() {
-    dir=$(find -H ~/Development ~/Personal -maxdepth 1 -type d | fzf)
-    if [ ! -z "$dir" ]; then
-      cd $dir || return
-      habitat
-    fi
-}
-
-# Searches for files under the current directory
-fuzz() {
-  fd $1 | fzf
-}
-
-# Fuzzy find in history and executes
-h() {
-  pid=$(history | uniq_history | gtac | fzf | awk '{ print $1 }')
-  if [ ! -z "$pid" ]; then
-    fc -e - $pid
-  fi
-}
-
-# Note-taking shortcuts
-notes() {
-  cd ~/Personal/Notes || return
-  atom .
-}
-
-today() {
-  cd $HOME/Personal/Notes || return
-  target_note="DailyLog/$(date '+%Y-%m-%d').md"
-  if [ ! -f $target_note ]; then
-    last_note=$(find DailyLog | sort | tail -n 1)
-    # Removed completed tasks
-    grep -v "\- \[[xX]\]" $last_note | \
-      # Remove anything after "---" so it doesn't carry over to the note
-      awk 'NR == 1 { output = 1 }; /---/ { output = 0 }; output { print }' \
-      > $target_note
-  fi
-  atom . && atom $target_note
-  cd - || return
-}
-
-# Remind me when command finished
-
-# Adapted from https://dockyard.com/blog/2018/05/11/tell-me-when-it-s-finished
-# Usage:
-# - with args, `judge mix test`; runs `yay` or `boom`
-#   depending on exit status of given command
-# - without args, `mix test; judge`; runs `yay` or `boom`
-#   depending on exit status of previous command
-function remind() {
-  last_exit_status=$?
-  number_of_args=$#
-  if [ $number_of_args -gt 0 ]
-  then
-    # - treat the args as a command to run
-    # - $@ is all the args given
-    # - `"$@"` makes sure that quoting is preserved;
-    #     eg, if the command was `judge echo one "two three"`,
-    #     `echo` will get two args, not three
-    # - Once the expansion is done, the shell sees a bare
-    #   command and runs it.
-    cmnd=$*
-    "$@" && _success "$cmnd" || (_failure "$cmnd" && false)
-  else
-    # No args given means no command to run, so check the exit
-    # status of the last command and notify accordingly
-    [ $last_exit_status -eq 0 ] && _success || (_failure && false)
-  fi
-}
-
-function _success() {
-  osascript -e "display notification \"$*\" with title \"Command Succeded\" sound name \"Glass\""
-}
-
-
-function _failure() {
-  osascript -e "display notification \"$*\" with title \"Command Failed\" sound name \"Funk\""
-}
 
 
 # Source .env when logging in
@@ -158,7 +54,7 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
-source "/usr/local/opt/nvm/nvm.sh"
+source "$(brew --prefix nvm)/nvm.sh"
 
 # Enable asdf
 source "$(brew --prefix asdf)/asdf.sh"
