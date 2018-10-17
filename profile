@@ -9,7 +9,19 @@ if [ -d ~/Personal/ruby-dev-scripts ]; then
   PATH=~/Personal/ruby-dev-scripts:$PATH
 fi
 
-export PATH="/usr/local/sbin:$PATH" # Add sbin, some stuff is installed there by homebrew
+if [ -d /usr/local/sbin ]; then
+  PATH=/usr/local/sbin:$PATH
+fi
+
+if [ -d ~/.yarn/bin ]; then
+  PATH=~/.yarn/bin:$PATH
+fi
+
+if [ -d ~/.config/yarn/global/node_modules/.bin ]; then
+  PATH=~/.config/yarn/global/node_modules/.bin:$PATH
+fi
+
+export PATH
 
 # Other environment variables
 export ATOM_REPOS_HOME=~/Development
@@ -162,3 +174,6 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 # nvm
 export NVM_DIR="$HOME/.nvm"
 source "/usr/local/opt/nvm/nvm.sh"
+
+# Enable asdf
+source /usr/local/opt/asdf/asdf.sh
