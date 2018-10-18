@@ -117,3 +117,8 @@ fi
 
 # Enable zmv
 autoload -U zmv
+
+# source autocompletion scripts
+source /usr/local/etc/bash_completion.d/asdf.bash
+source /usr/local/etc/bash_completion.d/brew
+source /usr/local/etc/bash_completion.d/brew-services
