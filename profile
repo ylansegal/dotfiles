@@ -36,22 +36,21 @@ export ATOM_REPOS_HOME=~/Development
 export DEVELOPER_DIR="/Applications/Xcode.app/Contents/Developer/"
 export EDITOR=nano
 # Needed by crystal in macOS High Sierra.
-export PKG_CONFIG_PATH="$(brew --prefix openssl)/lib/pkgconfig"
+export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
 # Elixir iex history
 export ERL_AFLAGS="-kernel shell_history enabled"
 # fzf options
 export FZF_DEFAULT_OPTS="--reverse"
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,node_modules}/*" 2> /dev/null'
 
+# nvm
+export NVM_DIR="$HOME/.nvm"
+source "/usr/local/opt/nvm/nvm.sh"
+
+# Enable asdf
+source "/usr/local/opt/asdf/asdf.sh"
 
 # Source .env when logging in
 if [ -f ~/.env ]; then
   habitat
 fi
-
-# nvm
-export NVM_DIR="$HOME/.nvm"
-source "$(brew --prefix nvm)/nvm.sh"
-
-# Enable asdf
-source "$(brew --prefix asdf)/asdf.sh"
