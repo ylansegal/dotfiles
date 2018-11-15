@@ -24,7 +24,6 @@
   "bracket-matcher":
     highlightMatchingLineNumber: true
   core:
-    automaticallyUpdate: false
     closeDeletedFileTabs: true
     customFileTypes:
       "source.ruby.gemfile": [
@@ -135,6 +134,7 @@
   "terminal-panel": {}
   "tree-view":
     alwaysOpenExisting: true
+    hideVcsIgnoredFiles: true
     squashDirectoryNames: true
   "unity-ui":
     colorStatusIndicatorsInTreeView: true
