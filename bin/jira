@@ -8,8 +8,7 @@ IFS=$'\n\t'
 
 
 base_url="https://procoretech.atlassian.net/browse"
-ticket_number_from_branch=$(git branch | grep '*' | awk '{print $2}' | sed -E 's/.*([A-Z]{2,4}-[0-9]{1,5}).*/\1/')
-ticket_number=${1:-$ticket_number_from_branch}
+ticket_number=${1:-$(git branch | grep '*' | awk '{print $2}' | sed -E 's/.*([A-Z]{2,4}-[0-9]{1,5}).*/\1/')}
 
 set -x
 open "$base_url/$ticket_number"
