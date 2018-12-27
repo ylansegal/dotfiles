@@ -92,7 +92,7 @@
   "linter-elixirc":
     elixircExecutablePath: "/usr/local/bin/elixirc"
   "linter-rubocop":
-    command: "rubocop -R"
+    command: "shim_rubocop -R"
   "linter-ui-default":
     panelHeight: 75
   "markdown-preview":
@@ -133,7 +133,6 @@
   "terminal-panel": {}
   "tree-view":
     alwaysOpenExisting: true
-    hideVcsIgnoredFiles: true
     squashDirectoryNames: true
   "unity-ui":
     colorStatusIndicatorsInTreeView: true
@@ -145,7 +144,7 @@
     ignoreWhitespaceOnCurrentLine: false
   wikilink: {}
   zentabs:
-    maximumOpenedTabs: 8
+    maximumOpenedTabs: 10
     neverCloseDirty: true
     neverCloseNew: true
     neverCloseUnsaved: true
