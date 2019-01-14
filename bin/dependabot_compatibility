@@ -1,0 +1,19 @@
+#!/usr/bin/env ruby
+# Generates a dependabot compatibility URL like:
+# https://dependabot.com/compatibility-score/?dependency-name=rails&package-manager=bundler&previous-version=4.2.10&new-version=4.2.11
+
+gem, low_version, high_version = ARGV
+
+query_string = {
+  "dependency-name" => gem,
+  "package-manager" => "bundler",
+  "previous-version" => low_version,
+  "new-version" => high_version
+}.map { |k, v|
+  "#{k}=#{v}"
+}.join("&")
+
+uri = URI("https://dependabot.com/compatibility-score/")
+uri.query = query_string
+
+puts uri
