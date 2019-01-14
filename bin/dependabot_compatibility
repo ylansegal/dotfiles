@@ -2,6 +2,8 @@
 # Generates a dependabot compatibility URL like:
 # https://dependabot.com/compatibility-score/?dependency-name=rails&package-manager=bundler&previous-version=4.2.10&new-version=4.2.11
 
+require 'uri'
+
 gem, low_version, high_version = ARGV
 
 query_string = {
