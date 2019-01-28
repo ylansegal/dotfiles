@@ -92,7 +92,7 @@
   "linter-elixirc":
     elixircExecutablePath: "/usr/local/bin/elixirc"
   "linter-rubocop":
-    command: "shim_rubocop -R"
+    command: "shim_rubocop"
   "linter-ui-default":
     panelHeight: 75
   "markdown-preview":
@@ -133,6 +133,7 @@
   "terminal-panel": {}
   "tree-view":
     alwaysOpenExisting: true
+    hideVcsIgnoredFiles: true
     squashDirectoryNames: true
   "unity-ui":
     colorStatusIndicatorsInTreeView: true
