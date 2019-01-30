@@ -63,3 +63,5 @@ default = current
 	whitespace = red reverse
 [diff-so-fancy]
 	markEmptyLines = false
+[merge]
+	tool = meld

@@ -30,6 +30,7 @@ cask "atom"
 cask "google-chrome"
 cask "gpg-suite"
 cask "iterm2"
+cask "meld"
 cask "spectacle"
 
 tap "caskroom/fonts"
