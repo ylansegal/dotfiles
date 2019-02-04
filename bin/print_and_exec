@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+# Prints stdin and executes in the given program, commenting the output.
+# Example usage:
+
+# $ echo "SELECT NOW()" | print_and_exec psql procore_development
+# SELECT NOW()
+# --              now
+# -- ------------------------------
+# --  2019-02-04 15:04:07.92713-08
+# -- (1 row)
+# --
+# -- Time: 0.697 ms
+
+# $ echo "puts Time.now" | print_and_exec ruby
+# puts Time.now
+# # => 2019-02-04 15:05:46 -0800
+
+set -euo pipefail
+
+# Create a new temporary named pipe
+fifoname=$(mktemp -u).fifo
+mkfifo $fifoname
+
+# Determine which comment pattern to use
+case $1 in
+      psql)
+        comment='-- ' ;;
+      ruby)
+        comment='# => ' ;;
+      *)
+        comment='# ' ;;
+esac
+
+# Execute same command that was passed in
+tee $fifoname < /dev/stdin | cat - <(cat $fifoname | "$@" | sed "s/^/$comment/")
+
+# Delete named pipe
+rm $fifoname
