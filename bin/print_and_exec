@@ -25,14 +25,12 @@ mkfifo $fifoname
 case $1 in
       psql)
         comment='-- ' ;;
-      ruby)
-        comment='# => ' ;;
       *)
         comment='# ' ;;
 esac
 
-# Execute same command that was passed in
-tee $fifoname < /dev/stdin | cat - <(cat $fifoname | "$@" | sed "s/^/$comment/")
+# Execute same command that was passed in, capture input and output with preceeding comments
+tee $fifoname < /dev/stdin | cat - <(echo) <(cat $fifoname | "$@" | sed "s/^/$comment/")
 
 # Delete named pipe
 rm $fifoname
