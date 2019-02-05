@@ -12,10 +12,13 @@
 # --
 # -- Time: 0.737 ms
 
-# $ echo "puts Time.now" | io ruby
-# puts Time.now
+# $ echo "ls -1" | io sh
+# ls -1
 #
-# # 2019-02-05 12:42:58 -0800
+# # Brewfile
+# # LICENSE.txt
+# # README.md
+# # asdfrc
 
 set -euo pipefail
 
