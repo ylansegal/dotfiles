@@ -22,20 +22,12 @@
 
 set -euo pipefail
 
-# Create a new temporary named pipe
-fifoname=$(mktemp -u).fifo
-mkfifo $fifoname
-
 # Determine which comment pattern to use
 case $1 in
-      psql)
-        comment='-- ' ;;
-      *)
-        comment='# ' ;;
+  psql)
+    comment='-- ' ;;
+  *)
+    comment='# ' ;;
 esac
 
-# Execute same command that was passed in, capture input and output with preceeding comments
-tee $fifoname < /dev/stdin | cat - <(echo) <(cat $fifoname | "$@" | sed "s/^/$comment/")
-
-# Delete named pipe
-rm $fifoname
+cat /dev/stdin <(echo) | tee >("$@" | sed "s/^/$comment/")
