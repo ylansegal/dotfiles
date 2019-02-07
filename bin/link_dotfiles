@@ -10,6 +10,7 @@ ls "$HOME/.dotfiles" | \
   grep -v README.md | \
   grep -v ylansegal.zsh-theme | \
   grep -v spectacle_shortcuts.json | \
+  grep -v com.googlecode.iterm2.plist | \
   {
     while read -r rc_file; do
       if [ "$(readlink $HOME/.$rc_file)" -ef "$HOME/.dotfiles/$rc_file" ]; then
