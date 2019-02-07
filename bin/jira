@@ -6,7 +6,6 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-
 base_url="https://procoretech.atlassian.net/browse"
 ticket_number=${1:-$(git branch | grep '*' | awk '{print $2}' | sed -E 's/.*([A-Z]{2,4}-[0-9]{1,5}).*/\1/')}
 
