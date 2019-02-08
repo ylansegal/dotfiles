@@ -22,4 +22,6 @@ if [[ $ticket_number ]]
 then
   set -x
   open "$base_url/$ticket_number"
+else
+  exit 1
 fi

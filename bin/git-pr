@@ -8,10 +8,10 @@ IFS=$'\n\t'
 current_branch=$(git branch | grep '*' | awk '{print $2}')
 pr_url=$(hub pr list --format %U --head $current_branch --limit 1 | xargs echo)
 
-if [ -z "$pr_url" ]
+if [ "$pr_url" ]
 then
-  echo "PR not found"
-else
   set -x
   open $pr_url
+else
+  exit 1
 fi
