@@ -1,13 +1,25 @@
 #!/usr/bin/env bash
-# Opens jira on a specific ticket. If no argument is provided, it will try
-# to obtain the ticket number from the branch
+# Opens jira on a specific ticket. If no argument or piped stdin is provided, it will try
+# to obtain the ticket number from the branch.
 
 # Unofficial strict mode:
 set -euo pipefail
 IFS=$'\n\t'
 
 base_url="https://procoretech.atlassian.net/browse"
-ticket_number=${1:-$(git branch | grep '*' | awk '{print $2}' | sed -E 's/.*([A-Z]{2,4}-[0-9]{1,5}).*/\1/')}
 
-set -x
-open "$base_url/$ticket_number"
+# Check for piped input (open fd 0 - stdin)
+if [[ -t 0 ]]
+then
+  input=${1:-$(git branch | grep '*' | awk '{print $2}' | head -n 1)}
+else
+  input=$(cat)
+fi
+
+ticket_number=$(echo "$input" | grep --only-matching --extended-regexp '[A-Z]{2,4}-[0-9]{1,5}')
+
+if [[ $ticket_number ]]
+then
+  set -x
+  open "$base_url/$ticket_number"
+fi
