@@ -16,7 +16,7 @@ else
   input=$(cat)
 fi
 
-ticket_number=$(echo "$input" | grep --only-matching --extended-regexp '[A-Z]{2,4}-[0-9]{1,5}')
+ticket_number=$(echo "$input" | grep --only-matching --extended-regexp '[A-Z]{2,7}-[0-9]{1,5}')
 
 if [[ $ticket_number ]]
 then
