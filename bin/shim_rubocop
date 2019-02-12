@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+bundle show rubocop &> /dev/null
+if [ $? == 0 ]; then
+  RUBOCOP="bundle exec rubocop"
+else
+  RUBOCOP=rubocop
+fi
+
+$RUBOCOP "$@"

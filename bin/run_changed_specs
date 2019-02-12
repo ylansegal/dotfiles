@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+set -e
+
+DEFAULT_BRANCH=master
+
+if [ $1 ];
+then
+  BRANCH=${1:-"$DEFAULT_BRANCH"}
+  shift # Get rid of first parameters, which should not pass on to smart_rspec
+else
+  BRANCH="$DEFAULT_BRANCH"
+fi
+
+(git diff --name-only origin/$BRANCH..HEAD; git ls-files -m --other --exclude-standard) | \
+sed -E 's/.*\/(.*)\.rb/\1/' | \
+while read name; do \
+  find spec -name "*$name*_spec.rb"; \
+done | \
+  sort | \
+  uniq | \
+  xargs smart_rspec "$@"

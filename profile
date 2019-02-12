@@ -12,10 +12,6 @@ if [ -d ~/.bin ]; then
     PATH=~/.bin:$PATH
 fi
 
-if [ -d ~/Personal/ruby-dev-scripts ]; then
-  PATH=~/Personal/ruby-dev-scripts:$PATH
-fi
-
 if [ -d /usr/local/sbin ]; then
   PATH=/usr/local/sbin:$PATH
 fi
