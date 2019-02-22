@@ -1,0 +1,5 @@
+#!/usr/bin/env /bin/bash
+# meld installed from homebrew in unstable.
+# installed manually from https://yousseb.github.io/meld/
+# This script allows using it the command-line
+open -W -a Meld --args "$@"
