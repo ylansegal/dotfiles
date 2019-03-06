@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Regenerate ctags
+
+command -v ctags | grep "/usr/local/" > /dev/null
+if [ $? == 0 ]; then
+  pgrep ctags > /dev/null
+  if [ $? != 0 ]; then
+    echo "$(tput setaf 3)Git Hook:$(tput sgr 0) Creating ctags"
+    ctags -R --exclude='*.js' > /dev/null 2>&1 &
+  fi
+fi
