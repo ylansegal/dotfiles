@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Runs as a hook on git post-checkout
+
+# Third parameter is a flag. 1 means it's a branch checkout
+if [ "$3" == "1" ]; then
+  _git-hook-stop-spring
+fi
+
+_git-hook-ctags
