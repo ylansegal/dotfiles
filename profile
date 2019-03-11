@@ -39,10 +39,6 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 export FZF_DEFAULT_OPTS="--reverse"
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,node_modules}/*" 2> /dev/null'
 
-# nvm
-export NVM_DIR="$HOME/.nvm"
-source "/usr/local/opt/nvm/nvm.sh"
-
 # Enable asdf
 source "/usr/local/opt/asdf/asdf.sh"
 
