@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-_git-hook-post-commit
+command -v _git-hook-post-commit $> /dev/null && _git-hook-post-commit

@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-_git-hook-post-merge
+command -v _git-hook-post-merge $> /dev/null && _git-hook-post-merge st
