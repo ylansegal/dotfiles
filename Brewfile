@@ -12,6 +12,7 @@ brew "git-open"
 brew "httpie"
 brew "hub"
 brew "plantuml"
+brew "procmail" # installs lockfile
 brew "rclone"
 brew "ripgrep"
 brew "shellcheck"
