@@ -2,6 +2,7 @@
 *.sublime-project
 *.sublime-workspace
 .DS_Store
+.ctags.lock
 .gemtags
 .rspec
 .starscope.db
