@@ -9,6 +9,6 @@ if [ $? == 0 ]; then
   echo "$(tput setaf 3)Git Hook:$(tput sgr 0) Creating ctags"
 
   (lockfile .ctags.lock; \
-   ctags -R --exclude='*.js' &> /dev/null ; \
+   ctags -R --exclude='*.js' --exclude='*.h' --exclude='*.cpp' &> /dev/null ; \
    rm -f .ctags.lock) &
 fi
