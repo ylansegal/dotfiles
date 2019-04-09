@@ -16,6 +16,7 @@ brew "procmail" # installs lockfile
 brew "rclone"
 brew "ripgrep"
 brew "shellcheck"
+brew "stow"
 brew "tig"
 brew "tldr"
 brew "trash"
