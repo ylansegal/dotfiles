@@ -68,7 +68,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 ### Link dotfiles from home
 
 ```
-$ bin/link_dotfiles
+$ stow --target=$HOME settings
 ```
 
 This will link all dotfiles and the custom oh-my-zsh theme
@@ -91,7 +91,7 @@ Packages previously generated with `apm list --installed --bare > atom/packages-
 
 ### Alfred
 
-Download and install Alfred 2. Point settings to iCloud.
+Download and install Alfred 3. Point settings to iCloud.
 
 ### Iterm 2
 
