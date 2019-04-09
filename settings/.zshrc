@@ -2,7 +2,7 @@
 ZSH=$HOME/.oh-my-zsh
 
 # Sets the directory where my oh-my-zsh customizations go:
-ZSH_CUSTOM="$HOME/.dotfiles/zsh_custom"
+ZSH_CUSTOM="$HOME/.zsh_custom"
 ZSH_THEME="ylansegal"
 export ZSH_CUSTOM ZSH_THEME
 
