@@ -73,6 +73,13 @@ $ stow --target=$HOME settings
 
 This will link all dotfiles and the custom oh-my-zsh theme
 
+Since `stow` seems to ignore .gitignore files, this is required:
+
+```
+$ cd ~
+$ ln -s Personal/dotfiles/settings/.gitignore .gitignore
+```
+
 ### Change dotfiles repo to use ssh
 
 ```
