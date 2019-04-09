@@ -9,5 +9,3 @@ settings/.atom/.apm
 settings/.atom/packages/
 settings/.atom/atom-shell/
 settings/.atom/recovery/
-bin/cranklin
-bin/sqlcli
