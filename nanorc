@@ -1,6 +1,0 @@
-set tabsize 2
-set tabstospaces
-set speller "aspell -x -c"
-set const
-
-include "~/.nano/nanorc/git.nanorc"
