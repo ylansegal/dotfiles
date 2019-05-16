@@ -77,6 +77,8 @@
       ".gitignore"
       ".gitmodules"
     ]
+    scoringSystem: "fast"
+    useRipGrep: true
   "git-blame":
     customCommitUrlTemplateString: "https://github.mellmo.lan/<%- project %>/<%- repo %>/commit/<%- revision %>"
     useCustomUrlTemplateIfStandardRemotesFail: true
