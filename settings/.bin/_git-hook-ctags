@@ -2,13 +2,12 @@
 # Regenerate ctags
 
 # Ensure ctags Brew is being used. The Apple version is very old
-command -v ctags | grep "/usr/local/" &> /dev/null
-if [ $? == 0 ]; then
-  # Only run one ctags process for this directory at the time.
-  # Otherwise the ctags file is corrupted
-  echo "$(tput setaf 3)Git Hook:$(tput sgr 0) Creating ctags"
+(command -v ctags | grep "/usr/local/" &> /dev/null) || exit
 
-  (lockfile .ctags.lock; \
-   ctags -R --exclude='*.js' --exclude='*.h' --exclude='*.cpp' &> /dev/null ; \
-   rm -f .ctags.lock) &
-fi
+# Only run one ctags process for this directory at the time.
+# Otherwise the ctags file is corrupted
+echo "$(tput setaf 3)Git Hook:$(tput sgr 0) Creating ctags"
+
+(lockfile .ctags.lock; \
+ ctags -R --exclude='*.js' --exclude='*.h' --exclude='*.cpp' &> /dev/null ; \
+ rm -f .ctags.lock) &

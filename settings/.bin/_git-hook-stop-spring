@@ -1,10 +1,9 @@
 #!/usr/bin/env bash
 # Stop spring, if we have the binstub fot it
 
-
 spring_command="bin/spring"
 
-if [[ -x "$spring_command" ]]; then
-  echo "$(tput setaf 3)Git Hook:$(tput sgr 0) Stopping spring"
-  exec $spring_command stop
-fi
+[[ -x "$spring_command" ]] || exit
+
+echo "$(tput setaf 3)Git Hook:$(tput sgr 0) Stopping spring"
+exec $spring_command stop
