@@ -30,6 +30,7 @@ default = current
   sslVerify = false
 [branch]
   autosetuprebase = always
+  sort=-committerdate
 [mergetool]
   prompt = false
   keepBackup = false
