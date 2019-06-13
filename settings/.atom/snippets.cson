@@ -13,3 +13,18 @@
 #     'prefix': 'log'
 #     'body': 'console.log $1'
 #
+'.source.gfm':
+  'ruby':
+    'prefix': 'ruby'
+    'body': """
+      ```ruby$1
+      $2
+      ```$0
+    """
+  'sql':
+    'prefix': 'sql'
+    'body': """
+      ```sql$1
+      $2
+      ```$0
+    """
