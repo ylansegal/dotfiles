@@ -17,14 +17,14 @@
   'ruby':
     'prefix': 'ruby'
     'body': """
-      ```ruby$1
-      $2
+      ```ruby
+      $1
       ```$0
     """
   'sql':
     'prefix': 'sql'
     'body': """
-      ```sql$1
-      $2
+      ```sql
+      $1
       ```$0
     """
