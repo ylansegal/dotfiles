@@ -2,7 +2,7 @@
 # Prints stdin and executes in the given program, commenting the output.
 # Example usage:
 
-# $ echo "SELECT NOW()" | io psql procore_development
+# $ echo "SELECT NOW()" | io psql
 # SELECT NOW()
 # --               now
 # -- -------------------------------
