@@ -28,4 +28,4 @@ case $1 in
     comment='# ' ;;
 esac
 
-cat <(grep -v "^$comment" /dev/stdin)  | tee >("$@" | sed "s/^/$comment/")
+grep -v "^$comment" /dev/stdin | tee >("$@" | sed "s/^/$comment/")
