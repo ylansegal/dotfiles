@@ -40,6 +40,7 @@
       "pretty-json"
       "linter-crystal"
       "linter-elixir-credo"
+      "github"
     ]
     ignoredNames: [
       ".git"
@@ -61,7 +62,7 @@
   editor:
     confirmCheckoutHeadRevision: false
     fontFamily: "Hack"
-    fontSize: 16
+    fontSize: 17
     invisibles: {}
     lineHeight: 1.25
     preferredLineLength: 120
@@ -80,6 +81,7 @@
     scoringSystem: "fast"
     useRipGrep: true
   "git-blame":
+    columnWidth: 405
     customCommitUrlTemplateString: "https://github.mellmo.lan/<%- project %>/<%- repo %>/commit/<%- revision %>"
     useCustomUrlTemplateIfStandardRemotesFail: true
   "language-markdown":
@@ -135,7 +137,6 @@
   "terminal-panel": {}
   "tree-view":
     alwaysOpenExisting: true
-    hideVcsIgnoredFiles: true
     squashDirectoryNames: true
   "unity-ui":
     colorStatusIndicatorsInTreeView: true
