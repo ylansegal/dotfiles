@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Pre-populate commit message with ticket number
+
+branch=$(git rev-parse --symbolic --abbrev-ref HEAD)
+ticket_number=$(jira_ticket_number $branch)
+
+printf '%s\n%s\n' "$ticket_number: " "$(cat $1)" > $1

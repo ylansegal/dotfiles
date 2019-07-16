@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+command -v _git-hook-prepare-commit-msg $> /dev/null && _git-hook-prepare-commit-msg "$@"
