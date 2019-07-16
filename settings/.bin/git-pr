@@ -5,7 +5,7 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-current_branch=$(git branch | grep '*' | awk '{print $2}')
+current_branch=$(git rev-parse --symbolic --abbrev-ref HEAD)
 pr_url=$(hub pr list --format %U --head $current_branch --limit 1 | xargs echo)
 
 if [ "$pr_url" ]
