@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Extracts ticket number from input
+
+echo $1 | grep --only-matching --extended-regexp '[A-Z]{2,8}-[0-9]{1,5}'
