@@ -8,7 +8,7 @@ IFS=$'\n\t'
 current_branch=$(git rev-parse --symbolic --abbrev-ref HEAD)
 pr_url=$(hub pr list --format %U --head $current_branch --limit 1 | xargs echo)
 
-if [ "$pr_url" ]
+if [[ $pr_url ]];
 then
   set -x
   open $pr_url
