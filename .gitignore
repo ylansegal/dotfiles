@@ -10,3 +10,4 @@ settings/.atom/packages/
 settings/.atom/recovery/
 settings/.atom/storage
 ssh/known_hosts
+spec/examples.txt
