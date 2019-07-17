@@ -8,7 +8,11 @@ else
   if [ -f ./bin/rspec ]; then
     RSPEC="bin/rspec"
   else
-    RSPEC="bundle exec rspec"
+    if [ -f ./Gemfile ]; then
+      RSPEC="bundle exec rspec"
+    else
+      RSPEC="rspec"
+    fi
   fi
 fi
 
