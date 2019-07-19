@@ -112,3 +112,6 @@ bindkey "^k" "insert-fuzzy-git-commits-in-command-line"
 
 # Enable zmv
 autoload -U zmv
+
+# Enable direnv
+eval "$(direnv hook zsh)"
