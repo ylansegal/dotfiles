@@ -3,6 +3,7 @@
 *.sublime-workspace
 .DS_Store
 .ctags.lock
+.envrc
 .gemtags
 .rspec
 .starscope.db
