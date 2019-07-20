@@ -41,8 +41,3 @@ export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,
 
 # Enable asdf
 source "/usr/local/opt/asdf/asdf.sh"
-
-# Source .env when logging in
-if [ -f ~/.env ]; then
-  habitat
-fi
