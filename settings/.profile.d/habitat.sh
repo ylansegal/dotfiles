@@ -7,7 +7,7 @@ function habitat() {
       grep -v '^[#$]' | \
       grep -v 'PATH'| \
       while read line; do
-        echo $line
+        echo $line | cut -f1 -d '='
         export ${line?}
       done
   fi
