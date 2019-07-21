@@ -3,6 +3,7 @@
 *.sublime-workspace
 .DS_Store
 .ctags.lock
+.direnv
 .envrc
 .gemtags
 .rspec
