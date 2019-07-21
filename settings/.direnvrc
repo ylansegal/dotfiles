@@ -8,6 +8,7 @@ initialize_postgres() {
 	export PGDATA PGHOST
 
 	if [[ ! -d "$PGDATA" ]]; then
+    log_status "Initializing postgres for this project..."
 		initdb
 		cat >> "$PGDATA/postgresql.conf" <<-EOF
 			listen_addresses = ''
