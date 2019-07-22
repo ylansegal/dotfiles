@@ -17,11 +17,3 @@ layout_postgres() {
 		echo "CREATE DATABASE $USER;" | postgres --single -E postgres
 	fi
 }
-
-# Start postgres if it's not started
-use_postgres () {
-  if [[ ! -S "$PGDATA/.s.PGSQL.5432" ]]; then
-    log_status "Starting postgres..."
-    pg_ctl start
-  fi
-}
