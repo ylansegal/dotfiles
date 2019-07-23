@@ -4,7 +4,12 @@
 branch=$(git rev-parse --symbolic --abbrev-ref HEAD)
 ticket_number=$(jira_ticket_number $branch)
 
-if [[ $ticket_number ]];
-then
-  printf '%s\n%s\n' "$ticket_number: " "$(cat $1)" > $1
+
+
+if [[ $ticket_number ]]; then
+  # If file already contains tiket number before comments, don't do anythings
+  # Otherwise, prepend the ticket number
+  awk "NR == 1 { output = 1 }; /^#/ { output = 0 }; output { print }" $1 |\
+    grep -q $ticket_number ||
+    printf '%s\n%s\n' "$ticket_number: " "$(cat $1)" > $1
 fi
