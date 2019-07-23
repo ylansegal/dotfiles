@@ -72,7 +72,8 @@
   "exception-reporting":
     userId: "af6fb80d-448d-6726-ae3a-044bfd6711ee"
   "fancy-new-file": {}
-  "find-and-replace": {}
+  "find-and-replace":
+    useRipgrep: true
   "fuzzy-finder":
     ignoredNames: [
       ".gitignore"
@@ -84,6 +85,8 @@
     columnWidth: 405
     customCommitUrlTemplateString: "https://github.mellmo.lan/<%- project %>/<%- repo %>/commit/<%- revision %>"
     useCustomUrlTemplateIfStandardRemotesFail: true
+  "git-diff":
+    showIconsInEditorGutter: true
   "language-markdown":
     addListItems: false
   linter:
