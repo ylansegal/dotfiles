@@ -2,7 +2,7 @@
 
 \set QUIET 1
 
-\set PROMPT1 '%n@%M/%/%x %R%# '
+\set PROMPT1 '%n@%m/%/%x %R%# '
 
 \pset null '[null]'
 
