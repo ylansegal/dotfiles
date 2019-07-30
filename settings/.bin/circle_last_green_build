@@ -5,8 +5,8 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-repo=$(git remote get-url origin | sed 's/git@github\.com:\(.*\)\.git/\1/')
-branch=$(git rev-parse --symbolic --abbrev-ref HEAD)
+repo=${1:-$(git remote get-url origin | sed 's/git@github\.com:\(.*\)\.git/\1/')}
+branch=${2:-$(git rev-parse --symbolic --abbrev-ref HEAD)}
 
 url="https://circleci.com/api/v1.1/project/github/$repo/tree/$branch?circle-token=$CIRCLE_CLI_TOKEN&limit=5&filter=successful&shallow=true"
 
