@@ -1,14 +1,20 @@
 #!/usr/bin/env ruby
 
+require "bundler/inline"
+
+gemfile do
+  source "https://rubygems.org"
+  gem "git"
+end
+
 require "net/http"
 require "json"
 require "yaml"
 
 # Read token /Users/ylans/.config/hub
-
 token = YAML.safe_load(File.read(File.join(Dir.home, ".config", "hub")))["github.com"].first["oauth_token"]
-github_url = URI("https://api.github.com/graphql")
-owner, repo = `git remote get-url origin`.match(/git@github.com:(.*)\/(.*).git/).captures
+
+owner, repo = Git.open(".").remotes.first.url.match(%r{git@github.com:(.*)/(.*).git}).captures
 
 query = <<~GRAPHQL
   query {
@@ -16,7 +22,7 @@ query = <<~GRAPHQL
       defaultBranchRef {
         target {
           ... on Commit {
-            history(first: 100) {
+            history(first: 50) {
               nodes {
                 oid
                 status {
@@ -31,14 +37,14 @@ query = <<~GRAPHQL
   }
 GRAPHQL
 
+github_url = URI("https://api.github.com/graphql")
 headers = { "Authorization" => "bearer #{token}" }
 body = { query: query }.to_json
 
 response = JSON.parse(Net::HTTP.post(github_url, body, headers).body)
+nodes = response["data"]["repository"]["defaultBranchRef"]["target"]["history"]["nodes"]
 
-last_build = response["data"]["repository"]["defaultBranchRef"]["target"]["history"]["nodes"].find { |node|
-  node["status"]["state"] == "SUCCESS"
-}
+last_build = nodes.find { |node| node["status"]["state"] == "SUCCESS" }
 
 if last_build
   puts last_build["oid"]
