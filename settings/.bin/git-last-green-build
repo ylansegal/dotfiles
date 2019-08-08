@@ -41,9 +41,8 @@ headers = { "Authorization" => "bearer #{token}" }
 body = { query: query }.to_json
 
 response = JSON.parse(Net::HTTP.post(github_url, body, headers).body)
-nodes = response["data"]["repository"]["defaultBranchRef"]["target"]["history"]["nodes"]
-
-last_build = nodes.find { |node| node["status"]["state"] == "SUCCESS" }
+nodes = response.dig("data", "repository", "defaultBranchRef", "target", "history", "nodes")
+last_build = nodes.find { |node| node.dig("status", "state") == "SUCCESS" }
 
 if last_build
   puts last_build["oid"]
