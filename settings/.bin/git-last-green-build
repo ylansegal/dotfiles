@@ -11,8 +11,7 @@ require "net/http"
 require "json"
 require "yaml"
 
-# Read token /Users/ylans/.config/hub
-token = YAML.safe_load(File.read(File.join(Dir.home, ".config", "hub")))["github.com"].first["oauth_token"]
+token = ENV.fetch("GITHUB_API_TOKEN")
 
 owner, repo = Git.open(".").remotes.first.url.match(%r{git@github.com:(.*)/(.*).git}).captures
 
