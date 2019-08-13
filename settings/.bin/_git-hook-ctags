@@ -4,6 +4,12 @@
 # Ensure ctags Brew is being used. The Apple version is very old
 (command -v ctags | grep "/usr/local/" &> /dev/null) || exit
 
+# Do not run if we are in the middle of a rebase
+if [[ -d ".git/rebase-merge" ]]; then
+  exit
+fi
+
+
 # Only run one ctags process for this directory at the time.
 # Otherwise the ctags file is corrupted
 echo "$(tput setaf 3)Git Hook:$(tput sgr 0) Creating ctags"
