@@ -17,5 +17,11 @@ else
 fi
 
 CMD="$RSPEC $*"
-echo $CMD
-$CMD
+
+if [[ "${SMART_RSPEC_QUIET+x}" ]]; then
+  echo "$CMD 2> /dev/null"
+  $CMD 2> /dev/null
+else
+  echo "$CMD"
+  $CMD
+fi
