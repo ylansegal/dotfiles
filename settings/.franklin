@@ -10,6 +10,6 @@ libraries:
     url: https://blackgold.overdrive.com
   - name: Chula Vista Library
     url: https://serra.overdrive.com
-  # - name: Orange County Public Library
-  #   url: https://ocpl.overdrive.com
+  - name: Orange County Public Library
+    url: https://ocpl.overdrive.com
 default_type: eBook
