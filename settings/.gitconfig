@@ -10,7 +10,6 @@
   branch = auto
 	ui = true
 [alias]
-  co = checkout
   st = status
   br = branch
   d = diff
