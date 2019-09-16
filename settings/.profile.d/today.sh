@@ -8,8 +8,7 @@ today() {
     # Removed completed tasks
     grep -v "\- \[[xX]\]" $last_note | \
       # Remove anything after "---" so it doesn't carry over to the note
-      awk 'NR == 1 { output = 1 }; /---/ { output = 0 }; output { print }' | \
-      cat /dev/stdin <(echo "---\n") <(curl --silent https://icanhazdadjoke.com/) \
+      awk 'NR == 1 { output = 1 }; /---/ { output = 0 }; output { print }' \
       > $target_note
   fi
   atom . && atom $target_note
