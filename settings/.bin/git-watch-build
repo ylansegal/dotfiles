@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# Checks the status of the current branch's build until it changes
+
+# Unofficial strict mode:
+set -euo pipefail
+IFS=$'\n\t'
+
+# shellcheck source=/home/ylans/.profile.d/remind.sh
+source $HOME/.profile.d/remind.sh
+
+current_branch=$(git rev-parse --symbolic --abbrev-ref HEAD)
+
+remind watch -n 10 --chgexit hub ci-status $current_branch
