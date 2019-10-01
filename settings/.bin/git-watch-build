@@ -8,6 +8,6 @@ IFS=$'\n\t'
 # shellcheck source=/home/ylans/.profile.d/remind.sh
 source $HOME/.profile.d/remind.sh
 
-current_branch=$(git rev-parse --symbolic --abbrev-ref HEAD)
+current_branch=$(git current-branch)
 
 remind watch -n 10 --chgexit hub ci-status $current_branch

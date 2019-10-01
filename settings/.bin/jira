@@ -11,7 +11,7 @@ base_url="https://procoretech.atlassian.net/browse"
 # Check for piped input (open fd 0 - stdin)
 if [[ -t 0 ]]
 then
-  input=${1:-$(git rev-parse --symbolic --abbrev-ref HEAD)}
+  input=${1:-$(git current-branch)}
 else
   input=$(cat)
 fi
