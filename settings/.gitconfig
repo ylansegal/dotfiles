@@ -17,7 +17,7 @@
   dw = diff --word-diff
   dcw = diff --cached --word-diff
   ds = stash show -p
-  last-commit-hash = rev-parse HEAD
+  last-commit-hash = "!bash -c 'git rev-parse HEAD | tee >(pbcopy)'"
   current-branch = rev-parse --abbrev-ref HEAD
   uncommit=reset --soft 'HEAD^'
   find-merge = "!sh -c 'commit=$0 && branch=${1:-HEAD} && (git rev-list $commit..$branch --ancestry-path | cat -n; git rev-list $commit..$branch --first-parent | cat -n) | sort -k2 -s | uniq -f1 -d | sort -n | tail -1 | cut -f2'"
