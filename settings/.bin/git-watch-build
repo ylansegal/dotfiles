@@ -11,3 +11,5 @@ source $HOME/.profile.d/remind.sh
 current_branch=$(git current-branch)
 
 remind watch -n 10 --chgexit hub ci-status $current_branch
+
+echo $current_branch
