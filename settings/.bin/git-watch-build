@@ -10,6 +10,9 @@ source $HOME/.profile.d/remind.sh
 
 current_branch=$(git current-branch)
 
-remind watch -n 10 --chgexit hub ci-status $current_branch
+watch -n 10 --chgexit hub ci-status $current_branch && remind
+remind_exit_status=$?
 
 echo $current_branch
+
+exit $remind_exit_status
