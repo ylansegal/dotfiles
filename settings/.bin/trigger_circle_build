@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+# Adapted from https://discuss.circleci.com/t/branch-not-building/30499/10
+
+# Unofficial strict mode:
+set -euo pipefail
+IFS=$'\n\t'
+
+# Usage:
+#
+#   1. set $CIRCLE_CLI_TOKEN
+#   2. run `./trigger-build <account> <oroject> [<branch>]`
+#
+#   For https://github.com/iambob/myfirstproject:
+#
+#       trigger_build iambob myfirstproject
+#
+#   ... will build master
+_account=$1 # e.g. github user name or organization name
+_project=$2  # e.g. my_repo_name
+_branch=$3
+
+_circle_token=${CIRCLE_CLI_TOKEN}
+
+echo "Triggering build of $_account/$_project ($_branch)."
+trigger_build_url="https://circleci.com/api/v1.1/project/github/${_account}/${_project}/build?circle-token=${_circle_token}"
+post_data="{ \"branch\": \"${_branch}\"}"
+
+curl -s \
+--header "Accept: application/json" \
+--header "Content-Type: application/json" \
+--data "${post_data}" \
+-request POST "${trigger_build_url}"
