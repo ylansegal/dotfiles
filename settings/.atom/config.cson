@@ -62,7 +62,7 @@
   editor:
     confirmCheckoutHeadRevision: false
     fontFamily: "Hack"
-    fontSize: 17
+    fontSize: 16
     invisibles: {}
     lineHeight: 1.25
     preferredLineLength: 120
@@ -102,6 +102,7 @@
     command: "shim_rubocop"
   "linter-ui-default":
     panelHeight: 75
+    showPanel: true
   "markdown-preview":
     openPreviewInSplitPane: false
   metrics:
