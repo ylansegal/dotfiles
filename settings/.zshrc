@@ -51,7 +51,7 @@ function insert-fuzzy-path-in-command-line() {
     # Print a newline or we'll clobber the old prompt.
     echo
     # Find the path; abort if the user doesn't select anything.
-    selected_path=$(fd | fzf --multi | xargs echo) || return
+    selected_path=$(fd | sk --multi | xargs echo) || return
     # Append the selection to the current command buffer.
     eval 'LBUFFER="$LBUFFER$selected_path"'
     # Redraw the prompt since Selecta has drawn several new lines of text.
@@ -70,7 +70,7 @@ bindkey "^s" "insert-fuzzy-path-in-command-line"
 function insert-fuzzy-git-branch-in-command-line() {
     local selected_path
     echo
-    selected_path=$(git for-each-ref refs/heads | cut -d/ -f3- | fzf --multi | xargs echo) || return
+    selected_path=$(git for-each-ref refs/heads | cut -d/ -f3- | sk --multi | xargs echo) || return
     eval 'LBUFFER="$LBUFFER$selected_path"'
     zle reset-prompt
 }
@@ -85,7 +85,7 @@ bindkey "^b" "insert-fuzzy-git-branch-in-command-line"
 function insert-fuzzy-git-files-in-command-line() {
     local selected_path
     echo
-    selected_path=$(git status --porcelain | fzf --multi | sed s/^...// | xargs echo) || return
+    selected_path=$(git status --porcelain | sk --multi | sed s/^...// | xargs echo) || return
     eval 'LBUFFER="$LBUFFER$selected_path"'
     zle reset-prompt
 }
@@ -100,7 +100,7 @@ bindkey "^g" "insert-fuzzy-git-files-in-command-line"
 function insert-fuzzy-git-commits-in-command-line() {
     local selected_path
     echo
-    selected_path=$(git log --oneline --max-count=1000 --color=always | fzf --ansi | awk '{ print $1 }') || return st
+    selected_path=$(git log --oneline --max-count=1000 --color=always | sk --ansi | awk '{ print $1 }') || return st
     eval 'LBUFFER="$LBUFFER$selected_path"'
     zle reset-prompt
 }

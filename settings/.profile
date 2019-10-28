@@ -35,9 +35,9 @@ export EDITOR=nano
 export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
 # Elixir iex history
 export ERL_AFLAGS="-kernel shell_history enabled"
-# fzf options
-export FZF_DEFAULT_OPTS="--reverse"
-export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,node_modules}/*" 2> /dev/null'
+# sk options
+export SKIM_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
+export SKIM_DEFAULT_OPTIONS="--reverse"
 
 # Enable asdf
 source "/usr/local/opt/asdf/asdf.sh"
