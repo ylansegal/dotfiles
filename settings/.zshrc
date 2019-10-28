@@ -27,7 +27,7 @@ alias git='nocorrect git'
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(bundler colored-man-pages extract)
+plugins=(bundler colored-man-pages extract gitfast)
 
 source $ZSH/oh-my-zsh.sh
 
