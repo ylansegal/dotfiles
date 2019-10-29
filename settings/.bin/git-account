@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Opens GitHub on the current's branch PR
+
+# Unofficial strict mode:
+set -euo pipefail
+IFS=$'\n\t'
+
+git remote get-url origin | sed -E 's/git@github.com:(.*)\/(.*).git/\1/'
