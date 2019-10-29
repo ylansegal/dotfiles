@@ -7,3 +7,8 @@ ssh() {
   command ssh "$@"
   echo -e "\033]50;SetProfile=Default\a"
 }
+
+ssh_tmux() {
+  # Atatch or create a a "main" tmux session, configured for iTerm
+  ssh -t $1 'tmux -CC new -A -s main'
+}
