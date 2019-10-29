@@ -16,8 +16,8 @@ IFS=$'\n\t'
 #
 #   ... will build master
 
-_account=${1:-$(git remote get-url origin | sed -E 's/git@github.com:(.*)\/(.*).git/\1/')} # e.g. github user name or organization name
-_project=${2:-$(git remote get-url origin | sed -E 's/git@github.com:(.*)\/(.*).git/\2/')} # e.g. my_repo_name
+_account=${1:-$(git account)} # e.g. github user name or organization name
+_project=${2:-$(git project)} # e.g. my_repo_name
 _branch=${3:-$(git current-branch)}
 
 echo "Triggering build of $_account/$_project ($_branch)."
