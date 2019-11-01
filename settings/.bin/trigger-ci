@@ -1,31 +1,170 @@
 #!/usr/bin/env bash
+# Adapted from: https://gist.github.com/aks/04856d7765217e4ff9ae76aaacfa06e9
+# Which was
 # Adapted from https://discuss.circleci.com/t/branch-not-building/30499/10
+# Usage:
+#
+#   1. set \$CIRCLE_CLI_TOKEN or set token in ~/.circle/cli.yml
+#   2. run `./trigger-ci [[<account>] [[<oroject>] [<branch>]]]`
+#
+#   Examples to trigger builds in different ways:
+#
+#    trigger-ci                              # on the current branch
+#    trigger-ci  my-cool-branch              # on "my-cool-branch'
+#    trigger-ci  fun-stuff new-thing         # on "new-thing" in "funstuff" repo
+#    trigger-ci  mylogin fun-stuff new-thing
+
+PROG="${0##*/}"
+DIR="${0%*/}"
+
+talk() { echo "$*" 1>&2 ; }
+vtalk() { (( verbose )) && talk "$*" ; }
+error() { talk "$*" ; exit 1 ; }
+
+usage() {
+  (( $# > 0 )) && talk "$*"
+  cat 1>&2 <<USAGE
+usage: $PROG [options] ACCOUNT REPO BRANCH
+   or: $PROG [options] REPO BRANCH
+   or: $PROG [options] BRANCH
+   or: $PROG [options]
+This script triggers a CircleCI build given the proper arguments above.
+If BRANCH is not given, and the command is given within a repo directory, then
+the current branch is used by default.  However, the command is not
+automatically triggered unless the -a (auto) is also given.
+If ACCOUNT and REPO are not given, and the command is given within a repo
+directory, the "git remote -v" output is used and parsed for the current
+ACCOUNT and REPO values.  However, the command will not proceed automatically
+unless -a is given.
+If the environment variable CIRCLE_CLI_TOKEN is not defined, the path
+"$HOME/.circleci/cli.yml" is searched for a "token:" line, from which the
+actual token is extracted into the variable.
+Options:
+  -a      automatically proceed
+  -h      show this help
+  -n      don't actually do anything; but show it
+  -v      show the URL that triggers the build
+USAGE
+  exit 1
+}
+
+run() {
+  if [[ -n "$norun" ]]; then
+    talk "(norun) $*"
+  else
+    safe_run "$@"
+  fi
+  return 0
+}
+
+safe_run() {
+  if [[ -n "$verbose$norun" ]]; then
+    talk ">> $*"
+  fi
+  if ! eval "$@" ; then
+    code=$?
+    return $code
+  fi
+  return 0
+}
+
+circle_cli_yml_file="$HOME/.circleci/cli.yml"
+
+circle_cli_token() {
+  awk '/token:/ {print $2}' $circle_cli_yml_file 2>/dev/null
+}
+
+check_circle_ci_token() {
+  if [[ -z "$CIRCLE_CLI_TOKEN" ]] ; then
+    CIRCLE_CLI_TOKEN=`circle_cli_token`
+    export CIRCLE_CLI_TOKEN
+  fi
+  [[ -n "$CIRCLE_CLI_TOKEN" ]] || error "CIRCLE_CLI_TOKEN is not defined!"
+}
+
+get_current_repo_info() {
+  declare -g account= project= branch=
+  if [[ -d .git ]] ; then
+    fetch_info=`git remote -v | awk '/origin.*push/{print $2}'`
+    if [[ "$fetch_info" =~ [^@]+@github.com:([^/]+)/([^/.]+)\.git ]] ; then
+      account=${BASH_REMATCH[1]}
+      project=${BASH_REMATCH[2]}
+    fi
+    branch=`git rev-parse --abbrev-ref HEAD`
+  fi
+}
+
+check_arg() {
+  [[ -n "$2" ]] || usage "$1 was not given!"
+}
+
+confirm_implicit_data() {
+  if [[ -n "$implicit" && -z "$autorun" ]] ; then
+    talk "Some (or all) of this information was discovered:"
+    talk "  account: $account"
+    talk "  project: $project"
+    talk "  branch:  $branch"
+    while true ; do
+      read -p "Proceed? [yn] " ans
+      case "${ans:-no}" in
+        yes|y) break ;;
+        no|n)  error "Nothing done" ;;
+        *) talk "Please answer yes or no, or just <RETURN> (for no)" ;;
+      esac
+    done
+  fi
+}
+
+autorun=
+norun=
+verbose=
+implicit=
+
+while getopts 'ahnv' opt ; do
+  case "$opt" in
+    a) autorun=1 ;;
+    h) usage ;;
+    n) norun=1 ;;
+    v) verbose=1 ;;
+  esac
+done
+shift $((OPTIND - 1))
+
+check_circle_ci_token
+get_current_repo_info
+
+implicit=1
+case "$#" in
+  0) ;;
+  1) branch="$1" ;;
+  2) project="$1" branch="$2" ;;
+  3) account="$1" project="$2" branch="$3" implicit= ;;
+  *)
+    talk "Too many arguments";
+    usage
+    ;;
+esac
+
+check_arg account "$account"
+check_arg project "$project"
+check_arg branch  "$branch"
+
+confirm_implicit_data
+
+circle_token=$CIRCLE_CLI_TOKEN
 
 # Unofficial strict mode:
 set -euo pipefail
 IFS=$'\n\t'
 
-# Usage:
-#
-#   1. set $CIRCLE_CLI_TOKEN
-#   2. run `./trigger-build <account> <oroject> [<branch>]`
-#
-#   For https://github.com/iambob/myfirstproject:
-#
-#       trigger_build iambob myfirstproject
-#
-#   ... will build master
+talk "Triggering build of $account/$project ($branch)."
+trigger_build_url="https://circleci.com/api/v1.1/project/github/${account}/${project}/build?circle-token=${circle_token}"
+post_data="{ \"branch\": \"${branch}\"}"
 
-_account=${1:-$(git account)} # e.g. github user name or organization name
-_project=${2:-$(git project)} # e.g. my_repo_name
-_branch=${3:-$(git current-branch)}
+cmd="curl -s --header 'Accept: application/json' --header 'Content-Type: application/json'"
+cmd+=" --data '${post_data}'"
+cmd+=" --request POST '${trigger_build_url}'"
 
-echo "Triggering build of $_account/$_project ($_branch)."
-trigger_build_url="https://circleci.com/api/v1.1/project/github/${_account}/${_project}/build?circle-token=${CIRCLE_CLI_TOKEN}"
-post_data="{ \"branch\": \"${_branch}\"}"
-
-curl -s \
---header "Accept: application/json" \
---header "Content-Type: application/json" \
---data "${post_data}" \
---request POST "${trigger_build_url}"
+run "$cmd"
+talk ''
+exit
