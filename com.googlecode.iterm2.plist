@@ -2804,7 +2804,7 @@
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>155 473 592 584 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>567 17 1195 1040 0 0 1920 1057 </string>
+	<string>402 0 1195 1027 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>526 -169 1276 1018 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -6769,6 +6769,8 @@
 	<true/>
 	<key>UseLionStyleFullscreen</key>
 	<false/>
+	<key>UseTmuxStatusBar</key>
+	<true/>
 	<key>VisualIndicatorForEsc</key>
 	<false/>
 	<key>WebKitDefaultFontSize</key>
