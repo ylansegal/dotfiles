@@ -10,7 +10,7 @@ ssh() {
   if [[ ${@: -1} =~ procore ]]; then
     # Atatch or create a a "main" tmux session, configured for iTerm
     set -x
-    command ssh -t "$@" 'tmux -CC new -A -s main'
+    command ssh -t "$@" 'tmux -CC new -A -s ylan'
   else
     command ssh "$@"
   fi
