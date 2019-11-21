@@ -35,8 +35,13 @@
       $1
       ```$0
     """
-  'pr':
+  'w':
     'prefix': 'w'
     'body': """
       [[Procore/$1]]: $0
+    """
+  'wt':
+    'prefix': 'wt'
+    'body': """
+      - [ ] [[Procore/$1]]: $0
     """
