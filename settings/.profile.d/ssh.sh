@@ -16,3 +16,11 @@ ssh() {
   fi
   echo -e "\033]50;SetProfile=Default\a"
 }
+
+aws-ssh() {
+  # Set iTerm profile to Ssh
+  echo -e "\033]50;SetProfile=Ssh\a"
+  set -x
+  command aws-ssh "$@"
+  echo -e "\033]50;SetProfile=Default\a"
+}
