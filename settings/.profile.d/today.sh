@@ -12,6 +12,7 @@ today() {
       # Remove anything after "---" so it doesn't carry over to the note
       awk 'NR == 1 { output = 1 }; /---/ { output = 0 }; output { print }' \
       > $target_note
+      echo "---" >> $target_note
   fi
 
   local editor=${NOTES_EDITOR:-atom}

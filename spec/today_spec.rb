@@ -35,6 +35,7 @@ RSpec.describe 'today' do
       # Next
       - [ ] Not Done
 
+      ---
     MARKDOWN
   end
 end
