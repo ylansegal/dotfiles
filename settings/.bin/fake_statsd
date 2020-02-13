@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+require "socket"
+u = UDPSocket.new
+u.bind("127.0.0.1", 8125)
+
+puts "Fake statsd server started on port 8125"
+puts "----------------------------------------"
+puts
+
+loop do
+  stat, _ = u.recvfrom(1000)
+  puts stat
+end
