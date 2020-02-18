@@ -85,7 +85,6 @@ $ ln -s Personal/dotfiles/settings/.gitignore .gitignore
 ```
 $ cd dotfiles
 $ git remote set-url origin git@github.com:ylansegal/dotfiles.git
-$ git submodule init && git submodule update
 ```
 
 ### Install atom packages
