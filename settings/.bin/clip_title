@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+require "bundler/inline"
+
+gemfile do
+  source "https://rubygems.org"
+  gem "activesupport"
+end
+
+require "active_support/core_ext/string/inflections"
+
+input = ARGV.empty? ? STDIN.read : ARGV.join(" ")
+
+puts input.titleize.gsub(" ", "")
