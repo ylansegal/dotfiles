@@ -1,11 +1,10 @@
-require 'spec_helper'
-require 'tmpdir'
-require 'date'
+require "spec_helper"
+require "tmpdir"
+require "date"
 
-
-RSpec.describe 'today' do
+RSpec.describe "today" do
   def exec_today
-    %x{NOTES_HOME=#{tmpdir} NOTES_EDITOR=echo source $HOME/.profile.d/today.sh && today}
+    `NOTES_HOME=#{tmpdir} NOTES_EDITOR=echo source $HOME/.profile.d/today.sh && today`
   end
 
   let(:tmpdir) { Dir.mktmpdir }
@@ -20,16 +19,16 @@ RSpec.describe 'today' do
       This should be trimmed!
     MARKDOWN
   }
-  let(:new_note) {  File.read("#{tmpdir}/DailyLog/#{Date.today}.md") }
+  let(:new_note) { File.read("#{tmpdir}/DailyLog/#{Date.today}.md") }
 
   before do
     Dir.mkdir(File.join(tmpdir, "DailyLog"))
-    File.open("#{tmpdir}/DailyLog/2020-01-01.md", 'w') do |file|
+    File.open("#{tmpdir}/DailyLog/2020-01-01.md", "w") do |file|
       file << last_note
     end
   end
 
-  it 'removes done things and creates a new note' do
+  it "removes done things and creates a new note" do
     exec_today
     expect(new_note).to eq <<~MARKDOWN
       # Next
