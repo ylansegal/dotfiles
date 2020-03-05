@@ -13,7 +13,7 @@ RSpec.describe "clip_title" do
     end
   end
 
-  it 'handles input from standin' do
+  it 'handles input from stdin' do
     output = %x{echo "harry potter" | clip_title}
     expect(output).to eq("#{Date.today.to_s}-HarryPotter\n")
   end
