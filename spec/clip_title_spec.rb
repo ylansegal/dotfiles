@@ -4,7 +4,8 @@ require 'date'
 RSpec.describe "clip_title" do
   TRUTH_TABLE = {
     "Millions of tiny databases" => "#{Date.today}-MillionsOfTinyDatabases",
-  }
+    "A successful Git branching model" => "#{Date.today}-ASuccessfulGitBranchingModel"
+  }.freeze
 
   TRUTH_TABLE.each do |input, expected_output|
     it "generates a title suitable for clipping" do
