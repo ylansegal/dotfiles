@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 
 require "bundler/inline"
+require "date"
 
 gemfile do
   source "https://rubygems.org"
@@ -10,5 +11,6 @@ end
 require "active_support/core_ext/string/inflections"
 
 input = ARGV.empty? ? STDIN.read : ARGV.join(" ")
+title = input.titleize.gsub(" ", "")
 
-puts input.titleize.gsub(" ", "")
+puts "#{Date.today}-#{title}"
