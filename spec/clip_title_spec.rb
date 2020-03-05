@@ -3,19 +3,19 @@ require "date"
 
 RSpec.describe "clip_title" do
   CLIP_TITLE_TRUTH_TABLE = {
-    "Millions of tiny databases" => "#{Date.today}-MillionsOfTinyDatabases",
-    "A successful Git branching model" => "#{Date.today}-ASuccessfulGitBranchingModel"
+    "Millions of tiny databases" => "Clips/#{Date.today}-MillionsOfTinyDatabases",
+    "A successful Git branching model" => "Clips/#{Date.today}-ASuccessfulGitBranchingModel"
   }.freeze
 
   CLIP_TITLE_TRUTH_TABLE.each do |input, expected_output|
-    it "generates a title suitable for clipping" do
+    it "generates a clip file title from command arguments (#{input})" do
       output = `clip_title #{input}`
       expect(output).to eq("#{expected_output}\n")
     end
-  end
 
-  it "handles input from stdin" do
-    output = `echo "harry potter" | clip_title`
-    expect(output).to eq("#{Date.today}-HarryPotter\n")
+    it "generates a clip file title from stdin (#{input})" do
+      output = `echo #{input} | clip_title`
+      expect(output).to eq("#{expected_output}\n")
+    end
   end
 end
