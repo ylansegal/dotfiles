@@ -6,6 +6,7 @@
 .direnv
 .envrc
 .gemtags
+.idea
 .rspec
 .starscope.db
 .tags*
