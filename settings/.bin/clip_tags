@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Finds all existing tags
+
+SEARCH_DIR=${ARGV[0]:./Clips}
+
+rg --no-line-number --no-filename '^\\#' Clips | sort | uniq
