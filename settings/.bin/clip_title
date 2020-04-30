@@ -11,6 +11,6 @@ end
 require "active_support/core_ext/string/inflections"
 
 input = ARGV.empty? ? STDIN.read : ARGV.join(" ")
-title = input.titleize.gsub(" ", "")
+title = input.titleize.gsub(/\W/, "")
 
 puts "Clips/#{Date.today}-#{title}"

@@ -4,7 +4,8 @@ require "date"
 RSpec.describe "clip_title" do
   CLIP_TITLE_TRUTH_TABLE = {
     "Millions of tiny databases" => "Clips/#{Date.today}-MillionsOfTinyDatabases",
-    "A successful Git branching model" => "Clips/#{Date.today}-ASuccessfulGitBranchingModel"
+    "A successful Git branching model" => "Clips/#{Date.today}-ASuccessfulGitBranchingModel",
+    "Build a Twitter with Rails, CableReady, and StimulusReflex" => "Clips/#{Date.today}-BuildATwitterWithRailsCableReadyAndStimulusReflex"
   }.freeze
 
   CLIP_TITLE_TRUTH_TABLE.each do |input, expected_output|
