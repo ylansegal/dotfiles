@@ -35,6 +35,13 @@
       $1
       ```$0
     """
+  'java':
+    'prefix': 'java'
+    'body': """
+      ```java
+      $1
+      ```$0
+    """
   'w':
     'prefix': 'w'
     'body': """

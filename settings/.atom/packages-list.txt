@@ -2,18 +2,22 @@ KeyCount@0.2.0
 advanced-open-file@0.16.8
 atom-beautify@0.33.4
 atom-elixir-formatter@2.0.0
+atom-notes@1.23.0
 atom-test-switcher@0.0.1
+autocomplete-java@1.2.7
 base16-ocean-dark-syntax-theme@0.1.10
+busy@0.7.0
 busy-signal@2.0.1
 diagrams@0.30.0
 elixir-jump-around@0.3.1
 git-blame@1.8.0
 ide-crystal@0.3.3
 intentions@1.1.5
+language-atom-notes@0.4.1
 language-crystal-actual@0.37.2
 language-diff@0.7.0
 language-docker@1.1.8
-language-elixir@0.23.0
+language-elixir@0.24.0
 language-haml@0.32.1
 language-hql@4.2.0
 language-kotlin@0.5.0
@@ -21,7 +25,7 @@ language-plantuml@0.2.0
 language-puppet@0.23.0
 language-rspec@0.12.1
 language-slim@1.0.1
-language-terraform@0.8.1
+language-terraform@0.9.3
 language-typescript-grammars-only@1.6.0
 linter@2.3.1
 linter-rubocop@2.5.7
@@ -34,6 +38,5 @@ ruby-syntax-replacer@0.5.1
 toggle-markdown-task-with-ongoing@0.0.6
 toggle-quotes@1.1.4
 unity-ui@2.1.11
-wikilink@0.14.0
 zentabs@0.8.9
 

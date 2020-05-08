@@ -18,6 +18,7 @@
 #
 'atom-text-editor':
   'cmd-.': 'atom-test-switcher:switch'
+  'ctrl-enter': 'atom-notes:interlink'
 'atom-text-editor[data-grammar="source elixir"]':
   "cmd-.": "elixir-jump-around:toggle-test-file"
 ".autocomplete-plus input.hidden-input":
