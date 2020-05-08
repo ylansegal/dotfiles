@@ -3,3 +3,4 @@ erlang 21.0.9
 kubectl 1.10.3
 nodejs 10.15.3
 ruby 2.6.6
+java adopt-openjdk-11.0.6+10
