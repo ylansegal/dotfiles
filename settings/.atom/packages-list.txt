@@ -28,6 +28,7 @@ language-slim@1.0.1
 language-terraform@0.9.3
 language-typescript-grammars-only@1.6.0
 linter@2.3.1
+linter-javac@1.10.0
 linter-rubocop@2.5.7
 linter-shellcheck@1.6.0
 linter-ui-default@1.8.1

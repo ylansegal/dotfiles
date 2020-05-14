@@ -11,7 +11,8 @@
     detectGitProjectAndUseGitGrep: false
   "atom-lint": {}
   "atom-notes":
-    directory: "~/Personal/Notes"
+    directory: "/Users/ylans/Personal/Notes"
+    useLunrPipeline: false
   "atom-package-deps":
     ignored: []
   "atom-terminal-panel": {}
@@ -45,6 +46,7 @@
       "github"
       "linter"
       "autocomplete-java"
+      "plantuml-viewer"
     ]
     ignoredNames: [
       ".git"
@@ -61,7 +63,7 @@
     telemetryConsent: "limited"
     themes: [
       "unity-ui"
-      "base16-ocean-dark-syntax-theme"
+      "base16-tomorrow-dark-theme"
     ]
   editor:
     confirmCheckoutHeadRevision: false
@@ -104,12 +106,16 @@
     flags: "--strict"
   "linter-elixirc":
     elixircExecutablePath: "/usr/local/bin/elixirc"
+  "linter-javac":
+    classpathFilename: ".classpath-atom"
+    verboseLogging: true
   "linter-rubocop":
     command: "shim_rubocop"
   "linter-spell":
     spellPath: "aspell"
   "linter-ui-default":
     panelHeight: 75
+    showPanel: true
   "markdown-preview":
     grammars: [
       "source.gfm"
@@ -138,6 +144,7 @@
     command: "smart_rspec"
     force_colored_results: false
   "spell-check":
+    addKnownWords: true
     excludedScopes: [
       "markup.raw.gfm"
       "interlink"
@@ -155,6 +162,9 @@
     knownWords: [
       "Procore"
       "idempotency"
+      "Haiyang"
+      "Ylan"
+      "Segal"
     ]
     useLocales: false
   "split-diff":
@@ -170,7 +180,6 @@
   "terminal-panel": {}
   "tree-view":
     alwaysOpenExisting: true
-    hideVcsIgnoredFiles: true
     squashDirectoryNames: true
   "unity-ui":
     colorStatusIndicatorsInTreeView: true
