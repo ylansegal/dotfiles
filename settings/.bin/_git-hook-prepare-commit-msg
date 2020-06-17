@@ -13,6 +13,6 @@ if [[ $ticket_number ]]; then
   # Otherwise, prepend the ticket number
 
   awk "NR == 1 { output = 1 }; /^#/ { output = 0 }; output { print }" $1 |\
-    grep --quiet --extended-regexp '[A-Z]{2,8}-[0-9]{1,5}' ||
+    grep --quiet --extended-regexp $JIRA_TICKET_REGEX ||
     printf '%s\n%s\n' "$ticket_number: " "$(cat $1)" > $1
 fi
