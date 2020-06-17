@@ -2806,7 +2806,7 @@
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>127 443 592 584 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>402 4 1276 1018 0 0 1680 1027 </string>
+	<string>640 0 1276 1057 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>642 17 1276 1040 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -6814,6 +6814,7 @@
 		<string>3.3.10beta2</string>
 		<string>3.3.10beta3</string>
 		<string>3.3.10beta4</string>
+		<string>3.3.11beta1</string>
 	</array>
 	<key>NoSyncAutoBurialReveal</key>
 	<true/>
@@ -6831,9 +6832,9 @@
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{0, 0}, {1920, 1080}}</string>
+		<string>{{0, 0}, {1680, 1050}}</string>
 		<key>topLeft</key>
-		<string>{310, 648}</string>
+		<string>{269, 595}</string>
 	</dict>
 	<key>NoSyncHaveRequestedFullDiskAccess</key>
 	<true/>
@@ -6844,7 +6845,7 @@
 	<key>NoSyncLastTipTime</key>
 	<real>577760218.64241004</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>176</integer>
+	<integer>187</integer>
 	<key>NoSyncNeverAskAboutSettingAlternateMouseScroll</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
@@ -7686,6 +7687,8 @@
 	</dict>
 	<key>PrefsCustomFolder</key>
 	<string>/Users/ylans/Personal/dotfiles</string>
+	<key>PreventEscapeSequenceFromChangingProfile</key>
+	<false/>
 	<key>Print In Black And White</key>
 	<true/>
 	<key>PromptOnQuit</key>
@@ -7705,11 +7708,11 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-05-13T23:59:12Z</date>
+	<date>2020-06-09T16:19:49Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateGroupIdentifier</key>
-	<integer>307531462</integer>
+	<integer>3988629703</integer>
 	<key>SUUpdateRelaunchingMarker</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -7779,7 +7782,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.3.10beta4</string>
+	<string>3.3.11beta1</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>7</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
