@@ -44,7 +44,6 @@
       "linter-crystal"
       "linter-elixir-credo"
       "github"
-      "linter"
       "autocomplete-java"
       "plantuml-viewer"
     ]
@@ -95,6 +94,7 @@
     showIconsInEditorGutter: true
   "ide-java":
     javaHome: "/Users/ylans/.asdf/installs/java/adopt-openjdk-11.0.6+10"
+  "language-atom-notes": {}
   "language-markdown":
     addListItems: false
   linter:
@@ -115,7 +115,6 @@
     spellPath: "aspell"
   "linter-ui-default":
     panelHeight: 75
-    showPanel: true
   "markdown-preview":
     grammars: [
       "source.gfm"
@@ -180,6 +179,7 @@
   "terminal-panel": {}
   "tree-view":
     alwaysOpenExisting: true
+    hideVcsIgnoredFiles: true
     squashDirectoryNames: true
   "unity-ui":
     colorStatusIndicatorsInTreeView: true
