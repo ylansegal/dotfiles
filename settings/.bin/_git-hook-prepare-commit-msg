@@ -1,13 +1,18 @@
 #!/usr/bin/env bash
 # Pre-populate commit message with ticket number
 
+# $1: The first is the name of the file that contains the commit log message.
+# $2: Optional. It is the source of the commit message, and can be:
+#     message, template, merge, squash, commit
+# $3: Optional. Commit SHA-1
+
 branch=$(git current-branch)
 ticket_number=$(jira_ticket_number $branch)
-
 if [[ $ticket_number ]]; then
-  # If file already contains ticket number before comments, don't do anything
+  # If file already contains *any* ticket number before comments, don't do anything
   # Otherwise, prepend the ticket number
+
   awk "NR == 1 { output = 1 }; /^#/ { output = 0 }; output { print }" $1 |\
-    grep -q $ticket_number ||
+    grep --quiet --extended-regexp '[A-Z]{2,8}-[0-9]{1,5}' ||
     printf '%s\n%s\n' "$ticket_number: " "$(cat $1)" > $1
 fi
