@@ -4,10 +4,8 @@
 branch=$(git current-branch)
 ticket_number=$(jira_ticket_number $branch)
 
-
-
 if [[ $ticket_number ]]; then
-  # If file already contains tiket number before comments, don't do anythings
+  # If file already contains ticket number before comments, don't do anything
   # Otherwise, prepend the ticket number
   awk "NR == 1 { output = 1 }; /^#/ { output = 0 }; output { print }" $1 |\
     grep -q $ticket_number ||
