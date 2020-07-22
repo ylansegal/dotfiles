@@ -11,6 +11,7 @@
 .starscope.db
 .tags*
 .tool-versions
+.yardoc
 TODO.md
 tags
 to_do
