@@ -67,7 +67,7 @@
   editor:
     confirmCheckoutHeadRevision: false
     fontFamily: "Hack"
-    fontSize: 16
+    fontSize: 17
     invisibles: {}
     lineHeight: 1.25
     preferredLineLength: 120
@@ -100,6 +100,8 @@
   linter:
     lintOnChange: false
     lintOnEditorFocus: false
+    lintOnOpen: false
+    lintPreviewTabs: false
   "linter-crystal":
     command: "compile"
   "linter-elixir-credo":
@@ -110,7 +112,7 @@
     classpathFilename: ".classpath-atom"
     verboseLogging: true
   "linter-rubocop":
-    command: "shim_rubocop"
+    useBundler: true
   "linter-spell":
     spellPath: "aspell"
   "linter-ui-default":
@@ -191,6 +193,7 @@
     ignoreWhitespaceOnCurrentLine: false
   wikilink: {}
   zentabs:
+    manualMode: true
     maximumOpenedTabs: 10
     neverCloseDirty: true
     neverCloseNew: true
