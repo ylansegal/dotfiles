@@ -34,6 +34,7 @@ cask "alfred"
 cask "atom"
 cask "gpg-suite"
 cask "iterm2"
+cask "meetingbar"
 cask "rectangle"
 
 tap "homebrew/cask-fonts"
