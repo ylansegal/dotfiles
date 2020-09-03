@@ -12,7 +12,7 @@ else
   BRANCH="$DEFAULT_BRANCH"
 fi
 
-(git diff --name-only origin/$BRANCH..HEAD; git ls-files -m --other --exclude-standard) | \
+(git diff --name-only origin/$BRANCH...; git ls-files -m --other --exclude-standard) | \
 sed -E 's/.*\/(.*)\.rb/\1/' | \
 while read name; do \
   find spec -name "*$name*_spec.rb"; \
