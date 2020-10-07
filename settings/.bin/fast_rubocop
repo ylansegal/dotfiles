@@ -1,0 +1,22 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'bundler/inline'
+
+gemfile = 'Gemfile.shared'
+regex = %r{https://([\da-fA-F]{48}):@packagecloud.io/ProcoreTech/ruby-style-guide}
+ruby_style_guide_version = File.exist?(gemfile) && File.new(gemfile).each.grep(regex).first.match(regex)[1]
+
+gemfile do
+  source 'https://rubygems.org'
+
+  if ruby_style_guide_version
+    gem 'ruby-style-guide', source: "https://#{ruby_style_guide_version}:@packagecloud.io/ProcoreTech/ruby-style-guide"
+  else
+    gem 'rubocop'
+  end
+end
+
+require 'rubocop'
+
+RuboCop::CLI.new.run
