@@ -27,7 +27,6 @@
   "bracket-matcher":
     highlightMatchingLineNumber: true
   core:
-    closeDeletedFileTabs: true
     customFileTypes:
       "source.ruby.gemfile": [
         "Gemfile.shared"
@@ -112,6 +111,7 @@
     classpathFilename: ".classpath-atom"
     verboseLogging: true
   "linter-rubocop":
+    command: "shim_rubocop"
     useBundler: true
   "linter-spell":
     spellPath: "aspell"
@@ -181,7 +181,6 @@
   "terminal-panel": {}
   "tree-view":
     alwaysOpenExisting: true
-    hideVcsIgnoredFiles: true
     squashDirectoryNames: true
   "unity-ui":
     colorStatusIndicatorsInTreeView: true

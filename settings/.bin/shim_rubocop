@@ -1,10 +1,20 @@
 #!/usr/bin/env bash
 
-bundle show rubocop &> /dev/null
-if [ $? == 0 ]; then
-  RUBOCOP="bundle exec rubocop"
+if [ -f ".standard.yml" ]; then
+  if [ -f "bin/standardrb" ]; then
+    RUBOCOP="bin/standardrb"
+  else
+    RUBOCOP="standardrb"
+  fi
 else
-  RUBOCOP=rubocop
+  bundle show rubocop &> /dev/null
+  if [ $? == 0 ]; then
+    RUBOCOP="fast_rubocop"
+  else
+    RUBOCOP="rubocop"
+  fi
 fi
+
+
 
 $RUBOCOP "$@"
