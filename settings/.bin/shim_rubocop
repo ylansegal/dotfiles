@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+set -euo pipefail
+set -x
 
 if [ -f ".standard.yml" ]; then
   if [ -f "bin/standardrb" ]; then
@@ -7,14 +9,12 @@ if [ -f ".standard.yml" ]; then
     RUBOCOP="standardrb"
   fi
 else
-  bundle show rubocop &> /dev/null
-  if [ $? == 0 ]; then
+  if [ -v FAST_RUBOCOP ]; then
     RUBOCOP="fast_rubocop"
   else
     RUBOCOP="rubocop"
   fi
 fi
 
-
-
+set -x
 $RUBOCOP "$@"
