@@ -1,9 +1,9 @@
 # IRBRC file by Iain Hecker, http://iain.nl
 # put all this in your ~/.irbrc
-require 'rubygems'
-require 'yaml'
+require "rubygems"
+require "yaml"
 
-alias q exit
+alias_method :q, :exit
 
 class Object
   def local_methods
@@ -12,27 +12,28 @@ class Object
 end
 
 ANSI = {}
-ANSI[:RESET]     = "\e[0m"
-ANSI[:BOLD]      = "\e[1m"
+ANSI[:RESET] = "\e[0m"
+ANSI[:BOLD] = "\e[1m"
 ANSI[:UNDERLINE] = "\e[4m"
-ANSI[:LGRAY]     = "\e[0;37m"
-ANSI[:GRAY]      = "\e[0;90m"
-ANSI[:RED]       = "\e[31m"
-ANSI[:GREEN]     = "\e[32m"
-ANSI[:YELLOW]    = "\e[33m"
-ANSI[:BLUE]      = "\e[34m"
-ANSI[:MAGENTA]   = "\e[35m"
-ANSI[:CYAN]      = "\e[36m"
-ANSI[:WHITE]     = "\e[37m"
+ANSI[:LGRAY] = "\e[0;37m"
+ANSI[:GRAY] = "\e[0;90m"
+ANSI[:RED] = "\e[31m"
+ANSI[:GREEN] = "\e[32m"
+ANSI[:YELLOW] = "\e[33m"
+ANSI[:BLUE] = "\e[34m"
+ANSI[:MAGENTA] = "\e[35m"
+ANSI[:CYAN] = "\e[36m"
+ANSI[:WHITE] = "\e[37m"
 
 # Build a simple colorful IRB prompt
 IRB.conf[:PROMPT][:SIMPLE_COLOR] = {
-  :PROMPT_I => "#{ANSI[:BLUE]}>>#{ANSI[:RESET]} ",
-  :PROMPT_N => "#{ANSI[:BLUE]}>>#{ANSI[:RESET]} ",
-  :PROMPT_C => "#{ANSI[:RED]}?>#{ANSI[:RESET]} ",
-  :PROMPT_S => "#{ANSI[:YELLOW]}?>#{ANSI[:RESET]} ",
-  :RETURN   => "#{ANSI[:GREEN]}=>#{ANSI[:RESET]} %s\n",
-  :AUTO_INDENT => true }
+  PROMPT_I: "#{ANSI[:BLUE]}>>#{ANSI[:RESET]} ",
+  PROMPT_N: "#{ANSI[:BLUE]}>>#{ANSI[:RESET]} ",
+  PROMPT_C: "#{ANSI[:RED]}?>#{ANSI[:RESET]} ",
+  PROMPT_S: "#{ANSI[:YELLOW]}?>#{ANSI[:RESET]} ",
+  RETURN: "#{ANSI[:GREEN]}=>#{ANSI[:RESET]} %s\n",
+  AUTO_INDENT: true
+}
 IRB.conf[:PROMPT_MODE] = :SIMPLE
 
 # Loading extensions of the console. This is wrapped
@@ -51,11 +52,10 @@ rescue LoadError
 end
 $console_extensions = []
 
-
 # awesome_print is prints prettier than pretty_print
-extend_console 'ap' do
-  alias pp ap
+extend_console "ap" do
+  alias_method :pp, :ap
 end
 
 # Show results of all extension-loading
-puts "#{ANSI[:GRAY]}~> Console extensions:#{ANSI[:RESET]} #{$console_extensions.join(' ')}#{ANSI[:RESET]}"
+puts "#{ANSI[:GRAY]}~> Console extensions:#{ANSI[:RESET]} #{$console_extensions.join(" ")}#{ANSI[:RESET]}"
