@@ -1,3 +1,9 @@
 #!/usr/bin/env bash
 
-sk --ansi -i --delimiter ':' --nth 1 -c 'rg "{}"' --preview 'bat --style=numbers --color=always {1}'
+sk \
+  --multi \
+  --ansi \
+  --interactive \
+  --delimiter ':' --nth 1 --cmd 'rg "{}"' \
+  --preview 'bat --style=numbers --color=always {1}' \
+  | cut -f 1 -d ':'
