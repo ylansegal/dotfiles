@@ -11,7 +11,11 @@ else
   if [ -v FAST_RUBOCOP ]; then
     RUBOCOP="fast_rubocop"
   else
-    RUBOCOP="rubocop"
+    if [ -f "bin/rubocop" ]; then
+      RUBOCOP="bin/rubocop"
+    else
+      RUBOCOP="rubocop"
+    fi
   fi
 fi
 
