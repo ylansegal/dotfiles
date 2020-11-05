@@ -42,6 +42,13 @@
       $1
       ```$0
     """
+  'bash':
+    'prefix': 'bash'
+    'body': """
+      ```bash
+      $1
+      ```$0
+    """
   'w':
     'prefix': 'w'
     'body': """
