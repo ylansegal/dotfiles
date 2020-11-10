@@ -8,7 +8,7 @@ if [ -f ".standard.yml" ]; then
     RUBOCOP="standardrb"
   fi
 else
-  if [ -v FAST_RUBOCOP ]; then
+  if [ "${FAST_RUBOCOP+x}" ]; then
     RUBOCOP="fast_rubocop"
   else
     if [ -f "bin/rubocop" ]; then
