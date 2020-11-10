@@ -42,9 +42,9 @@
       "pretty-json"
       "linter-crystal"
       "linter-elixir-credo"
-      "github"
       "autocomplete-java"
       "plantuml-viewer"
+      "github"
     ]
     ignoredNames: [
       ".git"
@@ -66,7 +66,7 @@
   editor:
     confirmCheckoutHeadRevision: false
     fontFamily: "Hack"
-    fontSize: 17
+    fontSize: 18
     invisibles: {}
     lineHeight: 1.25
     preferredLineLength: 120
@@ -112,7 +112,6 @@
     verboseLogging: true
   "linter-rubocop":
     command: "shim_rubocop"
-    useBundler: true
   "linter-spell":
     spellPath: "aspell"
   "linter-ui-default":
@@ -181,6 +180,7 @@
   "terminal-panel": {}
   "tree-view":
     alwaysOpenExisting: true
+    hideVcsIgnoredFiles: true
     squashDirectoryNames: true
   "unity-ui":
     colorStatusIndicatorsInTreeView: true
