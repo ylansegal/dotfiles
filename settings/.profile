@@ -40,6 +40,8 @@ export SKIM_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
 export SKIM_DEFAULT_OPTIONS="--reverse"
 # JIRA utilities
 export JIRA_TICKET_REGEX='[A-Z]{2,8}-[0-9]{1,5}'
+# Zettlekasten Notes
+export ZK_HOME=~/Personal/Notes
 
 # Enable asdf
 source "/usr/local/opt/asdf/asdf.sh"
