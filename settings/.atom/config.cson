@@ -60,7 +60,7 @@
     restorePreviousWindowsOnStart: "no"
     telemetryConsent: "limited"
     themes: [
-      "unity-ui"
+      "atom-dark-ui"
       "base16-tomorrow-dark-theme"
     ]
   editor:
