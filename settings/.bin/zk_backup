@@ -2,6 +2,8 @@
 set -euo pipefail
 
 cd $ZK_HOME
+[[ -d .git ]] || return
+
 git add .
 git commit -m "Backup for $(date +%Y-%m-%d)"
 git push origin main
