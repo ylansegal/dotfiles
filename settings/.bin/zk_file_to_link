@@ -2,4 +2,4 @@
 # Convert a zk file name into a wiki-link
 set -euo pipefail
 
-sed -E 's/(.*)(\.md)/[[\1]]/'
+sed -E 's/(.*)(\.md)/[[\1]]/' /dev/stdin
