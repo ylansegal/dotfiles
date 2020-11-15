@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Backup ZH_HOME directory using git
 set -euo pipefail
 
 cd $ZK_HOME

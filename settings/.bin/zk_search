@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+# Interactive search in notes content
+set -euo pipefail
+
+cd $ZK_HOME
 
 sk \
   --multi \
