@@ -3,7 +3,7 @@
 set -euo pipefail
 
 cd $ZK_HOME
-[[ -d .git ]] || return
+[[ -d .git ]] || exit 0
 
 git add .
 git commit -m "Backup for $(date +%Y-%m-%d)"
