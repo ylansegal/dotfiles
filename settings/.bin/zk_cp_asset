@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Copies asset to ZK_HOME/.asset
+set -euo pipefail
+
+file_name=`basename $1`
+file_ext=${file_name##*.}
+
+new_asset_name="/.assets/`uuidgen`.$file_ext"
+
+cp $1 "${ZK_HOME}$new_asset_name"
+
+echo $new_asset_name
