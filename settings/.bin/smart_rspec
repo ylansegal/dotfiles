@@ -16,7 +16,12 @@ else
   fi
 fi
 
-CMD="$RSPEC $*"
+if [ $# -eq 0 ]; then
+  # No arguments, we will run all specs
+  CMD="$RSPEC --format=progress"
+else
+  CMD="$RSPEC $*"
+fi
 
 if [[ "${SMART_RSPEC_QUIET+x}" ]]; then
   echo "$CMD 2> /dev/null"
