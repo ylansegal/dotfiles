@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Generate tag index
+set -euo pipefail
+
+cd $ZK_HOME
+
+rg --no-filename '^\[\[Tags/.*\]\]' |\
+  sort |\
+  uniq > Tags.md
