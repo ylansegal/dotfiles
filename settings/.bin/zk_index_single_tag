@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Generate file with links for a specific tag
+set -euo pipefail
+
+cd $ZK_HOME
+
+filename=$(echo $1 | zk_link_to_file)
+
+rg --type md --files-with-matches --sort path --fixed-strings "$1" |\
+  grep -v "^Tags.md" |\
+  zk_file_to_link > "$filename"

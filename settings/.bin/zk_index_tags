@@ -4,6 +4,13 @@ set -euo pipefail
 
 cd $ZK_HOME
 
+# Generate tag index
 rg --no-filename '^\[\[Tags/.*\]\]' |\
   sort |\
   uniq > Tags.md
+
+# Generate Individual tag file
+while IFS= read -r tag
+do
+  zk_index_single_tag $tag </dev/null
+done < Tags.md
