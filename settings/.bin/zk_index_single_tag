@@ -6,6 +6,9 @@ cd $ZK_HOME
 
 filename=$(echo $1 | zk_link_to_file)
 
-rg --type md --files-with-matches --sort path --fixed-strings "$1" |\
+echo "# Used in:" > $filename
+
+rg --type md --files-with-matches --fixed-strings "$1" |\
   grep -v "^Tags.md" |\
-  zk_file_to_link > "$filename"
+  sort |\
+  zk_file_to_link >> "$filename"
