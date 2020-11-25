@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Convert a wiki-link into a markdown file name
+set -euo pipefail
+
+sed -E 's/\[\[(.*)\]\]/\1\.md/' /dev/stdin
