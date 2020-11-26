@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-# Finds all existing tags
-set -euo pipefail
-
-cd $ZK_HOME
-
-rg --no-line-number --no-filename '^\\#\S' . | sort | uniq -c | sort
