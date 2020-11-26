@@ -3,12 +3,25 @@
 set -euo pipefail
 
 cd $ZK_HOME
+tag=$1
+filename=$(echo $tag | zk_link_to_file)
 
-filename=$(echo $1 | zk_link_to_file)
-
+# Index tag usage
 echo "# Used in:" > $filename
 
-rg --type md --files-with-matches --fixed-strings "$1" |\
-  grep -v "^Tags.md" |\
+rg --type md --files-with-matches --fixed-strings "$tag" |\
+  grep --invert-match "^Tags.md" |\
   sort |\
   zk_file_to_link >> "$filename"
+
+# Index tag cross-reference
+echo "" >> "$filename"
+echo "# Tags Cross Refeference:" >> "$filename"
+
+rg --type md --files-with-matches --fixed-strings "$tag" |\
+  grep --invert-match "^Tags.md" |\
+  xargs rg --no-filename '^\[\[Tags/.*\]\]' |\
+  grep --invert-match --fixed-string "$tag" |
+  sort |\
+  uniq -c |\
+  sort -r >> "$filename"
