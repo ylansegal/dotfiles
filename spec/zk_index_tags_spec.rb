@@ -6,6 +6,7 @@ RSpec.describe "zk_index_tags" do
 
   before do
     Dir.mkdir(File.join(zk_home, "Clips"))
+    Dir.mkdir(File.join(zk_home, "Tags"))
 
     File.write File.join(zk_home, "Clips", "01-Note.md"), <<~MARKDOWN
       [[Tags/red]]
@@ -32,6 +33,16 @@ RSpec.describe "zk_index_tags" do
       ---
 
       Some other content
+    MARKDOWN
+
+    # Existing Tags.me (out of date)
+    File.write File.join(zk_home, "Tags.md"), <<~MARKDOWN
+      [[Tags/yellow]]
+    MARKDOWN
+
+    # Existing tag, should not exist later
+    File.write File.join(zk_home, "Tags", "gray.md"), <<~MARKDOWN
+      [[Clips/FileThatDoesntExistAnymore]]
     MARKDOWN
   end
 
@@ -77,5 +88,7 @@ RSpec.describe "zk_index_tags" do
       1 [[Tags/blue]]
       1 [[Tags/red]]
     MARKDOWN
+
+    expect(File.exist?(File.join(zk_home, "Tags", "gray.md"))).to be(false)
   end
 end
