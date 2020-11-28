@@ -21,23 +21,18 @@ end
 
 using Zettelkasten
 
-# Delete Tags.md and Tags/*.md
-files_to_delete = Dir.glob("Tags.md") + Dir.glob("Tags/*.md")
-FileUtils.rm(files_to_delete, force: true)
 FileUtils.mkdir_p("Tags")
 
 # - Read each eligible file in, and find tags
-files_to_index = Dir.glob("**/*.md")
+files_to_index = Dir.glob("**/*.md") - Dir.glob("Tags*.md") - Dir.glob("Tags/*.md")
 
 files_to_tags = files_to_index.each_with_object(Hash.new { |h, k| h[k] = Set[] }) { |filename, memo|
   File.new(filename).each_line { |line|
-    if line.match?('^\[\[Tags/.*\]\]$')
-      memo[filename] << line.chomp
-    end
+    memo[filename] << line.chomp if line.match?('^\[\[Tags/.*\]\]$')
   }
 }
 
-tags = files_to_tags.values.reduce(&:+)
+tags = Set.new(files_to_tags.values.reduce(&:+))
 
 # Write Tags.md
 File.write("Tags.md", tags.to_a.sort.join("\n") << "\n")
@@ -70,3 +65,7 @@ tag_file_data.each do |tag, tag_data|
     #{tag_data[:cross_ref]}
   MARKDOWN
 end
+
+# Remove unused tag files
+files_to_delete = Dir.glob("Tags/*.md") - tags.map(&:tag_to_filename)
+FileUtils.rm(files_to_delete, force: true)
