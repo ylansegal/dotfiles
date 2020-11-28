@@ -41,18 +41,19 @@ File.write("Tags.md", tags.to_a.sort.join("\n") << "\n")
 tag_file_data = tags.each_with_object({}) { |tag, memo|
   files_with_tag = files_to_tags.select { |_k, v| v.include?(tag) }
 
-  memo[tag] = {
-    uses: files_with_tag
-      .keys
-      .sort
-      .map(&:filename_to_tag)
-      .join("\n"),
-    cross_ref: (files_with_tag.values.flat_map(&:to_a) - [tag])
-      .tally
-      .sort_by { |k, v| [-v, k] }
-      .map { |k, v| "#{v} #{k}" }
-      .join("\n")
-  }
+  uses = files_with_tag
+         .keys
+         .sort
+         .map(&:filename_to_tag)
+         .join("\n")
+
+  cross_ref = (files_with_tag.values.flat_map(&:to_a) - [tag])
+              .tally
+              .sort_by { |k, v| [-v, k] }
+              .map { |k, v| "#{v} #{k}" }
+              .join("\n")
+
+  memo[tag] = { uses: uses, cross_ref: cross_ref }
 }
 
 # Write each tag file
