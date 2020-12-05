@@ -2,6 +2,7 @@
 
 require "bundler/inline"
 require "date"
+require "optparse"
 
 gemfile do
   source "https://rubygems.org"
@@ -10,7 +11,15 @@ end
 
 require "active_support/core_ext/string/inflections"
 
-input = ARGV.empty? ? STDIN.read : ARGV.join(" ")
+options = {}
+OptionParser.new do |opts|
+  opts.on("-s", "--strip", "Don't print a new line after output") do |_v|
+    options[:strip] = true
+  end
+end.parse!
+
+input = ARGV.empty? ? $stdin.read : ARGV.join(" ")
 title = input.titleize.gsub(/\W/, "")
 
-puts "#{Date.today}-#{title}"
+printer = options[:strip] ? ->(s) { print s } : ->(s) { puts s }
+printer.call "#{Date.today}-#{title}"

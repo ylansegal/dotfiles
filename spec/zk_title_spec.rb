@@ -18,5 +18,12 @@ RSpec.describe "zk_title" do
       output = `echo #{input} | zk_title`
       expect(output).to eq("#{expected_output}\n")
     end
+
+    describe '--strip' do
+      it 'generates output without a new line' do
+        output = `zk_title --strip #{input}`
+        expect(output).to eq("#{expected_output}")
+      end
+    end
   end
 end
