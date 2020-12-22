@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# Wraps plantuml to use stdin/stdout and generate unicode diagrams
+
+set -euo pipefail
+
+tmp_dir=$(mktemp -d -t ci-XXXXXXXXXX)
+input_file=$tmp_dir/diagram.plantuml
+
+cat /dev/stdin > $input_file
+plantuml $input_file -utxt -output $tmp_dir
+cat $tmp_dir/diagram.utxt
+
+rm -rf $tmp_dir
