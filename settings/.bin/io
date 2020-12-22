@@ -24,6 +24,8 @@ set -euo pipefail
 case $1 in
   psql)
     comment='-- ' ;;
+  uml)
+    comment="' " ;;
   *)
     comment='# ' ;;
 esac
