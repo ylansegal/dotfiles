@@ -29,7 +29,7 @@ brew "wget"
 brew "zsh"
 brew "zsh-syntax-highlighting"
 
-tap "homebrew/cask-cask"
+tap "homebrew/cask"
 cask "1Password"
 cask "alfred"
 cask "atom"
