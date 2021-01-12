@@ -11,7 +11,7 @@
     detectGitProjectAndUseGitGrep: false
   "atom-lint": {}
   "atom-notes":
-    directory: "~/Personal/Zettelkasten"
+    directory: "/users/ylansegal/Personal/Zettelkasten"
     useLunrPipeline: false
   "atom-package-deps":
     ignored: []
