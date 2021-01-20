@@ -35,9 +35,9 @@ export EDITOR=nano
 export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
 # Elixir iex history
 export ERL_AFLAGS="-kernel shell_history enabled"
-# sk options
-export SKIM_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
-export SKIM_DEFAULT_OPTIONS="--reverse"
+# fzf options
+export FZF_DEFAULT_COMMAND='fd'
+export FZF_DEFAULT_OPTS="--reverse"
 # JIRA utilities
 export JIRA_TICKET_REGEX='[A-Z]{2,8}-[0-9]{1,5}'
 # Zettlekasten Notes
