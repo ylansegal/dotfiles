@@ -1,4 +1,5 @@
-settings/.netrc filter=git-crypt diff=git-crypt
-settings/.ssh/* filter=git-crypt diff=git-crypt
 settings/.env filter=git-crypt diff=git-crypt
+settings/.netrc filter=git-crypt diff=git-crypt
 settings/.rclone.conf filter=git-crypt diff=git-crypt
+settings/.ssh/* filter=git-crypt diff=git-crypt
+settings/.profile.d/private.sh filter=git-crypt diff=git-crypt

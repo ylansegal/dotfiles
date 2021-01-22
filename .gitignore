@@ -9,6 +9,5 @@ settings/.atom/dev
 settings/.atom/packages/
 settings/.atom/recovery/
 settings/.atom/storage
-settings/.profile.d/private.sh
 spec/examples.txt
 ssh/known_hosts
