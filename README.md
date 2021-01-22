@@ -56,7 +56,7 @@ $ git-crypt unlock
 
 ```
 $ cd dotfiles
-$ chmod 400 settting/.ssh/id_*
+$ chmod 400 setttings/.ssh/id*
 ```
 
 ### Install Oh-My-Zsh
