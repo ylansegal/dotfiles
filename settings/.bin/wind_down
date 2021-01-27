@@ -1,0 +1,33 @@
+#!/usr/bin/env ruby
+# Helps wind down after work
+
+require "bundler/inline"
+
+gemfile do
+  source "https://rubygems.org"
+  gem "highline"
+  gem "rainbow"
+end
+
+require "highline/import"
+require "rainbow/refinement"
+using Rainbow
+
+puts "Let's wind down for the day:"
+puts "----------------------------"
+
+ask "[MANUAL]:".cyan + " Take note of progress on today's tasks."
+ask "[MANUAL]:".cyan + " Reschedule undone tasks. Note resume point"
+ask "[MANUAL]:".cyan + " Review calendar for tomorrow"
+
+case ask("[AUTO]:  ".green + " Back-up Zettelkasten?") { |q| q.default = "y" }
+when /y/i
+  puts "[AUTO]:  ".green + " Zettelkasten".green + " indexing tags"
+  system "zk_index_tags"
+  puts "[AUTO]:  ".green + " Zettelkasten".green + " backing up"
+  system "zk_backup"
+else
+  puts "[AUTO]:  ".green + " Zettelkasten".green + " Aborting backup"
+end
+
+puts "----------------------------"
