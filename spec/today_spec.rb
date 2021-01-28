@@ -4,7 +4,7 @@ require "date"
 
 RSpec.describe "today" do
   def exec_today
-    `ZK_HOME=#{tmpdir} ZK_EDITOR=echo source $HOME/.profile.d/today.sh && today`
+    `ZK_HOME=#{tmpdir} ZK_EDITOR=echo today`
   end
 
   let(:tmpdir) { Dir.mktmpdir }
