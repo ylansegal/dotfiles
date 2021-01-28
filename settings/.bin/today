@@ -1,7 +1,4 @@
 #!/usr/bin/env bash
-# Unofficial strict mode:
-set -euo pipefail
-IFS=$'\n\t'
 
 cd $ZK_HOME || exit 1
 
