@@ -13,21 +13,25 @@ require "highline/import"
 require "rainbow/refinement"
 using Rainbow
 
+AUTO    = "[AUTO]:  ".green
+MANUAL  = "[MANUAL]:".cyan
+
 puts "Let's wind down for the day:"
 puts "----------------------------"
 
-ask "[MANUAL]:".cyan + " Take note of progress on today's tasks."
-ask "[MANUAL]:".cyan + " Reschedule undone tasks. Note resume point"
-ask "[MANUAL]:".cyan + " Review calendar for tomorrow"
+ask "#{MANUAL} Take note of progress on today's tasks."
+ask "#{MANUAL} Reschedule undone tasks. Note resume point"
+ask "#{MANUAL} Review calendar for tomorrow"
 
-case ask("[AUTO]:  ".green + " Back-up Zettelkasten?") { |q| q.default = "y" }
+answer = ask("#{AUTO} Back-up Zettelkasten?") { |q| q.default = "y" }
+case answer
 when /y/i
-  puts "[AUTO]:  ".green + " Zettelkasten".green + " indexing tags"
+  puts "#{AUTO} #{'Zettelkasten'.green} indexing tags"
   system "zk_index_tags"
-  puts "[AUTO]:  ".green + " Zettelkasten".green + " backing up"
+  puts "#{AUTO} #{'Zettelkasten'.green} backing up"
   system "zk_backup"
 else
-  puts "[AUTO]:  ".green + " Zettelkasten".green + " Aborting backup"
+  puts "#{AUTO} #{'Zettelkasten'.green} Aborting backup"
 end
 
 puts "----------------------------"
