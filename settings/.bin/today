@@ -19,4 +19,4 @@ fi
 
 editor=${ZK_EDITOR:-atom}
 $editor . $target_note
-cd - || exit 1
+cd - > /dev/null || exit 1
