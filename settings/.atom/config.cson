@@ -45,6 +45,7 @@
       "autocomplete-java"
       "plantuml-viewer"
       "github"
+      "language-rspec"
     ]
     ignoredNames: [
       ".git"
