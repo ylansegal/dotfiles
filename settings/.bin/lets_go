@@ -1,0 +1,27 @@
+#!/usr/bin/env ruby
+# Helps get setup for the day
+
+require "bundler/inline"
+
+gemfile do
+  source "https://rubygems.org"
+  gem "highline"
+  gem "rainbow"
+end
+
+require "highline/import"
+require "rainbow/refinement"
+using Rainbow
+
+AUTO    = "[AUTO]:  ".green
+MANUAL  = "[MANUAL]:".cyan
+
+puts "Let's get ready for the day!"
+puts "----------------------------"
+
+ask "#{AUTO} Creating today's Zettel"
+system "today"
+ask "#{MANUAL} Review today schedule"
+ask "#{MANUAL} Review today's tasks (Todoist, Zettelkasten)"
+ask "#{MANUAL} Schedule focus time"
+ask "#{MANUAL} Review comms (email, slack)"
