@@ -34,6 +34,6 @@ else
   puts "#{AUTO} #{'Zettelkasten'.green} Aborting backup"
 end
 
-ask "#{MANUAL} It's friday, shutdown your computerv after your done for the day" if Date.today.friday?
+ask "#{MANUAL} It's friday, shutdown your computer after your done for the day" if Date.today.friday?
 
 puts "----------------------------"
