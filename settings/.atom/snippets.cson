@@ -54,6 +54,27 @@
     'body': """
       [[Procore/$1]]: $0
     """
+  'g':
+    'prefix': 'g'
+    'body': """
+      [[Tags/$1]]
+      $0
+    """
+  'm':
+    'prefix': 'm'
+    'body': """
+      [[Meetings/$1]]$0
+    """
+  'th':
+    'prefix': 'th'
+    'body': """
+      [[Thoughts/$1]]$0
+    """
+  'x':
+    'prefix': 'c'
+    'body': """
+      [[Clips/$1]]$0
+    """
   'wt':
     'prefix': 'wt'
     'body': """
