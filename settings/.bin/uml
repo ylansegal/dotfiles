@@ -4,18 +4,10 @@
 set -euo pipefail
 
 # Defaults
-tmp_dir=$(mktemp -d -t uml-XXXXXXXXXX)
-input_file=$tmp_dir/diagram.plantuml
-format="-txt"
-extension="atxt"
+format="-ttxt"
 
 if [ ${1-default} == '-u' ]; then
-  format="-utxt"
-  extension="utxt"
+  format="-tutxt"
 fi
 
-cat /dev/stdin > $input_file
-plantuml $input_file "$format" -output $tmp_dir
-cat "$tmp_dir/diagram.$extension"
-
-rm -rf $tmp_dir
+COLUMNS=300 plantuml "$format" -pipe
