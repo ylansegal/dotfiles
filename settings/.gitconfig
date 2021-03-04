@@ -68,3 +68,5 @@ default = current
 	markEmptyLines = false
 [merge]
 	tool = meld
+[pull]
+	rebase = false
