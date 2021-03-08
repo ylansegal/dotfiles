@@ -1,1 +1,4 @@
 include ~/.git.nanorc
+
+# Spell check:
+set speller "aspell -c" 
