@@ -14,6 +14,7 @@ brew "git-open"
 brew "git-when-merged"
 brew "httpie"
 brew "hub"
+brew "nano"
 brew "plantuml"
 brew "procmail" # installs lockfile
 brew "rclone"
