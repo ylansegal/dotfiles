@@ -1,6 +1,11 @@
 #!/usr/bin/env ruby
 # Generate tag index for personal Zettelkasten
 
+require "bundler/inline"
+gemfile do
+  ruby "~> 3.0"
+end
+
 require "fileutils"
 require "set"
 

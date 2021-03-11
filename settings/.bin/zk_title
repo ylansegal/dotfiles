@@ -5,6 +5,7 @@ require "date"
 require "optparse"
 
 gemfile do
+  ruby "~> 3.0"
   source "https://rubygems.org"
   gem "activesupport"
 end
