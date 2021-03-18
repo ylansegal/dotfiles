@@ -20,7 +20,7 @@ MANUAL  = "[MANUAL]:".cyan
 puts "Let's get ready for the day!"
 puts "----------------------------"
 
-ask "#{AUTO} Creating today's Zettel"
+puts "#{AUTO} Creating today's Zettel"
 system "today"
 ask "#{MANUAL} Review today schedule"
 ask "#{MANUAL} Review today's tasks (Todoist, Zettelkasten)"
