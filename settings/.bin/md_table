@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+# Generate a blank markdown table
+
+SEPARATOR = "|"
+COLUMN = "#{SEPARATOR}   "
+SEPARATOR_COLUMN = "#{SEPARATOR}---"
+
+columns = (ARGV[0] || 2).to_i
+rows = (ARGV[1] || 2).to_i
+
+puts (COLUMN * columns) + SEPARATOR
+puts (SEPARATOR_COLUMN * columns) + SEPARATOR
+rows.times do
+  puts (COLUMN * columns) + SEPARATOR
+end
