@@ -3,8 +3,8 @@
   useConfigOnly = true
 [core]
   excludesfile = ~/.gitignore
-  editor = nano
-	attributesfile = /Users/ylans/.gitattributes
+  editor = atom --wait
+  attributesfile = /Users/ylans/.gitattributes
 [color]
   diff = auto
   status = auto
