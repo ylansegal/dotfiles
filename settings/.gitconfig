@@ -49,6 +49,7 @@ default = current
   verbose = true
 [log]
   follow = true
+	date = local
 [pager]
   diff = diff-so-fancy | less --tabs=1,5
   show = diff-so-fancy | less --tabs=1,5
