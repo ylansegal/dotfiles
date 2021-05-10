@@ -26,6 +26,8 @@ case $1 in
     comment='-- ' ;;
   uml)
     comment="' " ;;
+  node)
+    comment="\/\/ ";;
   *)
     comment='# ' ;;
 esac
