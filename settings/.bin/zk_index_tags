@@ -64,6 +64,8 @@ tag_file_data = tags.each_with_object({}) { |tag, memo|
 # Write each tag file
 tag_file_data.each do |tag, tag_data|
   File.write tag.tag_to_filename, <<~MARKDOWN
+    #{tag}
+
     # Used in:
     #{tag_data[:uses]}
 

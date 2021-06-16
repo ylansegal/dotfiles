@@ -58,6 +58,8 @@ RSpec.describe "zk_index_tags" do
 
     red_contents = File.read(File.join(zk_home, "Tags", "red.md"))
     expect(red_contents).to eq <<~MARKDOWN
+      [[Tags/red]]
+
       # Used in:
       [[Clips/01-Note]]
       [[Clips/02-Note]]
@@ -69,6 +71,8 @@ RSpec.describe "zk_index_tags" do
 
     blue_contents = File.read(File.join(zk_home, "Tags", "blue.md"))
     expect(blue_contents).to eq <<~MARKDOWN
+      [[Tags/blue]]
+
       # Used in:
       [[Clips/01-Note]]
       [[Clips/02-Note]]
@@ -80,6 +84,8 @@ RSpec.describe "zk_index_tags" do
 
     yellow_contents = File.read(File.join(zk_home, "Tags", "yellow.md"))
     expect(yellow_contents).to eq <<~MARKDOWN
+      [[Tags/yellow]]
+
       # Used in:
       [[Clips/02-Note]]
       [[Clips/03-Note]]
