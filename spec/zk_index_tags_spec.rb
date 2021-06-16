@@ -35,7 +35,7 @@ RSpec.describe "zk_index_tags" do
       Some other content
     MARKDOWN
 
-    # Existing Tags.me (out of date)
+    # Existing Tags.md (out of date)
     File.write File.join(zk_home, "Tags.md"), <<~MARKDOWN
       [[Tags/yellow]]
     MARKDOWN
