@@ -36,7 +36,9 @@ cask "alfred"
 cask "atom"
 cask "gpg-suite"
 cask "iterm2"
-cask "lunar"
+# Lunar > 4 requires Pro version to sync. Lunar 3 continues to work, but needs to be
+# installed manually
+# cask "lunar"
 cask "meetingbar"
 cask "rectangle"
 
