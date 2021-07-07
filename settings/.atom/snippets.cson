@@ -60,6 +60,12 @@
       [[Tags/$1]]
       $0
     """
+  'gp':
+    'prefix': 'gp'
+    'body': """
+      [[Tags/people/$1]]
+      $0
+    """
   'm':
     'prefix': 'm'
     'body': """
