@@ -6,14 +6,14 @@ source_path=~/Personal
 sparse_bundle=Secure.sparsebundle
 mounted=/Volumes/Secure
 
+# Obtaining Password
+read -sp "$sparse_bundle pasword: " PASS
+
 # Mount secure
 echo "Mounting $sparse_bundle"
-hdiutil attach $source_path/$sparse_bundle
+printf "$PASS" | hdiutil attach -stdinpass  $source_path/$sparse_bundle
 
 # Loop until it's unmounted
-
-echo "-------"
-
 until [ ! -d $mounted ] ; do
   echo ""
   read -rp "Press enter when ready to unmount $mounted..."
@@ -23,6 +23,10 @@ until [ ! -d $mounted ] ; do
   # Continue exiting on futher errors
   set -eu
 done
+
+echo "-------"
+echo "Compacting $sparse_bundle"
+printf "$PASS" | hdiutil compact -stdinpass  $source_path/$sparse_bundle
 
 echo "-------"
 echo "Backing up..."
