@@ -26,6 +26,6 @@ done
 
 echo "-------"
 echo "Backing up..."
-rclone --verbose sync $source_path/$sparse_bundle drive:/$sparse_bundle/
+rclone --progress sync $source_path/$sparse_bundle drive:/$sparse_bundle/
 
 echo "Done"
